@@ -42,11 +42,11 @@ jobs:
       TARGET_LABEL: wl_identification
       CONFIG_SOURCE_PATH: lean/ComparatorChallenges/WLIdentification.json
       CONFIG_RUNTIME_PATH: ComparatorChallenges/WLIdentification.json
-      CONFIG_BLOB_TARGET: b8bba8c922f55900f9bd15b5e53c4c5e09733c7c
+      TARGET_CONFIG_BLOB: b8bba8c922f55900f9bd15b5e53c4c5e09733c7c
       CHALLENGE_SOURCE_PATH: lean/ComparatorChallenges/WLIdentification.lean
-      CHALLENGE_BLOB_TARGET: b42160ea051a2117c5f9a2589b9821c454faab33
+      TARGET_CHALLENGE_BLOB: b42160ea051a2117c5f9a2589b9821c454faab33
       SOLUTION_SOURCE_PATH: lean/OAI/Computability/WLIdentification/Main.lean
-      SOLUTION_BLOB_TARGET: d704f56cda2f9590cc6099726bfa5284dc296082
+      TARGET_SOLUTION_BLOB: d704f56cda2f9590cc6099726bfa5284dc296082
       SOLUTION_MODULE: OAI.Computability.WLIdentification.Main
       SELECTED_THEOREM: OAI.WLIdentification.main
       AXIOM_IMPORT_MODULE: OAI.Computability.WLIdentification.Main
@@ -63,10 +63,6 @@ jobs:
         id: formal
         continue-on-error: true
         shell: bash
-        env:
-          CONFIG_BLOB: ${{ env.CONFIG_BLOB_TARGET }}
-          CHALLENGE_BLOB: ${{ env.CHALLENGE_BLOB_TARGET }}
-          SOLUTION_BLOB: ${{ env.SOLUTION_BLOB_TARGET }}
         run: bash scripts/run_openai_math_selected_target.sh
       - name: Finalize execution receipt
         if: always()
