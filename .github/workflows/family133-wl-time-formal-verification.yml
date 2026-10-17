@@ -42,11 +42,11 @@ jobs:
       TARGET_LABEL: wl_time_lower_bound
       CONFIG_SOURCE_PATH: lean/ComparatorChallenges/WeisfeilerLeman.json
       CONFIG_RUNTIME_PATH: ComparatorChallenges/WeisfeilerLeman.json
-      TARGET_CONFIG_BLOB: b05d96f5789d9a2b24124f43be10ba6d4cf52f31
+      TARGET_CONFIG_BLOB: 5e52feda9f499f0c3b3c462c845d4e8e1e897f7e
       CHALLENGE_SOURCE_PATH: lean/ComparatorChallenges/WeisfeilerLeman.lean
-      TARGET_CHALLENGE_BLOB: fcf9734ed7fb50df1878025e46c6b1849be53caf
+      TARGET_CHALLENGE_BLOB: da205d7aff62b7573d0c34c4197b229af57ece6d
       SOLUTION_SOURCE_PATH: lean/OAI/Computability/WeisfeilerLeman/Main.lean
-      TARGET_SOLUTION_BLOB: c344635d2a192fd43655278b168a8d90ae4f5e0c
+      TARGET_SOLUTION_BLOB: c34463d137ca2913e7af29d80d365c9c88936e1b
       SOLUTION_MODULE: OAI.Computability.WeisfeilerLeman.Main
       SELECTED_THEOREM: OAI.WLTime.unconditional_time_lower_bound
       AXIOM_IMPORT_MODULE: OAI.Computability.WeisfeilerLeman.Main
