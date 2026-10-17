@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - '.github/workflows/family136-pcp-ppad-partial-module-audit.yml'
+      - 'scripts/run_openai_math_module_build.sh'
   workflow_dispatch:
 
 permissions:
