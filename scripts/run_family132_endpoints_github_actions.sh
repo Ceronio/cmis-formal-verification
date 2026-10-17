@@ -68,6 +68,16 @@ mkdir -p "$RECEIPT"
 tar -czf "$RECEIPT/00_admission_receipt.tar.gz" -C "$ROOT" "$(basename "$ADMISSION_RECEIPT")"
 sha256sum "$RECEIPT/00_admission_receipt.tar.gz" > "$RECEIPT/00_admission_receipt.sha256"
 
+# The admitted subprocess cannot export its PATH back to this parent shell.
+# Rebind the exact Lean installation that the admission step created.
+LEAN_HOME=$(find "$TOOLS" -maxdepth 1 -mindepth 1 -type d -name 'lean-*-linux' -print -quit)
+[[ -n "$LEAN_HOME" && -x "$LEAN_HOME/bin/lake" ]] || {
+  write_status ENVIRONMENT_HOLD
+  echo 'Admitted Lean/Lake toolchain was not found.' >&2
+  exit 2
+}
+export PATH="$LEAN_HOME/bin:$TOOLS/bin:$PATH"
+
 exec > >(tee "$RECEIPT/01_endpoint.stdout") 2> >(tee "$RECEIPT/01_endpoint.stderr" >&2)
 
 for path in "$PROJECT" "$COMPARATOR_BIN" "$EXPORTER_BIN" "$LANDRUN_BIN"; do
