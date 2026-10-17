@@ -64,7 +64,6 @@ case "$EXECUTION_MODE" in admission|full) ;; *) write_status ENVIRONMENT_HOLD; e
 
 [[ "$(uname -m)" == "x86_64" ]] || { write_status ENVIRONMENT_HOLD; echo "This harness pins the x86_64 Lean asset." >&2; exit 2; }
 
-# Free space without touching the checked-out harness. This is runner hygiene, not proof evidence.
 {
   echo 'Before cleanup:'
   df -h /
@@ -78,7 +77,6 @@ sudo apt-get update > "$RECEIPT/03_apt_update.log" 2>&1
 sudo DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
   ca-certificates curl git jq zstd xz-utils unzip systemd > "$RECEIPT/04_apt_install.log" 2>&1
 
-# Install the exact official Lean release asset and verify its published digest.
 LEAN_ARCHIVE="$WORK/lean-${LEAN_VERSION}-linux.tar.zst"
 curl --fail --location --retry 5 --retry-all-errors "$LEAN_ASSET_URL" -o "$LEAN_ARCHIVE"
 printf '%s  %s\n' "$LEAN_ASSET_SHA256" "$LEAN_ARCHIVE" | sha256sum -c -
@@ -91,7 +89,6 @@ lean --version | tee "$RECEIPT/05_lean_version.txt"
 lake --version | tee "$RECEIPT/06_lake_version.txt"
 [[ "$(lean --version)" == *"version ${LEAN_VERSION}"* ]] || { write_status ENVIRONMENT_HOLD; echo "Lean version mismatch" >&2; exit 2; }
 
-# Build Landrun from the exact recorded commit.
 git clone --quiet https://github.com/Zouuup/landrun.git "$WORK/landrun"
 git -C "$WORK/landrun" checkout --quiet --detach "$LANDRUN_COMMIT"
 [[ "$(git -C "$WORK/landrun" rev-parse HEAD)" == "$LANDRUN_COMMIT" ]] || { write_status ENVIRONMENT_HOLD; exit 2; }
@@ -103,8 +100,6 @@ git -C "$WORK/landrun" checkout --quiet --detach "$LANDRUN_COMMIT"
 sha256sum "$TOOLS/bin/landrun" > "$RECEIPT/07_landrun_sha256.txt"
 "$TOOLS/bin/landrun" --best-effort --ldd --add-exec /usr/bin/true
 
-# Build Comparator at the last recorded Lean 4.34.0 toolchain commit, under the pinned
-# project patch release 4.34.1. Any incompatibility is an environment hold, not a proof failure.
 git clone --quiet https://github.com/leanprover/comparator.git "$WORK/comparator"
 git -C "$WORK/comparator" checkout --quiet --detach "$COMPARATOR_COMMIT"
 [[ "$(git -C "$WORK/comparator" rev-parse HEAD)" == "$COMPARATOR_COMMIT" ]] || { write_status ENVIRONMENT_HOLD; exit 2; }
@@ -119,14 +114,12 @@ EXPORTER_BIN="$WORK/comparator/.lake/packages/lean4export/.lake/build/bin/lean4e
 [[ -x "$COMPARATOR_BIN" && -x "$EXPORTER_BIN" ]] || { write_status ENVIRONMENT_HOLD; echo "Verifier binaries missing" >&2; exit 2; }
 sha256sum "$COMPARATOR_BIN" "$EXPORTER_BIN" > "$RECEIPT/09_verifier_sha256.txt"
 
-# Clone only the required project subtree at the historical source commit.
 git clone --quiet --filter=blob:none --no-checkout https://github.com/openai/math.git "$WORK/openai-math"
 git -C "$WORK/openai-math" sparse-checkout init --cone
 git -C "$WORK/openai-math" sparse-checkout set lean
 git -C "$WORK/openai-math" checkout --quiet --detach "$OPENAI_MATH_COMMIT"
 [[ "$(git -C "$WORK/openai-math" rev-parse HEAD)" == "$OPENAI_MATH_COMMIT" ]] || { write_status ENVIRONMENT_HOLD; exit 2; }
 
-# Verify the exact challenge, solution, config, toolchain and lockfile objects.
 check_blob() {
   local path=$1 expected=$2
   local actual
@@ -147,8 +140,6 @@ PROJECT="$WORK/openai-math/lean"
 [[ "$(jq -r '.fixedToolchain' "$PROJECT/lake-manifest.json")" == "true" ]] || { write_status ENVIRONMENT_HOLD; exit 2; }
 [[ "$(jq -r '.packages[] | select(.name=="mathlib") | .rev' "$PROJECT/lake-manifest.json")" == "$MATHLIB_COMMIT" ]] || { write_status ENVIRONMENT_HOLD; exit 2; }
 
-# GitHub-hosted VM security admission. Prefer user manager; fall back to a transient
-# system service that explicitly runs as the unprivileged runner user.
 SYSTEMD_MODE=''
 if systemd-run --user --wait --pipe --collect --property='RestrictAddressFamilies=~AF_UNIX' /usr/bin/true \
     > "$RECEIPT/11_systemd_user_test.txt" 2>&1; then
@@ -165,7 +156,6 @@ else
 fi
 printf '%s\n' "$SYSTEMD_MODE" > "$RECEIPT/11_systemd_mode.txt"
 
-# Prepare exact project dependencies. Tracked source files must remain unchanged.
 (
   cd "$PROJECT"
   sha256sum lake-manifest.json > "$RECEIPT/12_manifest_before.txt"
@@ -180,7 +170,6 @@ printf '%s\n' "$SYSTEMD_MODE" > "$RECEIPT/11_systemd_mode.txt"
   lake exe cache get 2>&1 | tee "$RECEIPT/16_cache_get.log"
 )
 
-# Record final environment before any solution build.
 {
   echo "openai_math_commit=$OPENAI_MATH_COMMIT"
   echo "lean_version=$LEAN_VERSION"
@@ -201,7 +190,6 @@ if [[ "$EXECUTION_MODE" == admission ]]; then
   exit 0
 fi
 
-# TRUST ORDER: Comparator is the first operation that may build the solution module.
 INNER="$RECEIPT/run_comparator_inner.sh"
 cat > "$INNER" <<EOF
 #!/usr/bin/env bash
@@ -211,7 +199,8 @@ export PATH='$PATH'
 export COMPARATOR_LANDRUN='$TOOLS/bin/landrun'
 export COMPARATOR_LEAN4EXPORT='$EXPORTER_BIN'
 cd '$PROJECT'
-exec '$COMPARATOR_BIN' ComparatorChallenges/SensitivitySeparation.json
+# Comparator must inherit Lake's LEAN_PATH so lean4export can resolve project modules.
+exec lake env '$COMPARATOR_BIN' ComparatorChallenges/SensitivitySeparation.json
 EOF
 chmod 700 "$INNER"
 
@@ -244,7 +233,6 @@ grep -F 'Your solution is okay!' "$RECEIPT/18_comparator.stdout" > "$RECEIPT/19_
   exit 4
 }
 
-# Post-check only after Comparator success. This corroborates scope; Comparator is the acceptance gate.
 cat > "$RECEIPT/PostCheckAxioms.lean" <<'EOF'
 import OAI.Combinatorics.Sensitivity.Separation
 #print axioms OAI.Paper320.quantitative_separation
