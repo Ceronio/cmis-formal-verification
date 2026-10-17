@@ -49,6 +49,7 @@ for name in "${required_env[@]}"; do
   }
 done
 case "$EXECUTION_MODE" in admission|full) ;; *) write_status ENVIRONMENT_HOLD; exit 2;; esac
+AXIOM_DECLARATIONS="${AXIOM_DECLARATIONS:-$SELECTED_THEOREM}"
 
 rm -rf "$RECEIPT" "$ADMISSION_RECEIPT"
 ORIGINAL_MODE="$EXECUTION_MODE"
@@ -101,6 +102,7 @@ SYSTEMD_MODE=$(cat "$ADMISSION_RECEIPT/11_systemd_mode.txt")
 {
   echo "target_label=$TARGET_LABEL"
   echo "selected_theorem=$SELECTED_THEOREM"
+  echo "axiom_declarations=$AXIOM_DECLARATIONS"
   echo "config_runtime_path=$CONFIG_RUNTIME_PATH"
   echo "solution_module=$SOLUTION_MODULE"
   echo "systemd_mode=$SYSTEMD_MODE"
@@ -151,7 +153,7 @@ set -e
 printf '%s\n' "$COMPARATOR_RC" > "$RECEIPT/04_comparator.exit_code"
 if [[ "$COMPARATOR_RC" -ne 0 ]]; then
   write_status COMPARATOR_HOLD
-  echo "Comparator did not accept $SELECTED_THEOREM." >&2
+  echo "Comparator did not accept configured target set: $SELECTED_THEOREM." >&2
   exit "$COMPARATOR_RC"
 fi
 
@@ -160,15 +162,24 @@ grep -F 'Your solution is okay!' "$RECEIPT/04_comparator.stdout" > "$RECEIPT/05_
   exit 4
 }
 
-cat > "$RECEIPT/PostCheckAxioms.lean" <<AXIOMS_EOF
-import $AXIOM_IMPORT_MODULE
-#print axioms $SELECTED_THEOREM
-AXIOMS_EOF
+{
+  echo "import $AXIOM_IMPORT_MODULE"
+  for decl in $AXIOM_DECLARATIONS; do
+    echo "#print axioms $decl"
+  done
+} > "$RECEIPT/PostCheckAxioms.lean"
 (
   cd "$PROJECT"
   lake env lean "$RECEIPT/PostCheckAxioms.lean" \
     > "$RECEIPT/06_axioms.stdout" 2> "$RECEIPT/06_axioms.stderr"
 )
+for decl in $AXIOM_DECLARATIONS; do
+  grep -F "$decl" "$RECEIPT/06_axioms.stdout" >/dev/null || {
+    write_status AXIOM_POSTCHECK_HOLD
+    echo "Axiom report absent for $decl" >&2
+    exit 4
+  }
+done
 
 write_status PASS_SELECTED_THEOREM
-echo "PASS: Comparator accepted $SELECTED_THEOREM. CMIS must review the receipt before upgrading status."
+echo "PASS: Comparator accepted the configured target set ($SELECTED_THEOREM). CMIS must review the receipt before upgrading status."
