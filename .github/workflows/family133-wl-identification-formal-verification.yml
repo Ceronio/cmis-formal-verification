@@ -42,11 +42,11 @@ jobs:
       TARGET_LABEL: wl_identification
       CONFIG_SOURCE_PATH: lean/ComparatorChallenges/WLIdentification.json
       CONFIG_RUNTIME_PATH: ComparatorChallenges/WLIdentification.json
-      TARGET_CONFIG_BLOB: b8bba8c922f55900f9bd15b5e53c4c5e09733c7c
+      TARGET_CONFIG_BLOB: c0008253f706cede39936f53b21a992a98ab80d5
       CHALLENGE_SOURCE_PATH: lean/ComparatorChallenges/WLIdentification.lean
-      TARGET_CHALLENGE_BLOB: b42160ea051a2117c5f9a2589b9821c454faab33
+      TARGET_CHALLENGE_BLOB: 9e922ae71265a0cc363f3d24be42cc26fa8cd0aa
       SOLUTION_SOURCE_PATH: lean/OAI/Computability/WLIdentification/Main.lean
-      TARGET_SOLUTION_BLOB: d704f56cda2f9590cc6099726bfa5284dc296082
+      TARGET_SOLUTION_BLOB: d704f56aed13a99407cbb766f2e76bd0241010dd
       SOLUTION_MODULE: OAI.Computability.WLIdentification.Main
       SELECTED_THEOREM: OAI.WLIdentification.main
       AXIOM_IMPORT_MODULE: OAI.Computability.WLIdentification.Main
