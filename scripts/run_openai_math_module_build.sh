@@ -29,6 +29,9 @@ done
 
 rm -rf "$RECEIPT" "$ADMISSION_RECEIPT"
 export EXECUTION_MODE=admission
+# The audited bootstrap uses the family-132 fixture solely to prepare the exact
+# Lean/Lake/dependency environment. No family-132 theorem result is credited here.
+export SELECTED_THEOREM="${BOOTSTRAP_SELECTED_THEOREM:-OAI.Paper320.quantitative_separation}"
 bash "$ROOT/scripts/run_family132_github_actions.sh"
 [[ -f "$RECEIPT/FINAL_STATUS.txt" && "$(cat "$RECEIPT/FINAL_STATUS.txt")" == ADMISSION_PASS ]] || {
   echo 'Base admission did not pass.' >&2; exit 2;
