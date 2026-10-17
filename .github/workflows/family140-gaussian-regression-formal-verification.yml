@@ -1,0 +1,165 @@
+name: CMIS Family 140 Gaussian Regression Formal Verification
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/family140-gaussian-regression-formal-verification.yml'
+  workflow_dispatch:
+    inputs:
+      execution_mode:
+        description: "Admission checks only, or admission plus full Comparator runs"
+        required: true
+        default: full
+        type: choice
+        options: [admission, full]
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    name: Pinned family-140 target — ${{ matrix.label }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 350
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - label: memory_precision
+            config: MemoryPrecision
+            config_blob: abbfdeb419e4312f8215ea961a34c689aacba5f4
+            challenge_blob: 9cc787bf862637dcc784ce66cb1efd68f5a85ceb
+            solution_path: lean/OAI/Probability/MemoryPrecision/Main.lean
+            solution_blob: 37a55271d3acd46185eedc7ddef076013e2c520c
+            solution_module: OAI.Probability.MemoryPrecision.Main
+            selected: OAI.MemoryPrecision.main
+            axioms: OAI.MemoryPrecision.main
+          - label: noiseless_regression
+            config: NoiselessRegression
+            config_blob: 769b0f6da6be79d456ff47315a215ee018235a09
+            challenge_blob: a9643741f0fee5bf2cb1c2caffc63a9a4d36a6ef
+            solution_path: lean/OAI/Probability/GaussianRegression/Main.lean
+            solution_blob: 90b6a09aaf5824576a1c6a93841873cc9aa4d6a1
+            solution_module: OAI.Probability.GaussianRegression.Main
+            selected: OAI.NoiselessRegression.main
+            axioms: OAI.NoiselessRegression.main
+          - label: posterior_replicas
+            config: PosteriorReplicas
+            config_blob: c665eebab98f3fe87917c1c462cf1718c14f6463
+            challenge_blob: be840922beb1feff22f51fa3d0c5b1d21f2f2211
+            solution_path: lean/OAI/Probability/PosteriorReplicas/Main.lean
+            solution_blob: 40cdda96a543c0d2515213690cc3681bf8b18ceb
+            solution_module: OAI.Probability.PosteriorReplicas.Main
+            selected: OAI.PosteriorReplicas.source_main
+            axioms: OAI.PosteriorReplicas.source_main
+          - label: finite_entropy
+            config: GaussianFiniteEntropy
+            config_blob: eb9b81151d19cdf1822da9360cd41523df1fe152
+            challenge_blob: ad8a3f5e4aefdc97908deeacd5bdddd3745344a0
+            solution_path: lean/OAI/Probability/Localization/Main.lean
+            solution_blob: 0a0a0d18e3fdafe73aae83fb43f3044fe702f29f
+            solution_module: OAI.Probability.Localization.Main
+            selected: OAI.RepeatedLocalization.FiniteEntropy.finite_expected_regularization
+            axioms: OAI.RepeatedLocalization.FiniteEntropy.finite_expected_regularization
+          - label: gaussian_information
+            config: GaussianInformation
+            config_blob: 60f6184ef6127936263d6c7bc432be754e03a190
+            challenge_blob: 13a121157428c9655083cb192d78cfc503e2174a
+            solution_path: lean/OAI/Probability/GaussianInformation/Main.lean
+            solution_blob: db0d0c10afd1a12862e952604f0d8b56a1fedc7a
+            solution_module: OAI.Probability.GaussianInformation.Main
+            selected: OAI.RepeatedLocalization.repeated_localization
+            axioms: OAI.RepeatedLocalization.repeated_localization OAI.AllScaleInverseVolume.inverse_volume_without_support OAI.KernelPotential.kernel_coercivity OAI.KernelPotential.actual_row_drift
+          - label: projection_moments
+            config: ProjectionMoments
+            config_blob: b04976339edbb4afb9b79fbf2769051203db02f4
+            challenge_blob: 3409d69fb128e6ace78dc4e603df8063b984384d
+            solution_path: lean/OAI/Probability/ProjectionMoments/Main.lean
+            solution_blob: c39ebce53bdce9c5d5b0a6b5c94d4c23a05d08d1
+            solution_module: OAI.Probability.ProjectionMoments.Main
+            selected: OAI.ProjectionMoments.main
+            axioms: OAI.ProjectionMoments.main
+          - label: gaussian_replacement
+            config: GaussianReplacement
+            config_blob: a93c443f9490463df2be4d5d81bca97ea20f065f
+            challenge_blob: 5853b619cbf223a36963bc5c7c542debb9b3f3ee
+            solution_path: lean/OAI/Probability/GaussianReplacement/FiberEquality.lean
+            solution_blob: effa6fda313c3fc8615740f2603047dd6bf1b0ef
+            solution_module: OAI.Probability.GaussianReplacement.FiberEquality
+            selected: OAI.CurrentProjection.mixedMomentMain
+            axioms: OAI.CurrentProjection.mixedMomentMain OAI.CurrentProjection.actualRowMain OAI.CurrentProjection.actualRowRefinement OAI.CurrentProjection.actualRowSourceMain OAI.CurrentProjection.actualRowSourceRefinement OAI.CurrentProjection.criticalComparisonMain OAI.CurrentProjection.oneLevelComparisonMain OAI.CurrentProjection.twoLabelComparisonMain OAI.CurrentProjection.hybridBlockMain OAI.CurrentProjection.fiberTwoPointMain OAI.CurrentProjection.fiberBlockMain
+          - label: subsphere_current
+            config: SubsphereCurrent
+            config_blob: c846f4f1c2e86afe8cf5cdabf05ec729fe83880f
+            challenge_blob: 07dc7ebfeea2de825724ed30cb6fab0b550db216
+            solution_path: lean/OAI/Probability/Subsphere/Main.lean
+            solution_blob: 2648df4435758b3c83e4e6cd936113e4468acfe8
+            solution_module: OAI.Probability.Subsphere.Main
+            selected: OAI.SubsphereCurrent.full_current_main_scope
+            axioms: OAI.SubsphereCurrent.full_current_main_scope
+    env:
+      EXECUTION_MODE: ${{ inputs.execution_mode || 'full' }}
+      OPENAI_MATH_COMMIT: fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb
+      LEAN_VERSION: 4.34.1
+      LEAN_ASSET_URL: https://github.com/leanprover/lean4/releases/download/v4.34.1/lean-4.34.1-linux.tar.zst
+      LEAN_ASSET_SHA256: 47bf4bbd78f70c2e9670598ab7124d92b6efb7330ff33e5fbb4030f6fd72e4e4
+      COMPARATOR_COMMIT: d03acab154d269c06e60e4de7e4cc85deebff94b
+      LEAN4EXPORT_COMMIT: 076e8e57707e813375e8f9da8bf989799ace9680
+      LANDRUN_COMMIT: ec104f6edc1e14d7fec6d31146f1ec6f9c192c5a
+      MATHLIB_COMMIT: d13f23b723b8a846827a245b89c10fc7d3f11612
+      CONFIG_BLOB: 4a045e5a5b2d3879ea54f5d6a790869a70d36da1
+      CHALLENGE_BLOB: b2cf871bc3bb38194fc1b742666210f11498918b
+      SOLUTION_BLOB: d72f424a9e90900da6e5f35ba4f486287eadf342
+      TARGET_LABEL: ${{ matrix.label }}
+      CONFIG_SOURCE_PATH: lean/ComparatorChallenges/${{ matrix.config }}.json
+      CONFIG_RUNTIME_PATH: ComparatorChallenges/${{ matrix.config }}.json
+      TARGET_CONFIG_BLOB: ${{ matrix.config_blob }}
+      CHALLENGE_SOURCE_PATH: lean/ComparatorChallenges/${{ matrix.config }}.lean
+      TARGET_CHALLENGE_BLOB: ${{ matrix.challenge_blob }}
+      SOLUTION_SOURCE_PATH: ${{ matrix.solution_path }}
+      TARGET_SOLUTION_BLOB: ${{ matrix.solution_blob }}
+      SOLUTION_MODULE: ${{ matrix.solution_module }}
+      SELECTED_THEOREM: ${{ matrix.selected }}
+      AXIOM_IMPORT_MODULE: ${{ matrix.solution_module }}
+      AXIOM_DECLARATIONS: ${{ matrix.axioms }}
+
+    steps:
+      - name: Check out the CMIS execution harness
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - name: Install exact Go toolchain for Landrun
+        uses: actions/setup-go@40f1582b2485089dde7abd97c1529aa768e1baff
+        with:
+          go-version: '1.24.0'
+          cache: false
+      - name: Run fail-closed theorem verification
+        id: formal
+        continue-on-error: true
+        shell: bash
+        run: bash scripts/run_openai_math_selected_target.sh
+      - name: Finalize execution receipt
+        if: always()
+        shell: bash
+        env:
+          FORMAL_STEP_OUTCOME: ${{ steps.formal.outcome }}
+        run: |
+          mkdir -p cmis_receipt
+          [[ -f cmis_receipt/FINAL_STATUS.txt ]] || echo RECEIPT_MISSING > cmis_receipt/FINAL_STATUS.txt
+          { echo "formal_step_outcome=${FORMAL_STEP_OUTCOME}"; echo "utc=$(date -u +%Y-%m-%dT%H:%M:%SZ)"; } > cmis_receipt/98_workflow_outcome.txt
+          (cd cmis_receipt && find . -maxdepth 1 -type f ! -name 99_receipt_sha256.txt -print0 | sort -z | xargs -0 sha256sum > 99_receipt_sha256.txt)
+      - name: Upload immutable execution receipt
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: cmis-family140-${{ matrix.label }}-receipt-${{ github.run_id }}-${{ github.run_attempt }}
+          path: cmis_receipt/
+          if-no-files-found: error
+          retention-days: 30
+          compression-level: 9
+      - name: Enforce fail-closed result
+        if: always()
+        shell: bash
+        run: |
+          status=$(cat cmis_receipt/FINAL_STATUS.txt)
+          echo "Final status: $status"
+          case "$status" in PASS_SELECTED_THEOREM|ADMISSION_PASS) exit 0;; *) exit 1;; esac
