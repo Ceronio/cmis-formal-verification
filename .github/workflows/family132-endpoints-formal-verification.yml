@@ -63,7 +63,12 @@ jobs:
         id: formal
         continue-on-error: true
         shell: bash
-        run: bash scripts/run_family132_endpoints_github_actions.sh
+        run: |
+          # The endpoint wrapper calls the admission harness in a child shell. Keep
+          # the future Lean installation directory on this parent shell's PATH so
+          # the subsequent Comparator call can locate `lake` after admission.
+          export PATH="$GITHUB_WORKSPACE/.cmis-tools/lean-${LEAN_VERSION}-linux/bin:$GITHUB_WORKSPACE/.cmis-tools/bin:$PATH"
+          bash scripts/run_family132_endpoints_github_actions.sh
 
       - name: Finalize execution receipt
         if: always()
