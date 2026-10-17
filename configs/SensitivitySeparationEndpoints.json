@@ -1,0 +1,15 @@
+{
+  "challenge_module": "ComparatorChallenges.SensitivitySeparationEndpoints",
+  "solution_module": "OAI.Combinatorics.Sensitivity.Separation",
+  "theorem_names": [
+    "OAI.Paper320.unbounded_quadratic_separation",
+    "OAI.Paper320.fixed_power_separation"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": false
+}
