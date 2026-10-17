@@ -42,9 +42,9 @@ jobs:
       TARGET_LABEL: variable_wl
       CONFIG_SOURCE_PATH: lean/ComparatorChallenges/VariableWL.json
       CONFIG_RUNTIME_PATH: ComparatorChallenges/VariableWL.json
-      TARGET_CONFIG_BLOB: 745f60633043a4ec9792b1c6b6fc4b2c28bd42f1
+      TARGET_CONFIG_BLOB: 950e87ae11edcfbceb2d8cfcf4fa8e6c3e187b0b
       CHALLENGE_SOURCE_PATH: lean/ComparatorChallenges/VariableWL.lean
-      TARGET_CHALLENGE_BLOB: fd02fc6a40eb75c067e24d2f8a41fc491d3b472b
+      TARGET_CHALLENGE_BLOB: 92252e2a6d9961ddc619833f9ab0be9f2d57d696
       SOLUTION_SOURCE_PATH: lean/OAI/Combinatorics/VariableWL/Completeness.lean
       TARGET_SOLUTION_BLOB: c9f78446e0227ee2f69a0c65489558439a12becf
       SOLUTION_MODULE: OAI.Combinatorics.VariableWL.Completeness
