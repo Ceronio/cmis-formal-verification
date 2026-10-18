@@ -2,7 +2,6 @@
 
 [![Latest release](https://img.shields.io/github/v/release/Ceronio/cmis-formal-verification?display_name=tag)](https://github.com/Ceronio/cmis-formal-verification/releases/latest)
 [![CMIS formal verification](https://github.com/Ceronio/cmis-formal-verification/actions/workflows/family160-quantitative-van-der-waerden-formal-verification.yml/badge.svg)](https://github.com/Ceronio/cmis-formal-verification/actions)
-[![GitHub stars](https://img.shields.io/github/stars/Ceronio/cmis-formal-verification?style=social)](https://github.com/Ceronio/cmis-formal-verification/stargazers)
 
 A public, reproducible verification laboratory for pinned mathematical formalizations.
 
@@ -33,14 +32,27 @@ The underlying mathematical sources are public and remain attributed to their so
 - [Immutable component pins](PINS.md)
 - [Citation information](CITATION.cff)
 
+## Follow one theorem check
+
+A newcomer can begin with family **160**, the quantitative van der Waerden result:
+
+1. open its [successful workflow run](https://github.com/Ceronio/cmis-formal-verification/actions/runs/39129756059);
+2. inspect the selected theorem and pinned source identities;
+3. review the Comparator, axiom and Lean-kernel gates; and
+4. compare the theorem-level result with the family-level entry in [COMPLETED_VERIFICATIONS.md](COMPLETED_VERIFICATIONS.md).
+
+This illustrates the core CMIS rule: a formal PASS applies to the exact selected statement, not automatically to a broader paper title, application or performance claim.
+
 ## Independent reproduction requested
 
-A technically useful contribution is an independent rerun of any completed theorem workflow from a clean GitHub-hosted runner.
+An outside contributor normally cannot manually dispatch a workflow in this repository without write access. The documented public route is therefore:
 
-1. Follow [REPRODUCING.md](REPRODUCING.md).
-2. Run one workflow with `execution_mode=full`.
-3. Download and inspect its receipt.
-4. Submit a [reproduction report](https://github.com/Ceronio/cmis-formal-verification/issues/new?template=reproduction-report.yml).
+1. fork this repository to your own GitHub account;
+2. enable GitHub Actions in the fork;
+3. follow [REPRODUCING.md](REPRODUCING.md);
+4. run one workflow in the fork with `execution_mode=full`;
+5. download and inspect its receipt; and
+6. submit a [reproduction report](https://github.com/Ceronio/cmis-formal-verification/issues/new?template=reproduction-report.yml).
 
 You may also submit a [scope-review challenge](https://github.com/Ceronio/cmis-formal-verification/issues/new?template=scope-review.yml) or [propose another theorem family](https://github.com/Ceronio/cmis-formal-verification/issues/new?template=verification-request.yml).
 
@@ -67,7 +79,7 @@ A green theorem run does not automatically validate a wider paper title, operati
 
 ## Reproduction
 
-Open the **Actions** tab, select a family workflow, choose **Run workflow**, and leave `execution_mode` as `full`. Each workflow uploads a hashed receipt whether it passes or stops at a controlled gate.
+Fork the repository, enable Actions in the fork, select a family workflow, choose **Run workflow**, and leave `execution_mode` as `full`. Each workflow uploads a hashed receipt whether it passes or stops at a controlled gate.
 
 ## Recognition and review
 
