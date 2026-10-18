@@ -43,7 +43,7 @@ A green theorem run does not automatically validate a wider paper title, operati
 - Lean: `4.34.1`
 - Mathlib: `d13f23b723b8a846827a245b89c10fc7d3f11612`
 - Comparator: `d03acab154d269c06e60e4de7e4cc85deebff94b`
-- lean4export: `476e8e57707e813375e8f9da8bf989799ace9680`
+- lean4export: `076e8e57707e813375e8f9da8bf989799ace9680`
 - Landrun: `ec104f6edc1e14d7fec6d31146f1ec6f9c192c5a`
 - Permitted axioms: `propext`, `Quot.sound`, `Classical.choice`
 

@@ -1,6 +1,6 @@
 # CMIS completed-verification register
 
-**Living register — update this file as new evidence is completed.**
+**Living register - update this file as new evidence is completed.**
 
 Last updated: **18 October 2026**
 
@@ -21,44 +21,44 @@ Last updated: **18 October 2026**
 ## Validated families
 
 | Family | Mathematical work | Verified declarations | GitHub run(s) | Status |
-|---:"|---|---:|---|---|
-| **1005** | Irrationality of Catalan’s constant | **1** | [39069346447](https://github.com/Ceronio/cmis-formal-verification/actions/runs/39069346447) | Validated — recorded pure-mathematical scope |
-| **132** | A counterexample to the quadratic sensitivity conjecture | **3** | [39065819244](https://github.com/Ceronio/cmis-formal-verification/actions/runs/39065819244)<br>[39071193887](https://github.com/Ceronio/cmis-formal-verification/actions/runs/39071193887) | Validated — recorded pure-mathematical scope |
-| **133** | The complexity of Weisfeiler–Leman refinement | **4** | [39071880237](https://github.com/Ceronio/cmis-formal-verification/actions/runs/39071880237)<br>[39074816714](https://github.com/Ceronio/cmis-formal-verification/actions/runs/39074816714)<br>[39074836683](https://github.com/Ceronio/cmis-formal-verification/actions/runs/390748366839<br>[39074859446](https://github.com/Ceronio/cmis-formal-verification/actions/runs/39074859446) | Validated — recorded pure-mathematical scope |
-| **134** | Generalized star height at most three | **1** | [39077024941](https://github.com/Ceronio/cmis-formal-verification/actions/runs/39077024941) | Validated — recorded pure-mathematical scope |
-| **135** | Sharp homogeneous depth-five complexity of matrix products | **1** | [39077369934](https://github.com/Ceronio/cmis-formal-verification/actions/runs/39077369934) | Validated — recorded pure-mathematical scope |
-| **137** | One-tape time simulation in two-fifths-power space | **2** | [39077800526](https://github.com/Ceronio/cmis-formal-verification/actions/runs/39077800526) | Validated — recorded pure-mathematical scope |
-| **139** | Subpolynomial queries for log-concave sampling | **1** | [39078979726](https://github.com/Ceronio/cmis-formal-verification/actions/runs/39078979726) | Validated — recorded pure-mathematical scope |
-| **140** | Memory–sample lower bounds for noiseless Gaussian regression | **8** | [39079350083](https://github.com/Ceronio/cmis-formal-verification/actions/runs/39079350083) | Validated — recorded pure-mathematical scope |
-| **143** | Uniform limit-cycle bounds in Hilbert’s sixteenth problem | **1** | [39113799488](https://github.com/Ceronio/cmis-formal-verification/actions/runs/39113799488) | Validated — recorded pure-mathematical scope |
-| **144** | Banach’s simple Lebesgue-spectrum problem | **1** | [39113828752](https://github.com/Ceronio/cmis-formal-verification/actions/runs/39113828752) | Validated — recorded pure-mathematical scope |
-| **145** | Rokhlin’s multiple-mixing problem | **1** | [39113856845](https://github.com/Ceronio/cmis-formal-verification/actions/runs/39113856845) | Validated — recorded pure-mathematical scope |
-| **146** | Sinai���s positive-entropy conjecture for the standard map | **3** | [39113889697](https://github.com/Ceronio/cmis-formal-verification/actions/runs/39113889697) | Validated — recorded pure-mathematical scope |
-| **148** | The dimension formula for self-similar measures on the line | **3** | [39127975290](https://github.com/Ceronio/cmis-formal-verification/actions/runs/39127975290) | Validated — recorded pure-mathematical scope |
-| **151** | A C1 counterexample to Shub’s entropy conjecture | **1** | [39127995324](https://github.com/Ceronio/cmis-formal-verification/actions/runs/39127995324) | Validated — recorded pure-mathematical scope |
-| **155** | A counterexample to periodic tiling in dimension three | **1** | [39129543413](https://github.com/Ceronio/cmis-formal-verification/actions/runs/39129543413) | Validated — recorded pure-mathematical scope |
-| **156** | Borsuk’s conjecture fails in dimension nine | **1** | [39129568496](https://github.com/Ceronio/cmis-formal-verification/actions/runs/39129568496) | Validated — recorded pure-mathematical scope |
-| **158** | The Euclidean plane cannot be colored with five colors | **2** | [39129693771](https://github.com/Ceronio/cmis-formal-verification/actions/runs/39129693771) | Validated — recorded pure-mathematical scope |
-| **160** | Superexponential van der Waerden numbers | **1** | [39129756059](https://github.com/Ceronio/cmis-formal-verification/actions/runs/39129756059) | Validated — recorded pure-mathematical scope |
+|---:|---|---:|---|---|
+| **005** | Irrationality of Catalan's constant | **1** | [39069346447](https://github.com/Ceronio/cmis-formal-verification/actions/runs/39069346447) | Validated - recorded pure-mathematical scope |
+| **132** | A counterexample to the quadratic sensitivity conjecture | **3** | [39065819244](https://github.com/Ceronio/cmis-formal-verification/actions/runs/39065819244)<br>[39071193887](https://github.com/Ceronio/cmis-formal-verification/actions/runs/39071193887) | Validated - recorded pure-mathematical scope |
+| **133** | The complexity of Weisfeiler-Leman refinement | **4** | [39071880237](https://github.com/Ceronio/cmis-formal-verification/actions/runs/39071880237)<br>[39074816714](https://github.com/Ceronio/cmis-formal-verification/actions/runs/39074816714)<br>[39074836683](https://github.com/Ceronio/cmis-formal-verification/actions/runs/39074836683)<br>[39074859446](https://github.com/Ceronio/cmis-formal-verification/actions/runs/39074859446) | Validated - recorded pure-mathematical scope |
+| **134** | Generalized star height at most three | **1** | [39077024941](https://github.com/Ceronio/cmis-formal-verification/actions/runs/39077024941) | Validated - recorded pure-mathematical scope |
+| **135** | Sharp homogeneous depth-five complexity of matrix products | **1** | [39077369934](https://github.com/Ceronio/cmis-formal-verification/actions/runs/39077369934) | Validated - recorded pure-mathematical scope |
+| **137** | One-tape time simulation in two-fifths-power space | **2** | [39077800526](https://github.com/Ceronio/cmis-formal-verification/actions/runs/39077800526) | Validated - recorded pure-mathematical scope |
+| **139** | Subpolynomial queries for log-concave sampling | **1** | [39078979726](https://github.com/Ceronio/cmis-formal-verification/actions/runs/39078979726) | Validated - recorded pure-mathematical scope |
+| **140** | Memory-sample lower bounds for noiseless Gaussian regression | **8** | [39079350083](https://github.com/Ceronio/cmis-formal-verification/actions/runs/39079350083) | Validated - recorded pure-mathematical scope |
+| **143** | Uniform limit-cycle bounds in Hilbert's sixteenth problem | **1** | [39113799488](https://github.com/Ceronio/cmis-formal-verification/actions/runs/39113799488) | Validated - recorded pure-mathematical scope |
+| **144** | Banach's simple Lebesgue-spectrum problem | **1** | [39113828752](https://github.com/Ceronio/cmis-formal-verification/actions/runs/39113828752) | Validated - recorded pure-mathematical scope |
+| **145** | Rokhlin's multiple-mixing problem | **1** | [39113856845](https://github.com/Ceronio/cmis-formal-verification/actions/runs/39113856845) | Validated - recorded pure-mathematical scope |
+| **146** | Sinai's positive-entropy conjecture for the standard map | **3** | [39113889697](https://github.com/Ceronio/cmis-formal-verification/actions/runs/39113889697) | Validated - recorded pure-mathematical scope |
+| **148** | The dimension formula for self-similar measures on the line | **3** | [39127975290](https://github.com/Ceronio/cmis-formal-verification/actions/runs/39127975290) | Validated - recorded pure-mathematical scope |
+| **151** | A C^1 counterexample to Shub's entropy conjecture | **1** | [39127995324](https://github.com/Ceronio/cmis-formal-verification/actions/runs/39127995324) | Validated - recorded pure-mathematical scope |
+| **155** | A counterexample to periodic tiling in dimension three | **1** | [39129543413](https://github.com/Ceronio/cmis-formal-verification/actions/runs/39129543413) | Validated - recorded pure-mathematical scope |
+| **156** | Borsuk's conjecture fails in dimension nine | **1** | [39129568496](https://github.com/Ceronio/cmis-formal-verification/actions/runs/39129568496) | Validated - recorded pure-mathematical scope |
+| **158** | The Euclidean plane cannot be colored with five colors | **2** | [39129693771](https://github.com/Ceronio/cmis-formal-verification/actions/runs/39129693771) | Validated - recorded pure-mathematical scope |
+| **160** | Superexponential van der Waerden numbers | **1** | [39129756059](https://github.com/Ceronio/cmis-formal-verification/actions/runs/39129756059) | Validated - recorded pure-mathematical scope |
 
 ## Complete reviews without whole-family validation
 
 | Family | Mathematical work | Successful supporting targets | Final reason |
-|---:"|---|---:|---|
-| **136** | The quasilinear PCP-for-PPAD conjecture | **0** | Central conjecture proposition remains unproved; only a partial module build was reproduced. |
-| **138** | Subset Sum in O(2z0.49n) time | **0** | Available declarations do not match the original O(2z0.49n) time claim. |
-| **147** | The near-boundary Birkhoff conjecture | **0** | Exact source contract reviewed, but no matching Lean/Comparator target was available. |
-| **149** | Permanence for weakly reversible reaction networks | **1** | Verified persistence theorem is narrower than the family’s common absorbing-set claim. |
-| **150** | Weak mixing of irrational triangular billiards | **1** | Verified theorem proves ergodicity, not the headline weak-mixing claim. |
-| **152** | Zero entropy does not guarantee a smooth positive-volume model | **1** | Verified theorem supplies finite entropy, not the headline zero-entropy result. |
-| **153** | Arithmetic classification of Bernoulli convolutions | **0** | Exact source contract reviewed, but no matching formal target was available. |
-| **154** | Pointwise multiple ergodic averages for mixing transformations | **0** | Exact source contract reviewed, but no matching formal target was available. |
-| **157** | Counterexamples to the Hadwiger and Colin de Verdière conjectures | **3** | Verified targets cover ordinary and list-Hadwiger results; fractional-chromatic and Colin de Verdière strengthenings remain outside. |
+|---:|---|---:|---|
+| **136** | The quasilinear PCP-for-PPAD conjecture | **0** | The central conjecture proposition remains unproved; only a partial module build was reproduced. |
+| **138** | Subset Sum in O(2^0.49n) time | **0** | The available declarations do not match the original O(2^0.49n) time claim. |
+| **147** | The near-boundary Birkhoff conjecture | **0** | The exact source contract was reviewed, but no matching Lean/Comparator target was available. |
+| **149** | Permanence for weakly reversible reaction networks | **1** | The verified persistence theorem is narrower than the family's common absorbing-set claim. |
+| **150** | Weak mixing of irrational triangular billiards | **1** | The verified theorem proves ergodicity, not the headline weak-mixing claim. |
+| **152** | Zero entropy does not guarantee a smooth positive-volume model | **1** | The verified theorem supplies finite entropy, not the headline zero-entropy result. |
+| **153** | Arithmetic classification of Bernoulli convolutions | **0** | The exact source contract was reviewed, but no matching formal target was available. |
+| **154** | Pointwise multiple ergodic averages for mixing transformations | **0** | The exact source contract was reviewed, but no matching formal target was available. |
+| **157** | Counterexamples to the Hadwiger and Colin de Verdiere conjectures | **3** | Verified targets cover ordinary and list-Hadwiger results; fractional-chromatic and Colin de Verdiere strengthenings remain outside. |
 
 ## All 42 completed formal theorem declarations
 
 | # | Family | Lean declaration | Scope credit | Evidence run |
-|---:|---:"|---|---|---:|
+|---:|---:|---|---|---:|
 | 1 | 005 | `OAI.InternalCatalan.catalan_irrational` | Family-validating | [39069346447](https://github.com/Ceronio/cmis-formal-verification/actions/runs/39069346447) |
 | 2 | 132 | `OAI.Paper320.quantitative_separation` | Family-validating | [39065819244](https://github.com/Ceronio/cmis-formal-verification/actions/runs/39065819244) |
 | 3 | 132 | `OAI.Paper320.unbounded_quadratic_separation` | Family-validating | [39071193887](https://github.com/Ceronio/cmis-formal-verification/actions/runs/39071193887) |
@@ -100,7 +100,7 @@ Last updated: **18 October 2026**
 | 39 | 157 | `OAI.LinearListHadwiger.main_theorem` | Partial family coverage | [39129637021](https://github.com/Ceronio/cmis-formal-verification/actions/runs/39129637021) |
 | 40 | 158 | `OAI.EuclideanFiveColor.no_proper_five_coloring` | Family-validating | [39129693771](https://github.com/Ceronio/cmis-formal-verification/actions/runs/39129693771) |
 | 41 | 158 | `OAI.Problem160.properColoring_seven` | Family-validating | [39129693771](https://github.com/Ceronio/cmis-formal-verification/actions/runs/39129693771) |
-| 42 | 160 | `OAI.QuantitativeVanDerWaerdeen.uniform_lower_bound` | Family-validating | [39129756059](https://github.com/Ceronio/cmis-formal-verification/actions/runs/39129756059) |
+| 42 | 160 | `OAI.QuantitativeVanDerWaerden.uniform_lower_bound` | Family-validating | [39129756059](https://github.com/Ceronio/cmis-formal-verification/actions/runs/39129756059) |
 
 ## Current execution hold
 
@@ -112,8 +112,8 @@ Last updated: **18 October 2026**
 
 When adding a result:
 
-1. Preserve the exact family claim and source pin.
-2. Add the exact theorem declaration and workflow run.
-3. Record whether it is family-validating, supporting-only, or partial-family evidence.
-4. Upgrade a family only when the verified target set matches the complete recorded family scope.
-5. Record timeouts, build holds, mismatches and non-validations without deleting them.
+1. preserve the exact family claim and source pin;
+2. add the exact theorem declaration and workflow run;
+3. record whether it is family-validating, supporting-only or partial-family evidence;
+4. upgrade a family only when the verified target set matches its complete recorded scope; and
+5. retain timeouts, build holds, mismatches and non-validations without deleting them.

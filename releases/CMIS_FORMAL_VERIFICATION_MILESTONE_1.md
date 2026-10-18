@@ -15,7 +15,7 @@ Each formal PASS represents the exact selected statement only. CMIS does not cla
 
 ## Excluded from completed totals
 
-Family 159’s reciprocal-sum target was cancelled at the workflow’s 350-minute limit while the large Lean build was still running. No Comparator or Lean-kernel verdict was reached. It is preserved as an execution hold, not a mathematical failure.
+Family 159's reciprocal-sum target was cancelled at the workflow's 350-minute limit while the large Lean build was still running. No Comparator or Lean-kernel verdict was reached. It is preserved as an execution hold, not a mathematical failure.
 
 ## Release contents
 
