@@ -1,0 +1,35 @@
+{
+  "title": "CMIS Formal Verification Milestone 1",
+  "upload_type": "software",
+  "description": "A reproducible, provenance-controlled verification register for pinned public Lean theorem formalizations, including statement comparison, Lean-kernel replay, axiom auditing, immutable receipts, and family-level scope classification. Milestone 1 records 42 formally passed theorem declarations, 18 validated mathematical families, and nine completed bounded non-validation reviews.",
+  "creators": [
+    {
+      "name": "Ceronio, Paul"
+    }
+  ],
+  "keywords": [
+    "formal verification",
+    "Lean 4",
+    "theorem proving",
+    "proof assistant",
+    "formal methods",
+    "reproducible research",
+    "mathematics",
+    "CMIS"
+  ],
+  "version": "0.1.0",
+  "publication_date": "2026-10-18",
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/Ceronio/cmis-formal-verification",
+      "relation": "isSupplementTo",
+      "resource_type": "software"
+    },
+    {
+      "identifier": "https://github.com/Ceronio/cmis-formal-verification/releases/tag/v0.1.0",
+      "relation": "isVersionOf",
+      "resource_type": "software"
+    }
+  ],
+  "notes": "CMIS does not claim authorship of externally sourced mathematical theorems. The project contributes independent reproduction, statement checking, kernel replay, axiom auditing, receipt integrity, scope classification, and reproducibility."
+}

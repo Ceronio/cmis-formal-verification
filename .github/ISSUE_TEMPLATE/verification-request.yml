@@ -1,0 +1,52 @@
+name: Verification request
+description: Propose a public theorem or mathematical family for CMIS review.
+title: "[VERIFICATION REQUEST] "
+body:
+  - type: input
+    id: title
+    attributes:
+      label: Theorem or family title
+    validations:
+      required: true
+  - type: input
+    id: discipline
+    attributes:
+      label: Mathematical discipline
+      placeholder: Combinatorics, number theory, dynamical systems, etc.
+    validations:
+      required: true
+  - type: textarea
+    id: statement
+    attributes:
+      label: Exact mathematical claim
+      description: Preserve hypotheses, quantifiers, conclusion and conventions.
+    validations:
+      required: true
+  - type: textarea
+    id: source
+    attributes:
+      label: Public source and immutable identity
+      description: Provide repository, commit, paper, theorem number and file path where possible.
+    validations:
+      required: true
+  - type: textarea
+    id: formalization
+    attributes:
+      label: Existing formalization
+      description: Give Lean modules, declarations and configuration files if they exist. State clearly when none is known.
+  - type: textarea
+    id: value
+    attributes:
+      label: Why this is a useful CMIS target
+      description: Explain its scientific, verification or cross-domain value.
+    validations:
+      required: true
+  - type: checkboxes
+    id: boundaries
+    attributes:
+      label: Public-data confirmation
+      options:
+        - label: All supplied sources are suitable for permanent public disclosure.
+          required: true
+        - label: I understand that a request is not a claim that CMIS can or has verified the theorem.
+          required: true

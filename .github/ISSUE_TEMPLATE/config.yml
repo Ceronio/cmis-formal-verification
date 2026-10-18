@@ -1,0 +1,11 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Milestone 1 release
+    url: https://github.com/Ceronio/cmis-formal-verification/releases/tag/v0.1.0
+    about: Review the frozen public release before opening an issue.
+  - name: Completed-verification register
+    url: https://github.com/Ceronio/cmis-formal-verification/blob/main/COMPLETED_VERIFICATIONS.md
+    about: Check whether the theorem or family is already recorded.
+  - name: Verification methodology
+    url: https://github.com/Ceronio/cmis-formal-verification/blob/main/METHODOLOGY.md
+    about: Read the trust model and evidence classifications.

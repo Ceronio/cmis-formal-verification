@@ -1,0 +1,91 @@
+name: Independent reproduction report
+description: Report an independent rerun of a CMIS theorem workflow.
+title: "[REPRODUCTION] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for independently reproducing a CMIS verification result. Please preserve the exact theorem and family scope.
+  - type: input
+    id: family
+    attributes:
+      label: Family ID
+      description: The three-digit CMIS family ID.
+      placeholder: "132"
+    validations:
+      required: true
+  - type: input
+    id: theorem
+    attributes:
+      label: Selected Lean declaration
+      placeholder: OAI.Paper320.quantitative_separation
+    validations:
+      required: true
+  - type: input
+    id: workflow
+    attributes:
+      label: Workflow name
+      placeholder: CMIS Family 132 Formal Verification
+    validations:
+      required: true
+  - type: input
+    id: run_url
+    attributes:
+      label: GitHub Actions run URL
+      placeholder: https://github.com/Ceronio/cmis-formal-verification/actions/runs/...
+    validations:
+      required: true
+  - type: dropdown
+    id: result
+    attributes:
+      label: Terminal result
+      options:
+        - PASS_SELECTED_THEOREM
+        - ADMISSION_PASS
+        - ENVIRONMENT_HOLD
+        - SECURITY_HOLD
+        - COMPARATOR_HOLD
+        - UNCLASSIFIED_HOLD
+        - Cancelled or timed out
+    validations:
+      required: true
+  - type: input
+    id: artifact_sha
+    attributes:
+      label: Artifact SHA-256
+      description: The SHA-256 of the downloaded ZIP, when available.
+  - type: input
+    id: manifest
+    attributes:
+      label: Receipt-manifest result
+      placeholder: 17/17 outer hashes and 23/23 nested hashes passed
+    validations:
+      required: true
+  - type: input
+    id: axioms
+    attributes:
+      label: Observed axioms
+      placeholder: propext; Classical.choice; Quot.sound
+  - type: textarea
+    id: environment
+    attributes:
+      label: Execution environment
+      description: Runner image, branch or commit, and any deliberate changes.
+    validations:
+      required: true
+  - type: textarea
+    id: discrepancies
+    attributes:
+      label: Discrepancies or observations
+      description: State whether the result matches the public register and describe any difference precisely.
+    validations:
+      required: true
+  - type: checkboxes
+    id: boundaries
+    attributes:
+      label: Public-data confirmation
+      options:
+        - label: I have not included private CMIS, CBI, TBC, Gmail, personal, credential, customer, investor or commercial material.
+          required: true
+        - label: I understand that a theorem-level PASS does not automatically validate a wider family claim.
+          required: true

@@ -1,0 +1,67 @@
+name: Scope review or correction
+description: Challenge or refine the mapping between a formal theorem and a wider family claim.
+title: "[SCOPE REVIEW] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        CMIS welcomes evidence-led scope corrections. Please distinguish the original family claim from the exact selected theorem.
+  - type: input
+    id: family
+    attributes:
+      label: Family ID
+      placeholder: "150"
+    validations:
+      required: true
+  - type: textarea
+    id: family_claim
+    attributes:
+      label: Original family claim
+      description: Quote or accurately paraphrase the complete claim with a pinned public source.
+    validations:
+      required: true
+  - type: textarea
+    id: formal_target
+    attributes:
+      label: Verified formal target
+      description: Give the exact Lean declaration or explain that no matching target exists.
+    validations:
+      required: true
+  - type: dropdown
+    id: issue_type
+    attributes:
+      label: Scope issue
+      options:
+        - Exact match confirmed
+        - Formal theorem is narrower
+        - Formal theorem is differently quantified
+        - Formal theorem assumes stronger hypotheses
+        - Formal theorem proves a different conclusion
+        - Missing formal target
+        - Family should be split into multiple claims
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Pinned evidence
+      description: Provide immutable source links, commit IDs, theorem names, configuration paths or receipt evidence.
+    validations:
+      required: true
+  - type: textarea
+    id: proposed_change
+    attributes:
+      label: Proposed register change
+      description: State the exact wording or classification you recommend.
+    validations:
+      required: true
+  - type: checkboxes
+    id: boundaries
+    attributes:
+      label: Confirmation
+      options:
+        - label: I have not included private or confidential information.
+          required: true
+        - label: I am not treating popularity, authority or a successful build as a substitute for the stated evidence.
+          required: true
