@@ -1,48 +1,58 @@
-# CMIS Family 132 — Free GitHub Actions formal verification
+# CMIS Formal Verification
 
-This small public execution harness checks one explicitly selected formal theorem from the pinned OpenAI Mathematics repository:
+[![CMIS formal verification](https://github.com/Ceronio/cmis-formal-verification/actions/workflows/family160-quantitative-van-der-waerden-formal-verification.yml/badge.svg)](https://github.com/Ceronio/cmis-formal-verification/actions)
 
-`OAI.Paper320.quantitative_separation`
+A public, reproducible verification laboratory for pinned mathematical formalizations.
 
-It contains **no private CMIS, CBI, TBC, Gmail or personal data**. It fetches only public source repositories and returns a hashed execution receipt.
+## Milestone 1 status
 
-## Why this repository is public
+| Measure | Completed |
+|---|---:|
+| Formal theorem declarations passed | **42** |
+| Families validated at recorded pure-mathematical scope | **18** |
+| Complete family reviews without validation | **9** |
+| Total resolved family reviews | **27** |
+| Current execution holds | **1** |
 
-Standard GitHub-hosted Actions runners are free for public repositories. The workflow uses a fresh Ubuntu virtual machine and uploads the result as a workflow artifact.
+The underlying mathematical sources are public and remain attributed to their source repository and authors. CMIS does **not** claim authorship of a theorem merely because it reproduced and verified its formal proof.
 
-## Run it
+## Living registers
 
-1. Open this repository's **Actions** tab.
-2. Select **CMIS Family 132 Formal Verification**.
-3. Choose **Run workflow**.
-4. Leave `execution_mode` as `full`.
-5. Download the `cmis-family132-formal-receipt-...` artifact after completion.
+- [Completed theorem and family register](COMPLETED_VERIFICATIONS.md)
+- [Completed scope and non-validation audits](SCOPE_AUDITS.md)
+- [Verification methodology and trust model](METHODOLOGY.md)
+- [Current execution holds](EXECUTION_HOLDS.md)
+- [Machine-readable register](verification-register.json)
+- [Immutable component pins](PINS.md)
+- [Citation information](CITATION.cff)
 
-The workflow is fail-closed. A green run means either:
+## What a green formal run means
 
-- `ADMISSION_PASS` when admission-only mode was chosen; or
-- `PASS_SELECTED_THEOREM` after Comparator success and the post-check axiom report.
+A `PASS_SELECTED_THEOREM` result requires:
 
-Any environment, security, build or Comparator problem fails the workflow and still uploads the diagnostic receipt.
+1. pinned source, configuration, challenge and solution identities;
+2. Comparator acceptance of the configured statement;
+3. an observed-axiom report within the permitted set; and
+4. Lean default-kernel acceptance.
+
+A green theorem run does not automatically validate a wider paper title, operational application, performance claim or CBI deployment.
 
 ## Pinned evidence contract
 
-- OpenAI Mathematics commit: `fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb`
+- OpenAI Mathematics: `fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb`
 - Lean: `4.34.1`
-- Official Lean Linux asset SHA-256: `47bf4bbd78f70c2e9670598ab7124d92b6efb7330ff33e5fbb4030f6fd72e4e4`
 - Mathlib: `d13f23b723b8a846827a245b89c10fc7d3f11612`
 - Comparator: `d03acab154d269c06e60e4de7e4cc85deebff94b`
-- lean4export: `076e8e57707e813375e8f9da8bf989799ace9680`
+- lean4export: `476e8e57707e813375e8f9da8bf989799ace9680`
 - Landrun: `ec104f6edc1e14d7fec6d31146f1ec6f9c192c5a`
-- Selected theorem: `OAI.Paper320.quantitative_separation`
 - Permitted axioms: `propext`, `Quot.sound`, `Classical.choice`
 
-## Scope
+## Reproduction
 
-A successful run verifies the theorem selected by the Comparator configuration. It does not automatically verify the separately tracked unbounded or fixed-power endpoint claims, and it does not validate an operational CMIS/CBI application.
+Open the **Actions** tab, select a family workflow, choose **Run workflow**, and leave `execution_mode` as `full`. Each workflow uploads a hashed receipt whether it passes or stops at a controlled gate.
 
 ## Public/private boundary
 
-Safe here: public mathematical sources, generic verification scripts, public dependency pins, workflow logs and formal receipts.
+Safe here: public mathematical sources, generic verification scripts, dependency pins, workflow logs and public receipts.
 
-Never place here: CBI or TBC content, Gmail, personal information, commercial strategy, credentials, private AIREM/BWIS material, or internal project archives.
+Never place here: private CMIS/CBI/TBC material, Gmail, personal information, credentials, customer records, investor material, commercial strategy or private project archives.

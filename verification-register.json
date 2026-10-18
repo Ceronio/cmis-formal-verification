@@ -1,0 +1,715 @@
+{
+  "schema_version": "1.0",
+  "repository": "Ceronio/cmis-formal-verification",
+  "updated_at": "2026-10-18T18:51:41Z",
+  "source_pin": {
+    "repository": "openai/math",
+    "commit": "fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb"
+  },
+  "verifier_pins": {
+    "lean": "4.34.1",
+    "mathlib": "d13f23b723b8a846827a245b89c10fc7d3f11612",
+    "comparator": "d03acab154d269c06e60e4de7e4cc85deebff94b",
+    "lean4export": "076e8e57707e813375e8f9da8bf989799ace9680",
+    "landrun": "ec104f6edc1e14d7fec6d31146f1ec6f9c192c5a",
+    "permitted_axioms": [
+      "propext",
+      "Quot.sound",
+      "Classical.choice"
+    ]
+  },
+  "counts": {
+    "formal_theorem_declarations_passed": 42,
+    "family_validating_declarations": 36,
+    "supporting_or_partial_declarations": 6,
+    "validated_families": 18,
+    "complete_not_validated_families": 9,
+    "resolved_family_reviews": 27,
+    "execution_holds": 1
+  },
+  "validated_families": [
+    {
+      "family_id": "005",
+      "title": "Irrationality of Catalan’s constant",
+      "status": "VALIDATED_PURE_MATHEMATICAL_SCOPE",
+      "theorem_declaration_count": 1,
+      "run_ids": [
+        39069346447
+      ]
+    },
+    {
+      "family_id": "132",
+      "title": "A counterexample to the quadratic sensitivity conjecture",
+      "status": "VALIDATED_PURE_MATHEMATICAL_SCOPE",
+      "theorem_declaration_count": 3,
+      "run_ids": [
+        39065819244,
+        39071193887
+      ]
+    },
+    {
+      "family_id": "133",
+      "title": "The complexity of Weisfeiler–Leman refinement",
+      "status": "VALIDATED_PURE_MATHEMATICAL_SCOPE",
+      "theorem_declaration_count": 4,
+      "run_ids": [
+        39071880237,
+        39074816714,
+        39074836683,
+        39074859446
+      ]
+    },
+    {
+      "family_id": "134",
+      "title": "Generalized star height at most three",
+      "status": "VALIDATED_PURE_MATHEMATICAL_SCOPE",
+      "theorem_declaration_count": 1,
+      "run_ids": [
+        39077024941
+      ]
+    },
+    {
+      "family_id": "135",
+      "title": "Sharp homogeneous depth-five complexity of matrix products",
+      "status": "VALIDATED_PURE_MATHEMATICAL_SCOPE",
+      "theorem_declaration_count": 1,
+      "run_ids": [
+        39077369934
+      ]
+    },
+    {
+      "family_id": "137",
+      "title": "One-tape time simulation in two-fifths-power space",
+      "status": "VALIDATED_PURE_MATHEMATICAL_SCOPE",
+      "theorem_declaration_count": 2,
+      "run_ids": [
+        39077800526
+      ]
+    },
+    {
+      "family_id": "139",
+      "title": "Subpolynomial queries for log-concave sampling",
+      "status": "VALIDATED_PURE_MATHEMATICAL_SCOPE",
+      "theorem_declaration_count": 1,
+      "run_ids": [
+        39078979726
+      ]
+    },
+    {
+      "family_id": "140",
+      "title": "Memory–sample lower bounds for noiseless Gaussian regression",
+      "status": "VALIDATED_PURE_MATHEMATICAL_SCOPE",
+      "theorem_declaration_count": 8,
+      "run_ids": [
+        39079350083
+      ]
+    },
+    {
+      "family_id": "143",
+      "title": "Uniform limit-cycle bounds in Hilbert’s sixteenth problem",
+      "status": "VALIDATED_PURE_MATHEMATICAL_SCOPE",
+      "theorem_declaration_count": 1,
+      "run_ids": [
+        39113799488
+      ]
+    },
+    {
+      "family_id": "144",
+      "title": "Banach’s simple Lebesgue-spectrum problem",
+      "status": "VALIDATED_PURE_MATHEMATICAL_SCOPE",
+      "theorem_declaration_count": 1,
+      "run_ids": [
+        39113828752
+      ]
+    },
+    {
+      "family_id": "145",
+      "title": "Rokhlin’s multiple-mixing problem",
+      "status": "VALIDATED_PURE_MATHEMATICAL_SCOPE",
+      "theorem_declaration_count": 1,
+      "run_ids": [
+        39113856845
+      ]
+    },
+    {
+      "family_id": "146",
+      "title": "Sinai’s positive-entropy conjecture for the standard map",
+      "status": "VALIDATED_PURE_MATHEMATICAL_SCOPE",
+      "theorem_declaration_count": 3,
+      "run_ids": [
+        39113889697
+      ]
+    },
+    {
+      "family_id": "148",
+      "title": "The dimension formula for self-similar measures on the line",
+      "status": "VALIDATED_PURE_MATHEMATICAL_SCOPE",
+      "theorem_declaration_count": 3,
+      "run_ids": [
+        39127975290
+      ]
+    },
+    {
+      "family_id": "151",
+      "title": "A ONE counterexample to Shub��s entropy conjecture",
+      "status": "VALIDATED_PURE_MATHEMATICAL_SCOPE",
+      "theorem_declaration_count": 1,
+      "run_ids": [
+        39127995324
+      ]
+    },
+    {
+      "family_id": "155",
+      "title": "A counterexample to periodic tiling in dimension three",
+      "status": "VALIDATED_PURE_MATHEMATICAL_SCOPE",
+      "theorem_declaration_count": 1,
+      "run_ids": [
+        39129543413
+      ]
+    },
+    {
+      "family_id": "156",
+      "title": "Borsuk’s conjecture fails in dimension nine",
+      "status": "VALIDATED_PURE_MATHEMATICAL_SCOPE",
+      "theorem_declaration_count": 1,
+      "run_ids": [
+        39129568496
+      ]
+    },
+    {
+      "family_id": "158",
+      "title": "The Euclidean plane cannot be colored with five colors",
+      "status": "VALIDATED_PURE_MATHEMATICAL_SCOPE",
+      "theorem_declaration_count": 2,
+      "run_ids": [
+        39129693771
+      ]
+    },
+    {
+      "family_id": "160",
+      "title": "Superexponential van der Waerden numbers",
+      "status": "VALIDATED_PURE_MATHEMATICAL_SCOPE",
+      "theorem_declaration_count": 1,
+      "run_ids": [
+        39129756059
+      ]
+    }
+  ],
+  "complete_not_validated_families": [
+    {
+      "family_id": "136",
+      "title": "The quasilinear PCP-for-PPAD conjecture",
+      "status": "COMPLETE_NOT_VALIDATED",
+      "reason": "Central conjecture proposition remains unproved; only a partial module build was reproduced.",
+      "verified_supporting_declaration_count": 0,
+      "run_ids": []
+    },
+    {
+      "family_id": "138",
+      "title": "Subset Sum in OJ2x0.49n) time",
+      "status": "COMPLETE_NOT_VALIDATED",
+      "reason": "Available declarations do not match the original OJ2x0.49n) time claim.",
+      "verified_supporting_declaration_count": 0,
+      "run_ids": [
+      ]
+    },
+    {
+      "family_id": "147",
+      "title": "The near-boundary Birkhoff conjecture",
+      "status": "COMPLETE_NOT_VALIDATED",
+      "reason": "Exact source contract reviewed, but no matching Lean/Comparator target was available.",
+      "verified_supporting_declaration_count": 0,
+      "run_ids": []
+    },
+    {
+      "family_id": "149",
+      "title": "Permanence for weakly reversible reaction networks",
+      "status": "COMPLETE_NOT_VALIDATED",
+      "reason": "Verified persistence theorem is narrower than the family’s common absorbing-set claim.",
+      "verified_supporting_declaration_count": 1,
+      "run_ids": [
+        39128187459
+      ]
+    },
+    {
+      "family_id": "150",
+      "title": "Weak mixing of irrational triangular billiards",
+      "status": "COMPLETE_NOT_VALIDATED",
+      "reason": "Verified theorem proves ergodicity, not the headline weak-mixing claim.",
+      "verified_supporting_declaration_count": 1,
+      "run_ids": [
+        39128206649
+      ]
+    },
+    {
+      "family_id": "152",
+      "title": "Zero entropy does not guarantee a smooth positive-volume model",
+      "status": "COMPLETE_NOT_VALIDATED",
+      "reason": "Verified theorem supplies finite entropy, not the headline zero-entropy result.",
+      "verified_supporting_declaration_count": 1,
+      "run_ids": [
+        39128229929
+      ]
+    },
+    {
+      "family_id": "153",
+      "title": "Arithmetic classification of Bernoulli convolutions",
+      "status": "COMPLETE_NOT_VALIDATED",
+      "reason": "Exact source contract reviewed, but no matching formal target was available.",
+      "verified_supporting_declaration_count": 0,
+      "run_ids": []
+    },
+    {
+      "family_id": "154",
+      "title": "Pointwise multiple ergodic averages for mixing transformations",
+      "status": "COMPLETE_NOT_VALIDATED",
+      "reason": "Exact source contract reviewed, but no matching formal target was available.",
+      "verified_supporting_declaration_count": 0,
+      "run_ids": []
+    },
+    {
+      "family_id": "157",
+      "title": "Counterexamples to the Hadwiger and Colin de Verdière conjectures",
+      "status": "COMPLETE_NOT_VALIDATED",
+      "reason": "Verified targets cover ordinary and list-Hadwiger results; fractional-chromatic and Colin de Verdière strengthenings remain outside.",
+      "verified_supporting_declaration_count": 3,
+      "run_ids": [
+        39129637021
+      ]
+    }
+  ],
+  "formal_theorem_declarations": [
+    {
+      "index": 1,
+      "family_id": "005",
+      "family_title": "Irrationality of Catalan’s constant",
+      "theorem": "OAI.InternalCatalan.catalan_irrational",
+      "run_id": 39069346447,
+      "scope_credit": "family-validating",
+      "status": "PASS_SELECTED_THEOREM",
+      "evidence": "Comparator statement acceptance, Lean kernel replay, and permitted-axiom audit."
+    },
+    {
+      "index": 2,
+      "family_id": "132",
+      "family_title": "A counterexample to the quadratic sensitivity conjecture",
+      "theorem": "OAI.Paper320.quantitative_separation",
+      "run_id": 39065819244,
+      "scope_credit": "family-validating",
+      "status": "PASS_SELECTED_THEOREM",
+      "evidence": "Comparator statement acceptance, Lean kernel replay, and permitted-axiom audit."
+    },
+    {
+      "index": 3,
+      "family_id": "132",
+      "family_title": "A counterexample to the quadratic sensitivity conjecture",
+      "theorem": "OAI.Paper320.unbounded_quadratic_separation",
+      "run_id": 39071193887,
+      "scope_credit": "family-validating",
+      "status": "PASS_SELECTED_THEOREM",
+      "evidence": "Comparator statement acceptance, Lean kernel replay, and permitted-axiom audit."
+    },
+    {
+      "index": 4,
+      "family_id": "132",
+      "family_title": "A counterexample to the quadratic sensitivity conjecture",
+      "theorem": "OAI.Paper320.fixed_power_separation",
+      "run_id": 39071193887,
+      "scope_credit": "family-validating",
+      "status": "PASS_SELECTED_THEOREM",
+      "evidence": "Comparator statement acceptance, Lean kernel replay, and permitted-axiom audit."
+    },
+    {
+      "index": 5,
+      "family_id": "133",
+      "family_title": "The complexity of Weisfeiler–Leman refinement",
+      "theorem": "OAI.ParityWL.parity_reduction",
+      "run_id": 39071880237,
+      "scope_credit": "family-validating",
+      "status": "PASS_SELECTED_THEOREM",
+      "evidence": "Comparator statement acceptance, Lean kernel replay, and permitted-axiom audit."
+    },
+    {
+      "index": 6,
+      "family_id": "133",
+      "family_title": "The complexity of Weisfeiler–Leman refinement",
+      "theorem": "OAI.WLIdentification.main",
+      "run_id": 39074816714,
+      "scope_credit": "family-validating",
+      "status": "PASS_SELECTED_THEOREM",
+      "evidence": "Comparator statement acceptance, Lean kernel replay, and permitted-axiom audit."
+    },
+    {
+      "index": 7,
+      "family_id": "133",
+      "family_title": "The complexity of Weisfeiler–Leman refinement",
+      "theorem": "OAI.WLTime.unconditional_time_lower_bound",
+      "run_id": 39074836683,
+      "scope_credit": "family-validating",
+      "status": "PASS_SELECTED_THEOREM",
+      "evidence": "Comparator statement acceptance, Lean kernel replay, and permitted-axiom audit."
+    },
+    {
+      "index": 8,
+      "family_id": "133",
+      "family_title": "The complexity of Weisfeiler–Leman refinement",
+      "theorem": "OAI.VariableWL.main",
+      "run_id": 39074859446,
+      "scope_credit": "family-validating",
+      "status": "PASS_SELECTED_THEOREM",
+      "evidence": "Comparator statement acceptance, Lean kernel replay, and permitted-axiom audit."
+    },
+    {
+      "index": 9,
+      "family_id": "134",
+      "family_title": "Generalized star height at most three",
+      "theorem": "OAI.GeneralizedStarHeight.main",
+      "run_id": 39077024941,
+      "scope_credit": "family-validating",
+      "status": "PASS_SELECTED_THEOREM",
+      "evidence": "Comparator statement acceptance, Lean kernel replay, and permitted-axiom audit."
+    },
+    {
+      "index": 10,
+      "family_id": "135",
+      "family_title": "Sharp homogeneous depth-five complexity of matrix products",
+      "theorem": "OAI.Problem335.main",
+      "run_id": 39077369934,
+      "scope_credit": "family-validating",
+      "status": "PASS_SELECTED_THEOREM",
+      "evidence": "Comparator statement acceptance, Lean kernel replay, and permitted-axiom audit."
+    },
+    {
+      "index": 11,
+      "family_id": "137",
+      "family_title": "One-tape time simulation in two-fifths-power space",
+      "theorem": "OAI.Fifths.Single.capped",
+      "run_id": 39077800526,
+      "scope_credit": "family-validating",
+      "status": "PASS_SELECTED_THEOREM",
+      "evidence": "Comparator statement acceptance, Lean kernel replay, and permitted-axiom audit."
+    },
+    {
+      "index": 12,
+      "family_id": "137",
+      "family_title": "One-tape time simulation in two-fifths-power space",
+      "theorem": "OAI.Fifths.Single.unknown",
+      "run_id": 39077800526,
+      "scope_credit": "family-validating",
+      "status": "PASS_SELECTED_THEOREM",
+      "evidence": "Comparator statement acceptance, Lean kernel replay, and permitted-axiom audit."
+    },
+    {
+      "index": 13,
+      "family_id": "139",
+      "family_title": "Subpolynomial queries for log-concave sampling",
+      "theorem": "OAI.LogConcaveSampling.exact_source_main",
+      "run_id": 39078979726,
+      "scope_credit": "family-validating",
+      "status": "PASS_SELECTED_THEOREM",
+      "evidence": "Comparator statement acceptance, Lean kernel replay, and permitted-axiom audit."
+    },
+    {
+      "index": 14,
+      "family_id": "140",
+      "family_title": "Memory–sample lower bounds for noiseless Gaussian regression",
+      "theorem": "OAI.MemoryPrecision.main",
+      "run_id": 39079350083,
+      "scope_credit": "family-validating",
+      "status": "PASS_SELECTED_THEOREM",
+      "evidence": "Comparator statement acceptance, Lean kernel replay, and permitted-axiom audit."
+    },
+    {
+      "index": 15,
+      "family_id": "140",
+      "family_title": "Memory–sample lower bounds for noiseless Gaussian regression",
+      "theorem": "OAI.NoiselessRegression.main",
+      "run_id": 39079350083,
+      "scope_credit": "family-validating",
+      "status": "PASS_SELECTED_THEOREM",
+      "evidence": "Comparator statement acceptance, Lean kernel replay, and permitted-axiom audit."
+    },
+    {
+      "index": 16,
+      "family_id": "140",
+      "family_title": "Memory–sample lower bounds for noiseless Gaussian regression",
+      "theorem": "OAI.PosteriorReplicas.source_main",
+      "run_id": 39079350083,
+      "scope_credit": "family-validating",
+      "status": "PASS_SELECTED_THEOREM",
+      "evidence": "Comparator statement acceptance, Lean kernel replay, and permitted-axiom audit."
+    },
+    {
+      "index": 17,
+      "family_id": "140",
+      "family_title": "Memory–sample lower bounds for noiseless Gaussian regression",
+      "theorem": "OAI.RepeatedLocalization.FiniteEntropy.finite_expected_regularization",
+      "run_id": 39079350083,
+      "scope_credit": "family-validating",
+      "status": "PASS_SELECTED_THEOREM",
+      "evidence": "Comparator statement acceptance, Lean kernel replay, and permitted-axiom audit."
+    },
+    {
+      "index": 18,
+      "family_id": "140",
+      "family_title": "Memory–sample lower bounds for noiseless Gaussian regression",
+      "theorem": "OAI.RepeatedLocalization.repeated_localization",
+      "run_id": 39079350083,
+      "scope_credit": "family-validating",
+      "status": "PASS_SELECTED_THEOREM",
+      "evidence": "Comparator statement acceptance, Lean kernel replay, and permitted-axiom audit."
+    },
+    {
+      "index": 19,
+      "family_id": "140",
+      "family_title": "Memory–sample lower bounds for noiseless Gaussian regression",
+      "theorem": "OAI.ProjectionMoments.main",
+      "run_id": 39079350083,
+      "scope_credit": "family-validating",
+      "status": "PASS_SELECTED_THEOREM",
+      "evidence": "Comparator statement acceptance, Lean kernel replay, and permitted-axiom audit."
+    },
+    {
+      "index": 20,
+      "family_id": "140",
+      "family_title": "Memory–sample lower bounds for noiseless Gaussian regression",
+      "theorem": "OAI.CurrentProjection.mixedMomentMain",
+      "run_id": 39079350083,
+      "scope_credit": "family-validating",
+      "status": "PASS_SELECTED_THEOREM",
+      "evidence": "Comparator statement acceptance, Lean kernel replay, and permitted-axiom audit."
+    },
+    {
+      "index": 21,
+      "family_id": "140",
+      "family_title": "Memory–sample lower bounds for noiseless Gaussian regression",
+      "theorem": "OAI.SubsphereCurrent.full_current_main_scope",
+      "run_id": 39079350083,
+      "scope_credit": "family-validating",
+      "status": "PASS_SELECTED_THEOREM",
+      "evidence": "Comparator statement acceptance, Lean kernel replay, and permitted-axiom audit."
+    },
+    {
+      "index": 22,
+      "family_id": "143",
+      "family_title": "Uniform limit-cycle bounds in Hilbert’s sixteenth problem",
+      "theorem": "OAI.QuinticLienard.main",
+      "run_id": 39113799488,
+      "scope_credit": "family-validating",
+      "status": "PASS_SELECTED_THEOREM",
+      "evidence": "Comparator statement acceptance, Lean kernel replay, and permitted-axiom audit."
+    },
+    {
+      "index": 23,
+      "family_id": "144",
+      "family_title": "Banach’s simple Lebesgue-spectrum problem",
+      "theorem": "OAI.ThreeTorus.simple_lebesgue_spectrum",
+      "run_id": 39113828752,
+      "scope_credit": "family-validating",
+      "status": "PASS_SELECTED_THEOREM",
+      "evidence": "Comparator statement acceptance, Lean kernel replay, and permitted-axiom audit."
+    },
+    {
+      "index": 24,
+      "family_id": "145",
+      "family_title": "Rokhlin’s multiple-mixing problem",
+      "theorem": "OAI.Rokhlin.mixing_all_finite_orders",
+      "run_id": 39113856845,
+      "scope_credit": "family-validating",
+      "status": "PASS_SELECTED_THEOREM",
+      "evidence": "Comparator statement acceptance, Lean kernel replay, and permitted-axiom audit."
+    },
+    {
+      "index": 25,
+      "family_id": "146",
+      "family_title": "Sinai’s positive-entropy conjecture for the standard map",
+      "theorem": "OAI.StandardMapEntropy.main_components",
+      "run_id": 39113889697,
+      "scope_credit": "family-validating",
+      "status": "PASS_SELECTED_THEOREM",
+      "evidence": "Comparator statement acceptance, Lean kernel replay, and permitted-axiom audit."
+    },
+    {
+      "index": 26,
+      "family_id": "146",
+      "family_title": "Sinai’s positive-entropy conjecture for the standard map",
+      "theorem": "OAI.StandardMapEntropy.main_entropy",
+      "run_id": 39113889697,
+      "scope_credit": "family-validating",
+      "status": "PASS_SELECTED_THEOREM",
+      "evidence": "Comparator statement acceptance, Lean kernel replay, and permitted-axiom audit."
+    },
+    {
+      "index": 27,
+      "family_id": "146",
+      "family_title": "Sinai’s positive-entropy conjecture for the standard map",
+      "theorem": "OAI.StandardMapEntropy.main_entropy_complete",
+      "run_id": 39113889697,
+      "scope_credit": "family-validating",
+      "status": "PASS_SELECTED_THEOREM",
+      "evidence": "Comparator statement acceptance, Lean kernel replay, and permitted-axiom audit."
+    },
+    {
+      "index": 28,
+      "family_id": "148",
+      "family_title": "The dimension formula for self-similar measures on the line",
+      "theorem": "OAI.EntropyRateDimension.entropy_rate_dimension",
+      "run_id": 39127975290,
+      "scope_credit": "family-validating",
+      "status": "PASS_SELECTED_THEOREM",
+      "evidence": "Comparator statement acceptance, Lean kernel replay, and permitted-axiom audit."
+    },
+    {
+      "index": 29,
+      "family_id": "148",
+      "family_title": "The dimension formula for self-similar measures on the line",
+      "theorem": "OAI.EntropyRateDimension.Extensions.homogeneous_dimension_direct",
+      "run_id": 39127975290,
+      "scope_credit": "family-validating",
+      "status": "PASS_SELECTED_THEOREM",
+      "evidence": "Comparator statement acceptance, Lean kernel replay, and permitted-axiom audit."
+    },
+    {
+      "index": 30,
+      "family_id": "148",
+      "family_title": "The dimension formula for self-similar measures on the line",
+      "theorem": "OAI.CorSetReference.cor_set",
+      "run_id": 39127975290,
+      "scope_credit": "family-validating",
+      "status": "PASS_SELECTED_THEOREM",
+      "evidence": "Comparator statement acceptance, Lean kernel replay, and permitted-axiom audit."
+    },
+    {
+      "index": 31,
+      "family_id": "149",
+      "family_title": "Permanence for weakly reversible reaction networks",
+      "theorem": "OAI.Problem326.global_bounded_persistent_solution",
+      "run_id": 39128187459,
+      "scope_credit": "supporting-only",
+      "status": "PASS_SELECTED_THEOREM",
+      "evidence": "Comparator statement acceptance, Lean kernel replay, and permitted-axiom audit."
+    },
+    {
+      "index": 32,
+      "family_id": "150",
+      "family_title": "Weak mixing of irrational triangular billiards",
+      "theorem": "OAI.TriangularBilliards.irrational_triangle_billiard",
+      "run_id": 39128206649,
+      "scope_credit": "supporting-only",
+      "status": "PASS_SELECTED_THEOREM",
+      "evidence": "Comparator statement acceptance, Lean kernel replay, and permitted-axiom audit."
+    },
+    {
+      "index": 33,
+      "family_id": "151",
+      "family_title": "A ONE counterexample to Shub’s entropy conjecture",
+      "theorem": "OAI.Problem340.exists_C1_entropy_counterexample",
+      "run_id": 39127995324,
+      "scope_credit": "family-validating",
+      "status": "PASS_SELECTED_THEOREM",
+      "evidence": "Comparator statement acceptance, Lean kernel replay, and permitted-axiom audit."
+    },
+    {
+      "index": 34,
+      "family_id": "152",
+      "family_title": "Zero entropy does not guarantee a smooth positive-volume model",
+      "theorem": "OAI.SmoothObstruction.main",
+      "run_id": 39128229929,
+      "scope_credit": "supporting-only",
+      "status": "PASS_SELECTED_THEOREM",
+      "evidence": "Comparator statement acceptance, Lean kernel replay, and permitted-axiom audit."
+    },
+    {
+      "index": 35,
+      "family_id": "155",
+      "family_title": "A counterexample to periodic tiling in dimension three",
+      "theorem": "OAI.PeriodicTilingThree.periodic_tiling_counterexample_and_minimality",
+      "run_id": 39129543413,
+      "scope_credit": "family-validating",
+      "status": "PASS_SELECTED_THEOREM",
+      "evidence": "Comparator statement acceptance, Lean kernel replay, and permitted-axiom audit."
+    },
+    {
+      "index": 36,
+      "family_id": "156",
+      "family_title": "Borsuk’s conjecture fails in dimension nine",
+      "theorem": "OAI.BorsukNine.main_theorem",
+      "run_id": 39129568496,
+      "scope_credit": "family-validating",
+      "status": "PASS_SELECTED_THEOREM",
+      "evidence": "Comparator statement acceptance, Lean kernel replay, and permitted-axiom audit."
+    },
+    {
+      "index": 37,
+      "family_id": "157",
+      "family_title": "Counterexamples to the Hadwiger and Colin de Verdière conjectures",
+      "theorem": "OAI.HadwigerCounterexample.exists_counterexamples",
+      "run_id": 39129637021,
+      "scope_credit": "partial-family",
+      "status": "PASS_SELECTED_THEOREM",
+      "evidence": "Comparator statement acceptance, Lean kernel replay, and permitted-axiom audit."
+    },
+    {
+      "index": 38,
+      "family_id": "157",
+      "family_title": "Counterexamples to the Hadwiger and Colin de Verdière conjectures",
+      "theorem": "OAI.HadwigerCounterexample.not_hadwiger_conjecture",
+      "run_id": 39129637021,
+      "scope_credit": "partial-family",
+      "status": "PASS_SELECTED_THEOREM",
+      "evidence": "Comparator statement acceptance, Lean kernel replay, and permitted-axiom audit."
+    },
+    {
+      "index": 39,
+      "family_id": "157",
+      "family_title": "Counterexamples to the Hadwiger and Colin de Verdière conjectures",
+      "theorem": "OAI.LinearListHadwiger.main_theorem",
+      "run_id": 39129637021,
+      "scope_credit": "partial-family",
+      "status": "PASS_SELECTED_THEOREM",
+      "evidence": "Comparator statement acceptance, Lean kernel replay, and permitted-axiom audit."
+    },
+    {
+      "index": 40,
+      "family_id": "158",
+      "family_title": "The Euclidean plane cannot be colored with five colors",
+      "theorem": "OAI.EuclideanFiveColor.no_proper_five_coloring",
+      "run_id": 39129693771,
+      "scope_credit": "family-validating",
+      "status": "PASS_SELECTED_THEOREM",
+      "evidence": "Comparator statement acceptance, Lean kernel replay, and permitted-axiom audit."
+    },
+    {
+      "index": 41,
+      "family_id": "158",
+      "family_title": "The Euclidean plane cannot be colored with five colors",
+      "theorem": "OAI.Problem160.properColoring_seven",
+      "run_id": 39129693771,
+      "scope_credit": "family-validating",
+      "status": "PASS_SELECTED_THEOREM",
+      "evidence": "Comparator statement acceptance, Lean kernel replay, and permitted-axiom audit."
+    },
+    {
+      "index": 42,
+      "family_id": "160",
+      "family_title": "Superexponential van der Waerden numbers",
+      "theorem": "OAI.QuantitativeVanDerWaerdeen.uniform_lower_bound",
+      "run_id": 39129756059,
+      "scope_credit": "family-validating",
+      "status": "PASS_SELECTED_THEOREM",
+      "evidence": "Comparator statement acceptance, Lean kernel replay, and permitted-axiom audit."
+    }
+  ],
+  "execution_holds": [
+    {
+      "family_id": "159",
+      "title": "Eirdös’s reciprocal-sum conjecture and quasipolynomial Szemerédi bounds",
+      "run_id": 39129728984,
+      "status": "CANCELLED_AT_WORKFLOW_TIMEOUT",
+      "selected_theorem": "OAI.Erdos3.manuscriptReciprocalProgressionTheorem",
+      "formal_verdict": "NOT_REACHED",
+      "scope": "Partial family coverage: reciprocal-sum consequence only; quantitative quasipolynomial bound outside selected statement.",
+      "diagnosis": "The 350-minute workflow limit expired during the large Lean build after 13,180 of 13,446 reported modules; no Comparator acceptance or kernel verdict was produced."
+    }
+  ]
+}

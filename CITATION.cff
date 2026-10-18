@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "Please cite the CMIS verification repository and the original mathematical sources."
+title: "CMIS Formal Verification Evidence Repository"
+type: software
+authors:
+  - family-names: "Ceronio"
+    given-names: "Paul"
+version: "0.1.0"
+date-released: "2026-10-18"
+repository-code: "https://github.com/Ceronio/cmis-formal-verification"
+url: "https://github.com/Ceronio/cmis-formal-verification"
+abstract: "A reproducible, provenance-controlled verification register for pinned public Lean theorem formalizations, including statement comparison, kernel replay, axiom auditing, immutable receipts and family-level scope classification."
+keywords:
+  - formal verification
+  - Lean 4
+  - theorem proving
+  - reproducible research
+  - mathematical verification
+license: "NOASSERTION"
