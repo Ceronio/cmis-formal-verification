@@ -12,16 +12,23 @@ Choose one completed target from [COMPLETED_VERIFICATIONS.md](COMPLETED_VERIFICA
 
 That classification must be preserved in your report.
 
-## Run the workflow
+## Public reproduction route: fork and run
 
-1. Open the repository's **Actions** tab.
-2. Select the workflow matching the target family.
-3. Choose **Run workflow**.
-4. Use the `main` branch unless you are deliberately testing another pinned revision.
-5. Leave `execution_mode` as `full`.
-6. Start the workflow and wait for a terminal result.
+An outside visitor normally cannot manually dispatch a workflow in the original repository without write access. Use your own fork:
+
+1. Open the repository and choose **Fork**.
+2. Create the fork under your own GitHub account without changing the source files.
+3. Open the fork's **Actions** tab.
+4. Choose **I understand my workflows, go ahead and enable them** if GitHub asks you to enable Actions for the fork.
+5. Select the workflow matching the target family.
+6. Choose **Run workflow**.
+7. Use the fork's default `main` branch unless you are deliberately testing another pinned revision.
+8. Leave `execution_mode` as `full`.
+9. Start the workflow and wait for a terminal result.
 
 The workflow is fail-closed. It uploads a receipt whether it passes or stops at a controlled gate.
+
+Record the exact fork commit used for the run. If the fork differs from the upstream repository, list every changed file and explain why it changed.
 
 ## Expected successful result
 
@@ -37,7 +44,7 @@ A completed formal PASS should contain:
 
 ## Verify the receipt
 
-On Linux or macOS, after extracting the artifact:
+On Linux, after extracting the artifact:
 
 ```bash
 cd <extracted-receipt-directory>
@@ -71,6 +78,7 @@ Do not convert a build failure, cancellation or timeout into a theorem rejection
 
 Open a [reproduction report](https://github.com/Ceronio/cmis-formal-verification/issues/new?template=reproduction-report.yml) and include:
 
+- fork URL and exact commit;
 - workflow name and run URL;
 - family and selected theorem;
 - final status;
@@ -78,9 +86,10 @@ Open a [reproduction report](https://github.com/Ceronio/cmis-formal-verification
 - manifest result;
 - observed axioms;
 - runner image;
+- all modified files, or an explicit statement that the fork was unchanged;
 - any discrepancies; and
 - whether your result changes the family-level disposition.
 
 ## Local reproduction
 
-Local execution is possible, but the GitHub-hosted workflow is the reference route because it recreates the pinned environment and preserves a public execution record. A local result should record the operating system, CPU architecture, toolchain, exact commit and all modified files.
+Local execution is possible, but the GitHub-hosted workflow in an unchanged fork is the reference public route because it recreates the pinned environment and preserves a public execution record. A local result should record the operating system, CPU architecture, toolchain, exact commit and all modified files.
