@@ -19,12 +19,15 @@ A public, reproducible verification laboratory for pinned mathematical formaliza
 
 The underlying mathematical sources are public and remain attributed to their source repository and authors. CMIS does **not** claim authorship of a theorem merely because it reproduced and verified its formal proof.
 
+**AI disclosure:** CMIS is an AI-assisted research and engineering project. Paul Ceronio sets the objectives, approves the scope and publication decisions, and remains accountable for the public claims. AI-generated text, code or analysis is not accepted as proof; formal results must pass the pinned evidence gates described below. See [AI assistance and human responsibility](AI_ASSISTANCE.md).
+
 ## Start here
 
 - [Milestone 1 release](https://github.com/Ceronio/cmis-formal-verification/releases/tag/v0.1.0)
 - [Completed theorem and family register](COMPLETED_VERIFICATIONS.md)
 - [Completed scope and non-validation audits](SCOPE_AUDITS.md)
 - [Verification methodology and trust model](METHODOLOGY.md)
+- [AI assistance and human responsibility](AI_ASSISTANCE.md)
 - [Reproduction guide](REPRODUCING.md)
 - [Contribution guide](CONTRIBUTING.md)
 - [Current execution holds](EXECUTION_HOLDS.md)
