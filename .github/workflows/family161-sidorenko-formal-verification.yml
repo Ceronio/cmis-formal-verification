@@ -1,0 +1,102 @@
+name: CMIS Family 161 Sidorenko Formal Verification
+
+# Scope: finite-host Sidorenko violation for the fixed 35-vertex, 66-edge pattern H; forcing consequence remains outside.
+on:
+  push:
+    branches: [cmis-family161-bounded-cp36]
+    paths:
+      - '.github/workflows/family161-sidorenko-formal-verification.yml'
+  workflow_dispatch:
+    inputs:
+      execution_mode:
+        description: "Admission checks only, or admission plus full Comparator run"
+        required: true
+        default: full
+        type: choice
+        options: [admission, full]
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    name: Pinned family-161 target — sidorenko_counterexample
+    runs-on: ubuntu-24.04
+    timeout-minutes: 350
+    env:
+      EXECUTION_MODE: ${{ inputs.execution_mode || 'full' }}
+      OPENAI_MATH_COMMIT: fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb
+      LEAN_VERSION: 4.34.1
+      LEAN_ASSET_URL: https://github.com/leanprover/lean4/releases/download/v4.34.1/lean-4.34.1-linux.tar.zst
+      LEAN_ASSET_SHA256: 47bf4bbd78f70c2e9670598ab7124d92b6efb7330ff33e5fbb4030f6fd72e4e4
+      COMPARATOR_COMMIT: d03acab154d269c06e60e4de7e4cc85deebff94b
+      LEAN4EXPORT_COMMIT: 076e8e57707e813375e8f9da8bf989799ace9680
+      LANDRUN_COMMIT: ec104f6edc1e14d7fec6d31146f1ec6f9c192c5a
+      MATHLIB_COMMIT: d13f23b723b8a846827a245b89c10fc7d3f11612
+      CONFIG_BLOB: 4a045e5a5b2d3879ea54f5d6a790869a70d36da1
+      CHALLENGE_BLOB: b2cf871bc3bb38194fc1b742666210f11498918b
+      SOLUTION_BLOB: d72f424a9e90900da6e5f35ba4f486287eadf342
+      CMIS_VERIFICATION_TIMEOUT_SECONDS: 19800
+      TARGET_LABEL: sidorenko_counterexample
+      CONFIG_SOURCE_PATH: lean/ComparatorChallenges/SidorenkoCounterexample.json
+      CONFIG_RUNTIME_PATH: ComparatorChallenges/SidorenkoCounterexample.json
+      TARGET_CONFIG_BLOB: 3fdb7a849e7b1df1fc07013c901e1052b35170f8
+      CHALLENGE_SOURCE_PATH: lean/ComparatorChallenges/SidorenkoCounterexample.lean
+      TARGET_CHALLENGE_BLOB: 3f4fa1074f812e2e823350ea50ff1a786e4a1927
+      SOLUTION_SOURCE_PATH: lean/OAI/Combinatorics/Sidorenko/RandomHost.lean
+      TARGET_SOLUTION_BLOB: c16e57e543789f938f972004f47ce3c5f6cf3d29
+      SOLUTION_MODULE: OAI.Combinatorics.Sidorenko.RandomHost
+      SELECTED_THEOREM: OAI.SidorenkoCounterexample.main
+      AXIOM_IMPORT_MODULE: OAI.Combinatorics.Sidorenko.RandomHost
+      AXIOM_DECLARATIONS: OAI.SidorenkoCounterexample.main
+
+    steps:
+      - name: Check out the CMIS execution harness
+        timeout-minutes: 2
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - name: Install exact Go toolchain for Landrun
+        timeout-minutes: 3
+        uses: actions/setup-go@40f1582b2485089dde7abd97c1529aa768e1baff
+        with:
+          go-version: '1.24.0'
+          cache: false
+      - name: Run bounded fail-closed theorem verification
+        id: formal
+        timeout-minutes: 335
+        continue-on-error: true
+        shell: bash
+        run: bash scripts/run_family161_bounded_target.sh
+      - name: Finalize execution receipt
+        timeout-minutes: 2
+        if: always()
+        shell: bash
+        env:
+          FORMAL_STEP_OUTCOME: ${{ steps.formal.outcome }}
+        run: |
+          mkdir -p cmis_receipt
+          [[ -f cmis_receipt/FINAL_STATUS.txt ]] || echo RECEIPT_MISSING > cmis_receipt/FINAL_STATUS.txt
+          { echo "formal_step_outcome=${FORMAL_STEP_OUTCOME}"; echo "utc=$(date -u +%Y-%m-%dT%H:%M:%SZ)"; } > cmis_receipt/98_workflow_outcome.txt
+          (cd cmis_receipt && find . -maxdepth 1 -type f ! -name 99_receipt_sha256.txt -print0 | sort -z | xargs -0 sha256sum > 99_receipt_sha256.txt)
+      - name: Upload immutable execution receipt
+        timeout-minutes: 5
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: cmis-family161-sidorenko-receipt-${{ github.run_id }}-${{ github.run_attempt }}
+          path: cmis_receipt/
+          if-no-files-found: error
+          retention-days: 30
+          compression-level: 9
+      - name: Enforce fail-closed result
+        timeout-minutes: 1
+        if: always()
+        shell: bash
+        env:
+          FORMAL_STEP_OUTCOME: ${{ steps.formal.outcome }}
+        run: |
+          status=$(cat cmis_receipt/FINAL_STATUS.txt)
+          echo "Final status: $status"
+          case "${EXECUTION_MODE}:${status}:${FORMAL_STEP_OUTCOME}" in
+            full:PASS_SELECTED_THEOREM:success|admission:ADMISSION_PASS:success) exit 0;;
+            *) exit 1;;
+          esac
