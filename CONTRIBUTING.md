@@ -50,6 +50,12 @@ Pull requests may improve:
 
 A change must not silently broaden a theorem's scope or upgrade a family without evidence.
 
+## AI-assistance disclosure
+
+CMIS is AI-assisted, and the repository records that openly in [AI_ASSISTANCE.md](AI_ASSISTANCE.md). Contributors must disclose substantial AI assistance when AI materially contributed to code, documentation, analysis, review or publication.
+
+Disclosure does not transfer responsibility to the tool. The contributor remains responsible for checking the work, citing sources, identifying limitations, removing private information and correcting errors. AI-generated text, code or analysis is not proof and does not replace the formal evidence gates.
+
 ## Evidence rules
 
 1. Preserve the original mathematical question.
@@ -60,6 +66,7 @@ A change must not silently broaden a theorem's scope or upgrade a family without
 6. Do not treat a permitted-axiom list as an observed-axiom report.
 7. Do not claim novelty or authorship of externally sourced mathematics.
 8. State limitations explicitly.
+9. Disclose substantial AI assistance.
 
 ## Pull-request expectations
 
@@ -69,7 +76,8 @@ A pull request should include:
 - the exact files and claims affected;
 - evidence or tests supporting the change;
 - any changed counts in the public register;
-- confirmation that private information is absent; and
+- confirmation that private information is absent;
+- an AI-assistance statement; and
 - a note on whether the change affects a frozen release or only the living register.
 
 ## Public-data boundary
