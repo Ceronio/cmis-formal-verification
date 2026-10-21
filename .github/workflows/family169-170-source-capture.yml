@@ -1,0 +1,36 @@
+name: CMIS original 169 and 170 source closure capture
+# AI-assisted source inspection only. No mathematical compilation or proof credit.
+on:
+  push:
+    branches: [cmis-family169-cp44-source-review]
+    paths: ['.github/workflows/family169-170-source-capture.yml']
+permissions:
+  contents: read
+jobs:
+  capture:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - name: Check out public harness
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        timeout-minutes: 2
+      - name: Fetch exact public source without running it
+        timeout-minutes: 7
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          mkdir -p .source-snapshot/openai-math
+          git -C .source-snapshot/openai-math init
+          git -C .source-snapshot/openai-math remote add origin https://github.com/openai/math.git
+          git -C .source-snapshot/openai-math fetch --depth=1 origin fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb
+          git -C .source-snapshot/openai-math checkout --detach FETCH_HEAD
+          python3 scripts/capture_original_169_170_sources.py
+      - name: Upload exact public source snapshot
+        timeout-minutes: 3
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: cmis-original-169-170-sources-${{ github.run_id }}-${{ github.run_attempt }}
+          path: cmis_original_source_snapshot/
+          if-no-files-found: error
+          retention-days: 30
+          compression-level: 9
