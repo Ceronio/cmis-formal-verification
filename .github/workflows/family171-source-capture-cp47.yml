@@ -1,0 +1,75 @@
+name: CMIS Family 171 source-only review capture
+# AI-assisted source collection. This workflow does not verify a theorem.
+on:
+  push:
+    branches: [cmis-family171-cp47-source-review]
+    paths: ['.github/workflows/family171-source-capture-cp47.yml']
+permissions:
+  contents: read
+jobs:
+  capture:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - name: Check out public capture workflow
+        timeout-minutes: 2
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Read exact original Git objects without executing source code
+        timeout-minutes: 7
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          mkdir -p .cp47-source
+          git -C .cp47-source init
+          git -C .cp47-source remote add origin https://github.com/openai/math.git
+          git -C .cp47-source fetch --depth=1 origin fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb
+          git -C .cp47-source checkout --detach FETCH_HEAD
+          python3 - <<'PY'
+          from pathlib import Path
+          import hashlib, json, re, subprocess
+          pin='fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb'
+          repo=Path('.cp47-source'); out=Path('cmis_family171_sources'); out.mkdir()
+          prefix='preprints/The-hypercube-Ramsey-number-has-linear-order-September-23-2026/'
+          def git(*args): return subprocess.check_output(['git','-C',str(repo),*args])
+          if git('rev-parse','HEAD').decode().strip()!=pin: raise ValueError('Source pin mismatch')
+          tree={}
+          for row in git('ls-tree','-rz',pin).split(b'\0'):
+              if not row: continue
+              info,path=row.split(b'\t',1); mode,kind,sha=info.decode().split()
+              if kind=='blob': tree[path.decode()]=sha
+          selected=[p for p in tree if (p.startswith(prefix) and p.endswith(('.tex','.bib','.md'))) or
+                    (p.startswith('lean/ComparatorChallenges/') and p.endswith('.json')) or
+                    p in ['overview.tex','lean/OAI/Combinatorics/Ramsey/Hypercube.lean','lean/docs/171.md','lean/lean-toolchain','lean/lake-manifest.json']]
+          batch=subprocess.Popen(['git','-C',str(repo),'cat-file','--batch'],stdin=subprocess.PIPE,stdout=subprocess.PIPE)
+          manifest=[]; configs=[]
+          for p in sorted(selected):
+              sha=tree[p]; batch.stdin.write((sha+'\n').encode()); batch.stdin.flush()
+              head=batch.stdout.readline().decode().split()
+              if len(head)!=3 or head[0]!=sha or head[1]!='blob': raise ValueError('Invalid object')
+              data=batch.stdout.read(int(head[2]))
+              if batch.stdout.read(1)!=b'\n': raise ValueError('Invalid framing')
+              if hashlib.sha1(b'blob '+str(len(data)).encode()+b'\0'+data).hexdigest()!=sha: raise ValueError('Blob mismatch')
+              dest=out/p; dest.parent.mkdir(parents=True,exist_ok=True); dest.write_bytes(data)
+              manifest.append({'path':p,'bytes':len(data),'git_blob':sha,'sha256':hashlib.sha256(data).hexdigest()})
+              if p.startswith('lean/ComparatorChallenges/') and p.endswith('.json'):
+                  configs.append({'path':p,'configuration':json.loads(data)})
+          batch.stdin.close(); batch.wait(timeout=15)
+          index=subprocess.run(['git','-C',str(repo),'grep','-n','-i','-E','HypercubeRamsey|ramseyNumber.*cube|cube.*ramseyNumber',pin,'--','lean'],capture_output=True,check=False)
+          if index.returncode not in (0,1): raise ValueError('Reference search failed')
+          (out/'LEAN_REFERENCE_INDEX.txt').write_bytes(index.stdout)
+          (out/'CONFIGURATION_CATALOGUE.json').write_text(json.dumps(configs,indent=2)+'\n')
+          (out/'ORIGINAL_PATH_INVENTORY.json').write_text(json.dumps({'pin':pin,'lean_paths':[p for p in sorted(tree) if p.startswith('lean/') and p.endswith(('.lean','.json'))], 'scope_doc_present':'lean/docs/171.md' in tree},indent=2)+'\n')
+          (out/'SOURCE_MANIFEST.json').write_text(json.dumps({'source_repository':'openai/math','source_commit':pin,'compiled':False,'files':manifest,'note':'Exact source capture only. Configuration catalogue and reference index are search evidence, not a proof verdict.'},indent=2)+'\n')
+          print(json.dumps({'captured_files':len(manifest),'original_configurations':len(configs),'compiled':False}))
+          PY
+      - name: Upload original public source evidence
+        timeout-minutes: 3
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: cmis-family171-original-sources-${{ github.run_id }}-${{ github.run_attempt }}
+          path: cmis_family171_sources/
+          if-no-files-found: error
+          retention-days: 30
+          compression-level: 9
