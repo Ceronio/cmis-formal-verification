@@ -1,0 +1,38 @@
+name: CMIS Family 159 source dependency capture
+on:
+  push:
+    branches: [cmis-family159-remediation-20261022]
+    paths: ['.github/workflows/family159-dependency-capture.yml']
+permissions:
+  contents: read
+jobs:
+  capture:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - name: Checkout public engineering harness
+        timeout-minutes: 2
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Read exact mathematical Git objects without compiling
+        timeout-minutes: 7
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          mkdir -p .family159-source/openai-math
+          git -C .family159-source/openai-math init
+          git -C .family159-source/openai-math remote add origin https://github.com/openai/math.git
+          git -C .family159-source/openai-math fetch --depth=1 origin fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb
+          git -C .family159-source/openai-math checkout --detach FETCH_HEAD
+          python3 -m py_compile scripts/capture_family159_dependency_graph.py
+          python3 scripts/capture_family159_dependency_graph.py
+      - name: Upload exact public dependency snapshot
+        timeout-minutes: 3
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: cmis-family159-dependency-sources-${{ github.run_id }}-${{ github.run_attempt }}
+          path: family159_dependency_snapshot/
+          if-no-files-found: error
+          retention-days: 30
+          compression-level: 9
