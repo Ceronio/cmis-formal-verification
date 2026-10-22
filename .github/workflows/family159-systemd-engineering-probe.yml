@@ -1,0 +1,59 @@
+name: CMIS Family 159 engineering-only systemd probe
+# This is NOT a theorem verification or a compilation benchmark.
+on:
+  push:
+    branches: [cmis-family159-remediation-20261022]
+    paths: ['.github/workflows/family159-systemd-engineering-probe.yml']
+permissions:
+  contents: read
+jobs:
+  engineering_probe:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    steps:
+      - name: Check out the public engineering harness
+        timeout-minutes: 2
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Check syntax and run harmless real-systemd cases
+        timeout-minutes: 4
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          bash -n scripts/run_family159_cp39_bounded_target.sh
+          python3 -m py_compile scripts/probe_family159_real_systemd.py
+          python3 scripts/probe_family159_real_systemd.py
+      - name: Preserve engineering metadata and file hashes
+        if: always()
+        timeout-minutes: 1
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          mkdir -p cmis_family159_systemd_probe
+          python3 - <<'PY'
+          from pathlib import Path
+          import hashlib,json,os
+          out=Path('cmis_family159_systemd_probe')
+          metadata={'kind':'ENGINEERING_ONLY','mathematical_credit':0,
+                    'run_id':os.environ['GITHUB_RUN_ID'],
+                    'run_attempt':os.environ['GITHUB_RUN_ATTEMPT'],
+                    'harness_commit':os.environ['GITHUB_SHA'],
+                    'source_changes':False,'lean_executed':False}
+          (out/'RUN_METADATA.json').write_text(json.dumps(metadata,indent=2)+'\n')
+          files=[{'path':str(p.relative_to(out)), 'bytes':p.stat().st_size,
+                  'sha256':hashlib.sha256(p.read_bytes()).hexdigest()}
+                 for p in sorted(out.rglob('*')) if p.is_file() and p.name!='MANIFEST.json']
+          (out/'MANIFEST.json').write_text(json.dumps({'files':files},indent=2)+'\n')
+          PY
+      - name: Upload engineering-only evidence
+        if: always()
+        timeout-minutes: 1
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: cmis-family159-engineering-only-${{ github.run_id }}-${{ github.run_attempt }}
+          path: cmis_family159_systemd_probe/
+          include-hidden-files: true
+          if-no-files-found: error
+          retention-days: 30
+          compression-level: 9
