@@ -1,0 +1,111 @@
+name: CMIS Family 171 CP68 pinned Lean target typecheck
+on:
+  push:
+    branches: [cmis-family171-cp66-cp70-formal-target]
+    paths: ['.github/workflows/family171-cp68-lean-typecheck.yml']
+permissions:
+  contents: read
+jobs:
+  typecheck:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    env:
+      OPENAI_MATH_COMMIT: fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb
+      LEAN_VERSION: 4.34.1
+      LEAN_ASSET_URL: https://github.com/leanprover/lean4/releases/download/v4.34.1/lean-4.34.1-linux.tar.zst
+      LEAN_ASSET_SHA256: 47bf4bbd78f70c2e9670598ab7124d92b6efb7330ff33e5fbb4030f6fd72e4e4
+      MATHLIB_COMMIT: d13f23b723b8a846827a245b89c10fc7d3f11612
+    steps:
+      - name: Check out the public target specification
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Install pinned Lean and fetch the pinned public project
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          sudo apt-get update >/dev/null
+          sudo DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends ca-certificates curl git jq zstd >/dev/null
+          mkdir -p .cp68/tools .cp68/source cp68_receipt
+          curl --fail --location --retry 5 --retry-all-errors "$LEAN_ASSET_URL" -o .cp68/lean.tar.zst
+          printf '%s  %s\n' "$LEAN_ASSET_SHA256" .cp68/lean.tar.zst | sha256sum -c -
+          tar --zstd -xf .cp68/lean.tar.zst -C .cp68/tools
+          LEAN_HOME=$(find .cp68/tools -maxdepth 1 -mindepth 1 -type d -name "lean-${LEAN_VERSION}-linux" -print -quit)
+          test -n "$LEAN_HOME"
+          echo "LEAN_HOME=$PWD/$LEAN_HOME" >> "$GITHUB_ENV"
+          echo "$PWD/$LEAN_HOME/bin" >> "$GITHUB_PATH"
+          git -C .cp68/source init
+          git -C .cp68/source remote add origin https://github.com/openai/math.git
+          git -C .cp68/source fetch --depth=1 origin "$OPENAI_MATH_COMMIT"
+          git -C .cp68/source checkout --detach FETCH_HEAD
+          test "$(git -C .cp68/source rev-parse HEAD)" = "$OPENAI_MATH_COMMIT"
+          test "$(tr -d '\r\n' < .cp68/source/lean/lean-toolchain)" = "leanprover/lean4:v${LEAN_VERSION}"
+          test "$(jq -r '.packages[] | select(.name=="mathlib") | .rev' .cp68/source/lean/lake-manifest.json)" = "$MATHLIB_COMMIT"
+          lean --version | tee cp68_receipt/LEAN_VERSION.txt
+          lake --version | tee cp68_receipt/LAKE_VERSION.txt
+      - name: Prepare exact dependencies and typecheck the target specification
+        timeout-minutes: 70
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          spec="$GITHUB_WORKSPACE/formal/family171/Family171FullTarget.lean"
+          if grep -En '\b(sorry|admit|axiom|unsafe)\b' "$spec"; then
+            echo 'Forbidden proof/trust token found.' >&2
+            exit 2
+          fi
+          cd .cp68/source/lean
+          before=$(sha256sum lake-manifest.json)
+          lake update | tee "$GITHUB_WORKSPACE/cp68_receipt/LAKE_UPDATE.log"
+          after=$(sha256sum lake-manifest.json)
+          test "$before" = "$after"
+          lake exe cache get | tee "$GITHUB_WORKSPACE/cp68_receipt/CACHE_GET.log"
+          mkdir -p CMIS
+          cp "$spec" CMIS/Family171FullTarget.lean
+          lake env lean CMIS/Family171FullTarget.lean \
+            > "$GITHUB_WORKSPACE/cp68_receipt/LEAN_STDOUT.txt" \
+            2> "$GITHUB_WORKSPACE/cp68_receipt/LEAN_STDERR.txt"
+          test ! -s "$GITHUB_WORKSPACE/cp68_receipt/LEAN_STDERR.txt"
+      - name: Seal the zero-credit typecheck receipt
+        if: always()
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          import hashlib, json, os
+          out=Path('cp68_receipt'); out.mkdir(exist_ok=True)
+          spec=Path('formal/family171/Family171FullTarget.lean')
+          stderr=(out/'LEAN_STDERR.txt')
+          ok=stderr.exists() and stderr.stat().st_size==0 and (out/'LEAN_STDOUT.txt').exists()
+          status='SPEC_TYPECHECK_PASS' if ok else 'SPEC_TYPECHECK_HOLD'
+          result={
+            'status':status,
+            'kind':'SPECIFICATION_TYPECHECK_ONLY',
+            'mathematical_credit':0,
+            'positive_target_proved':False,
+            'source_commit':os.environ['OPENAI_MATH_COMMIT'],
+            'branch_commit':os.environ['GITHUB_SHA'],
+            'spec_sha256':hashlib.sha256(spec.read_bytes()).hexdigest(),
+            'lean_version':os.environ['LEAN_VERSION'],
+          }
+          (out/'RESULT.json').write_text(json.dumps(result,indent=2)+'\n')
+          (out/'FINAL_STATUS.txt').write_text(status+'\n')
+          PY
+          (cd cp68_receipt && find . -maxdepth 1 -type f ! -name 99_receipt_sha256.txt -print0 | sort -z | xargs -0 sha256sum > 99_receipt_sha256.txt)
+      - name: Upload CP68 typecheck receipt
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: cmis-family171-cp68-typecheck-${{ github.run_id }}-${{ github.run_attempt }}
+          path: cp68_receipt/
+          if-no-files-found: error
+          retention-days: 30
+          compression-level: 9
+      - name: Enforce typecheck-only success
+        if: always()
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          test "$(cat cp68_receipt/FINAL_STATUS.txt)" = SPEC_TYPECHECK_PASS
+          grep -F '"mathematical_credit": 0' cp68_receipt/RESULT.json
+          grep -F '"positive_target_proved": false' cp68_receipt/RESULT.json
