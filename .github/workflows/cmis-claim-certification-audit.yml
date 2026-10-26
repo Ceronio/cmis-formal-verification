@@ -1,0 +1,80 @@
+# Audits provenance/claims only. Green audit is NOT a theorem certificate.
+# The distinct release job must remain red/HOLD until an independently reviewed
+# real kernel/Comparator replay + scope-attestation verifier is implemented.
+name: CMIS — claim evidence audit and strict certification hold
+
+on:
+  push:
+    branches:
+      - cmis/claim-certification-audit-20261026
+    paths:
+      - 'certification/**'
+      - 'scripts/verify_claim_certification.py'
+      - 'tests/test_claim_certification.py'
+      - '.github/workflows/cmis-claim-certification-audit.yml'
+      - 'verification-register.json'
+  pull_request:
+    paths:
+      - 'certification/**'
+      - 'scripts/verify_claim_certification.py'
+      - 'tests/test_claim_certification.py'
+      - '.github/workflows/cmis-claim-certification-audit.yml'
+      - 'verification-register.json'
+
+permissions:
+  contents: read
+
+jobs:
+  provenance_contract:
+    name: Provenance register audit (no theorem credit)
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    steps:
+      - name: Check out exact PR/branch revision
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Run adversarial negative controls
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          python3 -m unittest discover -s tests -p test_claim_certification.py -v
+      - name: Check all legacy claim and run invariants
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          python3 scripts/verify_claim_certification.py --mode audit | tee claim-audit.json
+          python3 - <<'PY'
+          import json
+          data=json.load(open("claim-audit.json"))
+          assert data["result"] == "CLAIM_CONTRACT_AUDIT_PASS_ZERO_NEW_CERTIFICATION"
+          assert data["historical_declarations"] == 42
+          assert data["historical_github_runs"] == 70
+          assert data["newly_certified_claims"] == 0
+          PY
+          echo "Contract audit PASS; mathematical certification NOT granted." >> "$GITHUB_STEP_SUMMARY"
+      - name: Upload zero-credit audit record
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: cmis-claim-contract-audit
+          path: claim-audit.json
+          if-no-files-found: warn
+          retention-days: 30
+
+  mathematical_release_gate:
+    name: Mathematical certification release gate (expected HOLD)
+    needs: provenance_contract
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - name: Check out exact PR/branch revision
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Refuse claim-level certification without independent proof replay
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          echo "Certification requires independent proof execution, bytes and reviewed claim scope." >> "$GITHUB_STEP_SUMMARY"
+          python3 scripts/verify_claim_certification.py --mode release-gate
