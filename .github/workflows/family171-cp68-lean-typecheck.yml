@@ -32,8 +32,10 @@ jobs:
           tar --zstd -xf .cp68/lean.tar.zst -C .cp68/tools
           LEAN_HOME=$(find .cp68/tools -maxdepth 1 -mindepth 1 -type d -name "lean-${LEAN_VERSION}-linux" -print -quit)
           test -n "$LEAN_HOME"
-          echo "LEAN_HOME=$PWD/$LEAN_HOME" >> "$GITHUB_ENV"
-          echo "$PWD/$LEAN_HOME/bin" >> "$GITHUB_PATH"
+          LEAN_HOME="$PWD/$LEAN_HOME"
+          export PATH="$LEAN_HOME/bin:$PATH"
+          echo "LEAN_HOME=$LEAN_HOME" >> "$GITHUB_ENV"
+          echo "$LEAN_HOME/bin" >> "$GITHUB_PATH"
           git -C .cp68/source init
           git -C .cp68/source remote add origin https://github.com/openai/math.git
           git -C .cp68/source fetch --depth=1 origin "$OPENAI_MATH_COMMIT"
