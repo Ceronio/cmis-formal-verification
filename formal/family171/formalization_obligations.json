@@ -1,0 +1,44 @@
+{
+  "family": 171,
+  "source_commit": "fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb",
+  "target": "CMIS.Family171.FullHypercubeRamseyLinearBound",
+  "positive_target_proved": false,
+  "formal_credit": 0,
+  "obligations": [
+    {
+      "id": "F0",
+      "statement": "The full positive target is well-typed and definitionally matches the manuscript statement.",
+      "status": "specified"
+    },
+    {
+      "id": "F1",
+      "statement": "Negation of the target yields the pinned counterexample sequence.",
+      "status": "existing_source_theorem"
+    },
+    {
+      "id": "F2",
+      "statement": "Formalize initial and asymmetric discrepancy.",
+      "status": "manuscript_reviewed_not_formalized"
+    },
+    {
+      "id": "F3",
+      "statement": "Formalize the regime exclusions and deep interaction engine.",
+      "status": "manuscript_reviewed_not_formalized"
+    },
+    {
+      "id": "F4",
+      "statement": "Formalize patch extraction, exact allocation, cleaning and balanced profiles.",
+      "status": "manuscript_reviewed_not_formalized"
+    },
+    {
+      "id": "F5",
+      "statement": "Formalize every high and low assignment branch and Hall completion.",
+      "status": "manuscript_reviewed_not_formalized"
+    },
+    {
+      "id": "F6",
+      "statement": "Assemble the formal contradiction and prove the positive target.",
+      "status": "not_formalized"
+    }
+  ]
+}
