@@ -1,0 +1,44 @@
+{
+  "family": 171,
+  "branch": "cmis-family171-cp66-cp70-formal-target",
+  "source_commit": "fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb",
+  "target": "CMIS.Family171.FullHypercubeRamseyLinearBound",
+  "positive_target_proved": false,
+  "formal_credit": 0,
+  "final_gates": {
+    "cp67": {
+      "run_id": 40381277165,
+      "status": "completed",
+      "conclusion": "success",
+      "artifact_id": 12678403511,
+      "artifact_digest": "sha256:8ed5d76049867458c2ed6afefad31eb3f94912a1cbd83424d079bbb811a530a2",
+      "receipt": "SPEC_AUDIT_PASS"
+    },
+    "cp68": {
+      "run_id": 40383613518,
+      "status": "completed",
+      "conclusion": "success",
+      "artifact_id": 12679742790,
+      "artifact_digest": "sha256:dd9f86d605ff5c442110c278783e04f5cf5ede8c9c73c89ceddf070ee92cd91b",
+      "receipt": "SPEC_TYPECHECK_PASS"
+    },
+    "cp69": {
+      "run_id": 40383707509,
+      "status": "completed",
+      "conclusion": "success",
+      "artifact_id": 12681105061,
+      "artifact_digest": "sha256:34001e760d904ff17f52c45525aed942400c7b2fcb93836a72a424469e3a3931",
+      "receipt": "TARGET_INTERFACE_TRUST_PASS"
+    }
+  },
+  "superseded_engineering_runs": [
+    40381420071,
+    40381846724,
+    40382572691,
+    40381507416,
+    40381910558,
+    40382645087
+  ],
+  "full_proof_obligations_open": true,
+  "independent_human_review_complete": false
+}
