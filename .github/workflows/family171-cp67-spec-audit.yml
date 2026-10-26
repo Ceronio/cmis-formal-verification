@@ -1,0 +1,76 @@
+name: CMIS Family 171 CP67 static specification audit
+on:
+  push:
+    branches: [cmis-family171-cp66-cp70-formal-target]
+    paths: ['.github/workflows/family171-cp67-spec-audit.yml']
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - name: Check out public specification branch
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Audit exact source and specification identities
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          mkdir -p cp67_receipt source
+          git -C source init
+          git -C source remote add origin https://github.com/openai/math.git
+          git -C source fetch --depth=1 origin fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb
+          git -C source checkout --detach FETCH_HEAD
+          test "$(git -C source rev-parse HEAD)" = fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb
+          source_file=source/lean/OAI/Combinatorics/Ramsey/Hypercube.lean
+          spec=formal/family171/Family171FullTarget.lean
+          test -f "$source_file"
+          test -f "$spec"
+          grep -F '¬ ∃ C : ℝ, 0 < C ∧ ∀ n : ℕ,' "$source_file"
+          grep -F 'def FullHypercubeRamseyLinearBound : Prop :=' "$spec"
+          grep -F '(ramseyNumber (cube n) : ℝ) ≤ C * (2 : ℝ) ^ n' "$spec"
+          grep -F '#check OAI.HypercubeRamsey.counterexample_sequence_of_not_linear' "$spec"
+          if grep -En '\b(sorry|admit|axiom|unsafe)\b' "$spec"; then
+            echo 'Forbidden proof/trust token found.' >&2
+            exit 2
+          fi
+          python3 - <<'PY'
+          from pathlib import Path
+          import hashlib, json, os
+          out=Path('cp67_receipt')
+          spec=Path('formal/family171/Family171FullTarget.lean')
+          source=Path('source/lean/OAI/Combinatorics/Ramsey/Hypercube.lean')
+          data={
+            'status':'SPEC_AUDIT_PASS',
+            'kind':'SPECIFICATION_ONLY',
+            'mathematical_credit':0,
+            'positive_target_proved':False,
+            'source_commit':'fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb',
+            'branch_commit':os.environ['GITHUB_SHA'],
+            'spec_sha256':hashlib.sha256(spec.read_bytes()).hexdigest(),
+            'source_sha256':hashlib.sha256(source.read_bytes()).hexdigest(),
+            'forbidden_tokens_absent':True,
+            'target_text_present':True,
+            'existing_negated_interface_present':True,
+          }
+          (out/'RESULT.json').write_text(json.dumps(data,indent=2)+'\n')
+          (out/'FINAL_STATUS.txt').write_text('SPEC_AUDIT_PASS\n')
+          PY
+          (cd cp67_receipt && find . -maxdepth 1 -type f ! -name 99_receipt_sha256.txt -print0 | sort -z | xargs -0 sha256sum > 99_receipt_sha256.txt)
+      - name: Upload CP67 specification receipt
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: cmis-family171-cp67-spec-audit-${{ github.run_id }}-${{ github.run_attempt }}
+          path: cp67_receipt/
+          if-no-files-found: error
+          retention-days: 30
+          compression-level: 9
+      - name: Enforce zero-credit audit outcome
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          test "$(cat cp67_receipt/FINAL_STATUS.txt)" = SPEC_AUDIT_PASS
+          grep -F '"mathematical_credit": 0' cp67_receipt/RESULT.json
+          grep -F '"positive_target_proved": false' cp67_receipt/RESULT.json
