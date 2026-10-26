@@ -76,14 +76,28 @@ jobs:
           lake build OAI.Combinatorics.Ramsey.Hypercube 2>&1 | tee "$GITHUB_WORKSPACE/cp69_receipt/OAI_HYPERCUBE_BUILD.log"
           mkdir -p CMIS
           cp "$GITHUB_WORKSPACE/formal/family171/Family171FullTarget.lean" CMIS/Family171FullTarget.lean
+          set +e
           lake env lean CMIS/Family171FullTarget.lean \
             > "$GITHUB_WORKSPACE/cp69_receipt/LEAN_AXIOMS.txt" \
             2> "$GITHUB_WORKSPACE/cp69_receipt/LEAN_STDERR.txt"
-          test ! -s "$GITHUB_WORKSPACE/cp69_receipt/LEAN_STDERR.txt"
+          lean_rc=$?
+          set -e
+          printf '%s\n' "$lean_rc" > "$GITHUB_WORKSPACE/cp69_receipt/LEAN_EXIT_CODE.txt"
+          test "$lean_rc" -eq 0
+          grep -Ev "^warning: [^:]+: repository '.*' has local changes$|^[[:space:]]*$" \
+            "$GITHUB_WORKSPACE/cp69_receipt/LEAN_STDERR.txt" \
+            > "$GITHUB_WORKSPACE/cp69_receipt/UNEXPECTED_STDERR.txt" || true
+          test ! -s "$GITHUB_WORKSPACE/cp69_receipt/UNEXPECTED_STDERR.txt"
+          printf '%s\n' EXPECTED_COMPATIBILITY_WARNINGS_ONLY \
+            > "$GITHUB_WORKSPACE/cp69_receipt/STDERR_CLASSIFICATION.txt"
           if grep -F 'sorryAx' "$GITHUB_WORKSPACE/cp69_receipt/LEAN_AXIOMS.txt"; then
             echo 'sorryAx found in target interface.' >&2
             exit 2
           fi
+          grep -F "'CMIS.Family171.fullTarget_iff_sourceStatement' depends on axioms: [propext, Classical.choice, Quot.sound]" \
+            "$GITHUB_WORKSPACE/cp69_receipt/LEAN_AXIOMS.txt"
+          grep -F "'CMIS.Family171.negatedInterface_iff_sourceHypothesis' depends on axioms: [propext, Classical.choice, Quot.sound]" \
+            "$GITHUB_WORKSPACE/cp69_receipt/LEAN_AXIOMS.txt"
       - name: Seal CP69 trust receipt
         if: always()
         shell: bash
@@ -94,8 +108,18 @@ jobs:
           import hashlib, json, os
           out=Path('cp69_receipt'); out.mkdir(exist_ok=True)
           spec=Path('formal/family171/Family171FullTarget.lean')
-          stderr=out/'LEAN_STDERR.txt'; ax=out/'LEAN_AXIOMS.txt'; build=out/'OAI_HYPERCUBE_BUILD.log'
-          ok=stderr.exists() and stderr.stat().st_size==0 and ax.exists() and build.exists() and 'sorryAx' not in ax.read_text(errors='replace')
+          rc=(out/'LEAN_EXIT_CODE.txt').read_text().strip() if (out/'LEAN_EXIT_CODE.txt').exists() else 'missing'
+          ax=(out/'LEAN_AXIOMS.txt').read_text(errors='replace') if (out/'LEAN_AXIOMS.txt').exists() else ''
+          build=(out/'OAI_HYPERCUBE_BUILD.log').read_text(errors='replace') if (out/'OAI_HYPERCUBE_BUILD.log').exists() else ''
+          unexpected=out/'UNEXPECTED_STDERR.txt'
+          exact=(
+            "'CMIS.Family171.fullTarget_iff_sourceStatement' depends on axioms: [propext, Classical.choice, Quot.sound]" in ax and
+            "'CMIS.Family171.negatedInterface_iff_sourceHypothesis' depends on axioms: [propext, Classical.choice, Quot.sound]" in ax
+          )
+          ok=(
+            rc=='0' and 'Build completed successfully' in build and unexpected.exists() and
+            unexpected.stat().st_size==0 and 'sorryAx' not in ax and exact
+          )
           status='TARGET_INTERFACE_TRUST_PASS' if ok else 'TARGET_INTERFACE_TRUST_HOLD'
           result={
             'status':status,
@@ -105,8 +129,11 @@ jobs:
             'source_commit':os.environ['OPENAI_MATH_COMMIT'],
             'branch_commit':os.environ['GITHUB_SHA'],
             'spec_sha256':hashlib.sha256(spec.read_bytes()).hexdigest(),
-            'sorryAx_absent':ok,
-            'pinned_source_module_built':build.exists(),
+            'lean_exit_code':rc,
+            'sorryAx_absent':'sorryAx' not in ax,
+            'pinned_source_module_built':'Build completed successfully' in build,
+            'expected_warnings_only':unexpected.exists() and unexpected.stat().st_size==0,
+            'interface_axioms_exact':exact,
             'full_proof_obligations_open':True,
           }
           (out/'RESULT.json').write_text(json.dumps(result,indent=2)+'\n')
@@ -131,4 +158,6 @@ jobs:
           grep -F '"mathematical_credit": 0' cp69_receipt/RESULT.json
           grep -F '"positive_target_proved": false' cp69_receipt/RESULT.json
           grep -F '"pinned_source_module_built": true' cp69_receipt/RESULT.json
+          grep -F '"expected_warnings_only": true' cp69_receipt/RESULT.json
+          grep -F '"interface_axioms_exact": true' cp69_receipt/RESULT.json
           grep -F '"full_proof_obligations_open": true' cp69_receipt/RESULT.json
