@@ -10,6 +10,7 @@ on:
     paths:
       - 'certification/**'
       - 'scripts/verify_claim_certification.py'
+      - 'scripts/audit_live_claim_artifacts.py'
       - 'tests/test_claim_certification.py'
       - '.github/workflows/cmis-claim-certification-audit.yml'
       - 'verification-register.json'
@@ -17,12 +18,14 @@ on:
     paths:
       - 'certification/**'
       - 'scripts/verify_claim_certification.py'
+      - 'scripts/audit_live_claim_artifacts.py'
       - 'tests/test_claim_certification.py'
       - '.github/workflows/cmis-claim-certification-audit.yml'
       - 'verification-register.json'
 
 permissions:
   contents: read
+  actions: read
 
 jobs:
   provenance_contract:
@@ -53,12 +56,22 @@ jobs:
           assert data["newly_certified_claims"] == 0
           PY
           echo "Contract audit PASS; mathematical certification NOT granted." >> "$GITHUB_STEP_SUMMARY"
+      - name: Query live GitHub run and artifact metadata
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          python3 scripts/audit_live_claim_artifacts.py | tee live-metadata-audit.json
+          echo "Live metadata validated; zero mathematical certification issued." >> "$GITHUB_STEP_SUMMARY"
       - name: Upload zero-credit audit record
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
           name: cmis-claim-contract-audit
-          path: claim-audit.json
+          path: |
+            claim-audit.json
+            live-metadata-audit.json
           if-no-files-found: warn
           retention-days: 30
 
