@@ -50,14 +50,18 @@ jobs:
           tar --zstd -xf .cp69/lean.tar.zst -C .cp69/tools
           LEAN_HOME=$(find .cp69/tools -maxdepth 1 -mindepth 1 -type d -name "lean-${LEAN_VERSION}-linux" -print -quit)
           test -n "$LEAN_HOME"
-          echo "LEAN_HOME=$PWD/$LEAN_HOME" >> "$GITHUB_ENV"
-          echo "$PWD/$LEAN_HOME/bin" >> "$GITHUB_PATH"
+          LEAN_HOME="$PWD/$LEAN_HOME"
+          export PATH="$LEAN_HOME/bin:$PATH"
+          echo "LEAN_HOME=$LEAN_HOME" >> "$GITHUB_ENV"
+          echo "$LEAN_HOME/bin" >> "$GITHUB_PATH"
           git -C .cp69/source init
           git -C .cp69/source remote add origin https://github.com/openai/math.git
           git -C .cp69/source fetch --depth=1 origin "$OPENAI_MATH_COMMIT"
           git -C .cp69/source checkout --detach FETCH_HEAD
           test "$(git -C .cp69/source rev-parse HEAD)" = "$OPENAI_MATH_COMMIT"
           test "$(jq -r '.packages[] | select(.name=="mathlib") | .rev' .cp69/source/lean/lake-manifest.json)" = "$MATHLIB_COMMIT"
+          lean --version | tee cp69_receipt/LEAN_VERSION.txt
+          lake --version | tee cp69_receipt/LAKE_VERSION.txt
       - name: Typecheck and inspect interface axioms
         timeout-minutes: 70
         shell: bash
