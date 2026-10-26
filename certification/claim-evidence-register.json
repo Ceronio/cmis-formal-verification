@@ -1,0 +1,1952 @@
+{
+  "schema_version": "1.0.0",
+  "meaning": "LEGACY PROOF CLAIM INDEX; does not by itself confer mathematical certification",
+  "repository": "Ceronio/cmis-formal-verification",
+  "source_registry": {
+    "path": "verification-register.json",
+    "branch": "main",
+    "blob_sha": "77a3906c00926b78f395382ca4823af1ca5ff19f",
+    "base_commit": "71f58f6bcfa119da721cd7db0a6100292a5e93d4"
+  },
+  "source_openai_commit": "fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb",
+  "observed_date": "2026-10-26",
+  "total_legacy_claims": 42,
+  "coverage_note": "Exactly the 42 historical main-branch declaration rows. Separately preserve and audit feature-branch runs, all additional mathematical claims, 372 original families, and CP71–CP80; none are deemed certified by this index.",
+  "inherited_categories_unchanged": true,
+  "uncertified_by_new_standard": true,
+  "evidence_note": "GitHub artifact ID and digest values are live metadata observations; no claimed receipt-content validation, independent proof replay, or full-headline correspondence.",
+  "claims": [
+    {
+      "claim_id": "CMIS-LEGACY-001",
+      "family_id": "005",
+      "source_declaration": "OAI.InternalCatalan.catalan_irrational",
+      "historical_scope_label": "family-validating",
+      "historical_main_registry_run_id": 39069346447,
+      "primary_github_run": {
+        "run_id": 39069346447,
+        "url": "https://github.com/Ceronio/cmis-formal-verification/actions/runs/39069346447",
+        "head_sha": "db54985e060a3acc6be69e02b7f997e6ac657aa5",
+        "reported_conclusion": "success",
+        "terminal_selected_theorem_pass_reported": true
+      },
+      "github_artifact_metadata": {
+        "artifact_id": 12116154674,
+        "github_artifact_zip_sha256": "sha256:9b0bea0d55fcceea87ebe5810189f4b317f9117814d0c8a35e19ee8f409b3063",
+        "metadata_source": "GITHUB_ACTIONS_ARTIFACT_METADATA",
+        "archive_contents_independently_verified": false
+      },
+      "exact_claim_statement": {
+        "full_pretty_printed_type": null,
+        "statement_sha256": null,
+        "independent_statement_equivalence_review": "NOT_DONE"
+      },
+      "historical_proof_status": "REPORTED_FORMAL_PASS_NOT_INDEPENDENTLY_REPRODUCED",
+      "evidence_integrity": {
+        "artifact_zip_hash_metadata_only": true,
+        "nested_manifest_independently_checked": false,
+        "long_term_immutable_mirror_verified": false
+      },
+      "independent_reproduction": {
+        "status": "NOT_DONE",
+        "distinct_run_id": null,
+        "receipt_sha256": null
+      },
+      "peer_scope_review": {
+        "status": "NOT_DONE",
+        "reviewer": null,
+        "review_evidence_url": null
+      },
+      "certification": {
+        "status": "UNCERTIFIED",
+        "certificate_id": null,
+        "reason": "Exact statement, replay, receipt, and independent scope gates remain open"
+      }
+    },
+    {
+      "claim_id": "CMIS-LEGACY-002",
+      "family_id": "132",
+      "source_declaration": "OAI.Paper320.quantitative_separation",
+      "historical_scope_label": "family-validating",
+      "historical_main_registry_run_id": 39065819244,
+      "primary_github_run": {
+        "run_id": 39065819244,
+        "url": "https://github.com/Ceronio/cmis-formal-verification/actions/runs/39065819244",
+        "head_sha": "fd1197dcb564ad638ad3e9a984433f40aa9e4143",
+        "reported_conclusion": "success",
+        "terminal_selected_theorem_pass_reported": true
+      },
+      "github_artifact_metadata": {
+        "artifact_id": 12113137429,
+        "github_artifact_zip_sha256": "sha256:d5ffcd0cc10671b17841e05d5595a4404cf68388fc350513425c8cd968c76ac8",
+        "metadata_source": "GITHUB_ACTIONS_ARTIFACT_METADATA",
+        "archive_contents_independently_verified": false
+      },
+      "exact_claim_statement": {
+        "full_pretty_printed_type": null,
+        "statement_sha256": null,
+        "independent_statement_equivalence_review": "NOT_DONE"
+      },
+      "historical_proof_status": "REPORTED_FORMAL_PASS_NOT_INDEPENDENTLY_REPRODUCED",
+      "evidence_integrity": {
+        "artifact_zip_hash_metadata_only": true,
+        "nested_manifest_independently_checked": false,
+        "long_term_immutable_mirror_verified": false
+      },
+      "independent_reproduction": {
+        "status": "NOT_DONE",
+        "distinct_run_id": null,
+        "receipt_sha256": null
+      },
+      "peer_scope_review": {
+        "status": "NOT_DONE",
+        "reviewer": null,
+        "review_evidence_url": null
+      },
+      "certification": {
+        "status": "UNCERTIFIED",
+        "certificate_id": null,
+        "reason": "Exact statement, replay, receipt, and independent scope gates remain open"
+      }
+    },
+    {
+      "claim_id": "CMIS-LEGACY-003",
+      "family_id": "132",
+      "source_declaration": "OAI.Paper320.unbounded_quadratic_separation",
+      "historical_scope_label": "family-validating",
+      "historical_main_registry_run_id": 39071193887,
+      "primary_github_run": {
+        "run_id": 39071193887,
+        "url": "https://github.com/Ceronio/cmis-formal-verification/actions/runs/39071193887",
+        "head_sha": "949f24db8aafc8a797b16092f338ed99e0fe53eb",
+        "reported_conclusion": "success",
+        "terminal_selected_theorem_pass_reported": true
+      },
+      "github_artifact_metadata": {
+        "artifact_id": 12115561875,
+        "github_artifact_zip_sha256": "sha256:6b58988d6ccc7a749048bdf362108294de2ff4775a2beae022f7fcdda9725c87",
+        "metadata_source": "GITHUB_ACTIONS_ARTIFACT_METADATA",
+        "archive_contents_independently_verified": false
+      },
+      "exact_claim_statement": {
+        "full_pretty_printed_type": null,
+        "statement_sha256": null,
+        "independent_statement_equivalence_review": "NOT_DONE"
+      },
+      "historical_proof_status": "REPORTED_FORMAL_PASS_NOT_INDEPENDENTLY_REPRODUCED",
+      "evidence_integrity": {
+        "artifact_zip_hash_metadata_only": true,
+        "nested_manifest_independently_checked": false,
+        "long_term_immutable_mirror_verified": false
+      },
+      "independent_reproduction": {
+        "status": "NOT_DONE",
+        "distinct_run_id": null,
+        "receipt_sha256": null
+      },
+      "peer_scope_review": {
+        "status": "NOT_DONE",
+        "reviewer": null,
+        "review_evidence_url": null
+      },
+      "certification": {
+        "status": "UNCERTIFIED",
+        "certificate_id": null,
+        "reason": "Exact statement, replay, receipt, and independent scope gates remain open"
+      }
+    },
+    {
+      "claim_id": "CMIS-LEGACY-004",
+      "family_id": "132",
+      "source_declaration": "OAI.Paper320.fixed_power_separation",
+      "historical_scope_label": "family-validating",
+      "historical_main_registry_run_id": 39071193887,
+      "primary_github_run": {
+        "run_id": 39071193887,
+        "url": "https://github.com/Ceronio/cmis-formal-verification/actions/runs/39071193887",
+        "head_sha": "949f24db8aafc8a797b16092f338ed99e0fe53eb",
+        "reported_conclusion": "success",
+        "terminal_selected_theorem_pass_reported": true
+      },
+      "github_artifact_metadata": {
+        "artifact_id": 12115561875,
+        "github_artifact_zip_sha256": "sha256:6b58988d6ccc7a749048bdf362108294de2ff4775a2beae022f7fcdda9725c87",
+        "metadata_source": "GITHUB_ACTIONS_ARTIFACT_METADATA",
+        "archive_contents_independently_verified": false
+      },
+      "exact_claim_statement": {
+        "full_pretty_printed_type": null,
+        "statement_sha256": null,
+        "independent_statement_equivalence_review": "NOT_DONE"
+      },
+      "historical_proof_status": "REPORTED_FORMAL_PASS_NOT_INDEPENDENTLY_REPRODUCED",
+      "evidence_integrity": {
+        "artifact_zip_hash_metadata_only": true,
+        "nested_manifest_independently_checked": false,
+        "long_term_immutable_mirror_verified": false
+      },
+      "independent_reproduction": {
+        "status": "NOT_DONE",
+        "distinct_run_id": null,
+        "receipt_sha256": null
+      },
+      "peer_scope_review": {
+        "status": "NOT_DONE",
+        "reviewer": null,
+        "review_evidence_url": null
+      },
+      "certification": {
+        "status": "UNCERTIFIED",
+        "certificate_id": null,
+        "reason": "Exact statement, replay, receipt, and independent scope gates remain open"
+      }
+    },
+    {
+      "claim_id": "CMIS-LEGACY-005",
+      "family_id": "133",
+      "source_declaration": "OAI.ParityWL.parity_reduction",
+      "historical_scope_label": "family-validating",
+      "historical_main_registry_run_id": 39071880237,
+      "primary_github_run": {
+        "run_id": 39071880237,
+        "url": "https://github.com/Ceronio/cmis-formal-verification/actions/runs/39071880237",
+        "head_sha": "a6ab04901a2a5fc03eda16ff2c024ad674c4e39a",
+        "reported_conclusion": "success",
+        "terminal_selected_theorem_pass_reported": true
+      },
+      "github_artifact_metadata": {
+        "artifact_id": 12115093359,
+        "github_artifact_zip_sha256": "sha256:617f45a1e3c7ff11c77a4a09e5284d9f2d3ee4ab0c6748f74d1bc48a4c98ce97",
+        "metadata_source": "GITHUB_ACTIONS_ARTIFACT_METADATA",
+        "archive_contents_independently_verified": false
+      },
+      "exact_claim_statement": {
+        "full_pretty_printed_type": null,
+        "statement_sha256": null,
+        "independent_statement_equivalence_review": "NOT_DONE"
+      },
+      "historical_proof_status": "REPORTED_FORMAL_PASS_NOT_INDEPENDENTLY_REPRODUCED",
+      "evidence_integrity": {
+        "artifact_zip_hash_metadata_only": true,
+        "nested_manifest_independently_checked": false,
+        "long_term_immutable_mirror_verified": false
+      },
+      "independent_reproduction": {
+        "status": "NOT_DONE",
+        "distinct_run_id": null,
+        "receipt_sha256": null
+      },
+      "peer_scope_review": {
+        "status": "NOT_DONE",
+        "reviewer": null,
+        "review_evidence_url": null
+      },
+      "certification": {
+        "status": "UNCERTIFIED",
+        "certificate_id": null,
+        "reason": "Exact statement, replay, receipt, and independent scope gates remain open"
+      }
+    },
+    {
+      "claim_id": "CMIS-LEGACY-006",
+      "family_id": "133",
+      "source_declaration": "OAI.WLIdentification.main",
+      "historical_scope_label": "family-validating",
+      "historical_main_registry_run_id": 39074816714,
+      "primary_github_run": {
+        "run_id": 39074816714,
+        "url": "https://github.com/Ceronio/cmis-formal-verification/actions/runs/39074816714",
+        "head_sha": "00d928310caf218c3027016f8a51f477a3b4e6f5",
+        "reported_conclusion": "success",
+        "terminal_selected_theorem_pass_reported": true
+      },
+      "github_artifact_metadata": {
+        "artifact_id": 12116921687,
+        "github_artifact_zip_sha256": "sha256:bd4597fb11cd2c811572e47547821945489fb95f978bfdff6b57a3f738aae608",
+        "metadata_source": "GITHUB_ACTIONS_ARTIFACT_METADATA",
+        "archive_contents_independently_verified": false
+      },
+      "exact_claim_statement": {
+        "full_pretty_printed_type": null,
+        "statement_sha256": null,
+        "independent_statement_equivalence_review": "NOT_DONE"
+      },
+      "historical_proof_status": "REPORTED_FORMAL_PASS_NOT_INDEPENDENTLY_REPRODUCED",
+      "evidence_integrity": {
+        "artifact_zip_hash_metadata_only": true,
+        "nested_manifest_independently_checked": false,
+        "long_term_immutable_mirror_verified": false
+      },
+      "independent_reproduction": {
+        "status": "NOT_DONE",
+        "distinct_run_id": null,
+        "receipt_sha256": null
+      },
+      "peer_scope_review": {
+        "status": "NOT_DONE",
+        "reviewer": null,
+        "review_evidence_url": null
+      },
+      "certification": {
+        "status": "UNCERTIFIED",
+        "certificate_id": null,
+        "reason": "Exact statement, replay, receipt, and independent scope gates remain open"
+      }
+    },
+    {
+      "claim_id": "CMIS-LEGACY-007",
+      "family_id": "133",
+      "source_declaration": "OAI.WLTime.unconditional_time_lower_bound",
+      "historical_scope_label": "family-validating",
+      "historical_main_registry_run_id": 39074836683,
+      "primary_github_run": {
+        "run_id": 39074836683,
+        "url": "https://github.com/Ceronio/cmis-formal-verification/actions/runs/39074836683",
+        "head_sha": "fe9e4b6e641893db6bdf6d88f8526fcedaef676b",
+        "reported_conclusion": "success",
+        "terminal_selected_theorem_pass_reported": true
+      },
+      "github_artifact_metadata": {
+        "artifact_id": 12115854497,
+        "github_artifact_zip_sha256": "sha256:aaf4ea3cfc4e82f0b720dd50fa5570e2761997bff94a56087bff9e8fcec41232",
+        "metadata_source": "GITHUB_ACTIONS_ARTIFACT_METADATA",
+        "archive_contents_independently_verified": false
+      },
+      "exact_claim_statement": {
+        "full_pretty_printed_type": null,
+        "statement_sha256": null,
+        "independent_statement_equivalence_review": "NOT_DONE"
+      },
+      "historical_proof_status": "REPORTED_FORMAL_PASS_NOT_INDEPENDENTLY_REPRODUCED",
+      "evidence_integrity": {
+        "artifact_zip_hash_metadata_only": true,
+        "nested_manifest_independently_checked": false,
+        "long_term_immutable_mirror_verified": false
+      },
+      "independent_reproduction": {
+        "status": "NOT_DONE",
+        "distinct_run_id": null,
+        "receipt_sha256": null
+      },
+      "peer_scope_review": {
+        "status": "NOT_DONE",
+        "reviewer": null,
+        "review_evidence_url": null
+      },
+      "certification": {
+        "status": "UNCERTIFIED",
+        "certificate_id": null,
+        "reason": "Exact statement, replay, receipt, and independent scope gates remain open"
+      }
+    },
+    {
+      "claim_id": "CMIS-LEGACY-008",
+      "family_id": "133",
+      "source_declaration": "OAI.VariableWL.main",
+      "historical_scope_label": "family-validating",
+      "historical_main_registry_run_id": 39074859446,
+      "primary_github_run": {
+        "run_id": 39074859446,
+        "url": "https://github.com/Ceronio/cmis-formal-verification/actions/runs/39074859446",
+        "head_sha": "8f80f133841993be34209e0573153a3a32e69742",
+        "reported_conclusion": "success",
+        "terminal_selected_theorem_pass_reported": true
+      },
+      "github_artifact_metadata": {
+        "artifact_id": 12115929265,
+        "github_artifact_zip_sha256": "sha256:8d9713b15f04ed57b5b34a27ee221f2f4d424763bd7e7276fae8040708e7e467",
+        "metadata_source": "GITHUB_ACTIONS_ARTIFACT_METADATA",
+        "archive_contents_independently_verified": false
+      },
+      "exact_claim_statement": {
+        "full_pretty_printed_type": null,
+        "statement_sha256": null,
+        "independent_statement_equivalence_review": "NOT_DONE"
+      },
+      "historical_proof_status": "REPORTED_FORMAL_PASS_NOT_INDEPENDENTLY_REPRODUCED",
+      "evidence_integrity": {
+        "artifact_zip_hash_metadata_only": true,
+        "nested_manifest_independently_checked": false,
+        "long_term_immutable_mirror_verified": false
+      },
+      "independent_reproduction": {
+        "status": "NOT_DONE",
+        "distinct_run_id": null,
+        "receipt_sha256": null
+      },
+      "peer_scope_review": {
+        "status": "NOT_DONE",
+        "reviewer": null,
+        "review_evidence_url": null
+      },
+      "certification": {
+        "status": "UNCERTIFIED",
+        "certificate_id": null,
+        "reason": "Exact statement, replay, receipt, and independent scope gates remain open"
+      }
+    },
+    {
+      "claim_id": "CMIS-LEGACY-009",
+      "family_id": "134",
+      "source_declaration": "OAI.GeneralizedStarHeight.main",
+      "historical_scope_label": "family-validating",
+      "historical_main_registry_run_id": 39077024941,
+      "primary_github_run": {
+        "run_id": 39077024941,
+        "url": "https://github.com/Ceronio/cmis-formal-verification/actions/runs/39077024941",
+        "head_sha": "388ae766bc59db73c5d07d9d5a90d3f0d71c35fa",
+        "reported_conclusion": "success",
+        "terminal_selected_theorem_pass_reported": true
+      },
+      "github_artifact_metadata": {
+        "artifact_id": 12117451928,
+        "github_artifact_zip_sha256": "sha256:d41525df7332e94ff7aa6eef3cd38fc63be039798475f1c85b9180dd75522ed5",
+        "metadata_source": "GITHUB_ACTIONS_ARTIFACT_METADATA",
+        "archive_contents_independently_verified": false
+      },
+      "exact_claim_statement": {
+        "full_pretty_printed_type": null,
+        "statement_sha256": null,
+        "independent_statement_equivalence_review": "NOT_DONE"
+      },
+      "historical_proof_status": "REPORTED_FORMAL_PASS_NOT_INDEPENDENTLY_REPRODUCED",
+      "evidence_integrity": {
+        "artifact_zip_hash_metadata_only": true,
+        "nested_manifest_independently_checked": false,
+        "long_term_immutable_mirror_verified": false
+      },
+      "independent_reproduction": {
+        "status": "NOT_DONE",
+        "distinct_run_id": null,
+        "receipt_sha256": null
+      },
+      "peer_scope_review": {
+        "status": "NOT_DONE",
+        "reviewer": null,
+        "review_evidence_url": null
+      },
+      "certification": {
+        "status": "UNCERTIFIED",
+        "certificate_id": null,
+        "reason": "Exact statement, replay, receipt, and independent scope gates remain open"
+      }
+    },
+    {
+      "claim_id": "CMIS-LEGACY-010",
+      "family_id": "135",
+      "source_declaration": "OAI.Problem335.main",
+      "historical_scope_label": "family-validating",
+      "historical_main_registry_run_id": 39077369934,
+      "primary_github_run": {
+        "run_id": 39077369934,
+        "url": "https://github.com/Ceronio/cmis-formal-verification/actions/runs/39077369934",
+        "head_sha": "fa0a2f23eaa4cb0710c175be58ffb272a299c6a1",
+        "reported_conclusion": "success",
+        "terminal_selected_theorem_pass_reported": true
+      },
+      "github_artifact_metadata": {
+        "artifact_id": 12118230869,
+        "github_artifact_zip_sha256": "sha256:d3c6e9437108d9fd953d857c724e7e4d085a46f4585ba23a0356fa0be313429a",
+        "metadata_source": "GITHUB_ACTIONS_ARTIFACT_METADATA",
+        "archive_contents_independently_verified": false
+      },
+      "exact_claim_statement": {
+        "full_pretty_printed_type": null,
+        "statement_sha256": null,
+        "independent_statement_equivalence_review": "NOT_DONE"
+      },
+      "historical_proof_status": "REPORTED_FORMAL_PASS_NOT_INDEPENDENTLY_REPRODUCED",
+      "evidence_integrity": {
+        "artifact_zip_hash_metadata_only": true,
+        "nested_manifest_independently_checked": false,
+        "long_term_immutable_mirror_verified": false
+      },
+      "independent_reproduction": {
+        "status": "NOT_DONE",
+        "distinct_run_id": null,
+        "receipt_sha256": null
+      },
+      "peer_scope_review": {
+        "status": "NOT_DONE",
+        "reviewer": null,
+        "review_evidence_url": null
+      },
+      "certification": {
+        "status": "UNCERTIFIED",
+        "certificate_id": null,
+        "reason": "Exact statement, replay, receipt, and independent scope gates remain open"
+      }
+    },
+    {
+      "claim_id": "CMIS-LEGACY-011",
+      "family_id": "137",
+      "source_declaration": "OAI.Fifths.Single.capped",
+      "historical_scope_label": "family-validating",
+      "historical_main_registry_run_id": 39077800526,
+      "primary_github_run": {
+        "run_id": 39077800526,
+        "url": "https://github.com/Ceronio/cmis-formal-verification/actions/runs/39077800526",
+        "head_sha": "bbd10fcb45dc48d628dfe4aeb9bebe70417ca9b7",
+        "reported_conclusion": "success",
+        "terminal_selected_theorem_pass_reported": true
+      },
+      "github_artifact_metadata": {
+        "artifact_id": 12118280249,
+        "github_artifact_zip_sha256": "sha256:362571a518c44fc01591dfd0f07752f4c76f92d5107f4fd41d32ceaf63f5f1b3",
+        "metadata_source": "GITHUB_ACTIONS_ARTIFACT_METADATA",
+        "archive_contents_independently_verified": false
+      },
+      "exact_claim_statement": {
+        "full_pretty_printed_type": null,
+        "statement_sha256": null,
+        "independent_statement_equivalence_review": "NOT_DONE"
+      },
+      "historical_proof_status": "REPORTED_FORMAL_PASS_NOT_INDEPENDENTLY_REPRODUCED",
+      "evidence_integrity": {
+        "artifact_zip_hash_metadata_only": true,
+        "nested_manifest_independently_checked": false,
+        "long_term_immutable_mirror_verified": false
+      },
+      "independent_reproduction": {
+        "status": "NOT_DONE",
+        "distinct_run_id": null,
+        "receipt_sha256": null
+      },
+      "peer_scope_review": {
+        "status": "NOT_DONE",
+        "reviewer": null,
+        "review_evidence_url": null
+      },
+      "certification": {
+        "status": "UNCERTIFIED",
+        "certificate_id": null,
+        "reason": "Exact statement, replay, receipt, and independent scope gates remain open"
+      }
+    },
+    {
+      "claim_id": "CMIS-LEGACY-012",
+      "family_id": "137",
+      "source_declaration": "OAI.Fifths.Single.unknown",
+      "historical_scope_label": "family-validating",
+      "historical_main_registry_run_id": 39077800526,
+      "primary_github_run": {
+        "run_id": 39077800526,
+        "url": "https://github.com/Ceronio/cmis-formal-verification/actions/runs/39077800526",
+        "head_sha": "bbd10fcb45dc48d628dfe4aeb9bebe70417ca9b7",
+        "reported_conclusion": "success",
+        "terminal_selected_theorem_pass_reported": true
+      },
+      "github_artifact_metadata": {
+        "artifact_id": 12118280249,
+        "github_artifact_zip_sha256": "sha256:362571a518c44fc01591dfd0f07752f4c76f92d5107f4fd41d32ceaf63f5f1b3",
+        "metadata_source": "GITHUB_ACTIONS_ARTIFACT_METADATA",
+        "archive_contents_independently_verified": false
+      },
+      "exact_claim_statement": {
+        "full_pretty_printed_type": null,
+        "statement_sha256": null,
+        "independent_statement_equivalence_review": "NOT_DONE"
+      },
+      "historical_proof_status": "REPORTED_FORMAL_PASS_NOT_INDEPENDENTLY_REPRODUCED",
+      "evidence_integrity": {
+        "artifact_zip_hash_metadata_only": true,
+        "nested_manifest_independently_checked": false,
+        "long_term_immutable_mirror_verified": false
+      },
+      "independent_reproduction": {
+        "status": "NOT_DONE",
+        "distinct_run_id": null,
+        "receipt_sha256": null
+      },
+      "peer_scope_review": {
+        "status": "NOT_DONE",
+        "reviewer": null,
+        "review_evidence_url": null
+      },
+      "certification": {
+        "status": "UNCERTIFIED",
+        "certificate_id": null,
+        "reason": "Exact statement, replay, receipt, and independent scope gates remain open"
+      }
+    },
+    {
+      "claim_id": "CMIS-LEGACY-013",
+      "family_id": "139",
+      "source_declaration": "OAI.LogConcaveSampling.exact_source_main",
+      "historical_scope_label": "family-validating",
+      "historical_main_registry_run_id": 39078979726,
+      "primary_github_run": {
+        "run_id": 39078979726,
+        "url": "https://github.com/Ceronio/cmis-formal-verification/actions/runs/39078979726",
+        "head_sha": "7bb4179f3cd4d8b8856697302f11c33affd199a6",
+        "reported_conclusion": "success",
+        "terminal_selected_theorem_pass_reported": true
+      },
+      "github_artifact_metadata": {
+        "artifact_id": 12118961190,
+        "github_artifact_zip_sha256": "sha256:9772b74499559250a133125bda8009666516868facac86484fa5262b96cffdfe",
+        "metadata_source": "GITHUB_ACTIONS_ARTIFACT_METADATA",
+        "archive_contents_independently_verified": false
+      },
+      "exact_claim_statement": {
+        "full_pretty_printed_type": null,
+        "statement_sha256": null,
+        "independent_statement_equivalence_review": "NOT_DONE"
+      },
+      "historical_proof_status": "REPORTED_FORMAL_PASS_NOT_INDEPENDENTLY_REPRODUCED",
+      "evidence_integrity": {
+        "artifact_zip_hash_metadata_only": true,
+        "nested_manifest_independently_checked": false,
+        "long_term_immutable_mirror_verified": false
+      },
+      "independent_reproduction": {
+        "status": "NOT_DONE",
+        "distinct_run_id": null,
+        "receipt_sha256": null
+      },
+      "peer_scope_review": {
+        "status": "NOT_DONE",
+        "reviewer": null,
+        "review_evidence_url": null
+      },
+      "certification": {
+        "status": "UNCERTIFIED",
+        "certificate_id": null,
+        "reason": "Exact statement, replay, receipt, and independent scope gates remain open"
+      }
+    },
+    {
+      "claim_id": "CMIS-LEGACY-014",
+      "family_id": "140",
+      "source_declaration": "OAI.MemoryPrecision.main",
+      "historical_scope_label": "family-validating",
+      "historical_main_registry_run_id": 39079350083,
+      "primary_github_run": {
+        "run_id": 39079350083,
+        "url": "https://github.com/Ceronio/cmis-formal-verification/actions/runs/39079350083",
+        "head_sha": "ba1a8e98f65926b44dc344279b842d6a2574bdca",
+        "reported_conclusion": "success",
+        "terminal_selected_theorem_pass_reported": true
+      },
+      "github_artifact_metadata": {
+        "artifact_id": 12118642272,
+        "github_artifact_zip_sha256": "sha256:388402adc6f7087e05233ce2e2eb5ed5172d4260ae0d75ab5af22c1402e02684",
+        "metadata_source": "GITHUB_ACTIONS_ARTIFACT_METADATA",
+        "archive_contents_independently_verified": false
+      },
+      "exact_claim_statement": {
+        "full_pretty_printed_type": null,
+        "statement_sha256": null,
+        "independent_statement_equivalence_review": "NOT_DONE"
+      },
+      "historical_proof_status": "REPORTED_FORMAL_PASS_NOT_INDEPENDENTLY_REPRODUCED",
+      "evidence_integrity": {
+        "artifact_zip_hash_metadata_only": true,
+        "nested_manifest_independently_checked": false,
+        "long_term_immutable_mirror_verified": false
+      },
+      "independent_reproduction": {
+        "status": "NOT_DONE",
+        "distinct_run_id": null,
+        "receipt_sha256": null
+      },
+      "peer_scope_review": {
+        "status": "NOT_DONE",
+        "reviewer": null,
+        "review_evidence_url": null
+      },
+      "certification": {
+        "status": "UNCERTIFIED",
+        "certificate_id": null,
+        "reason": "Exact statement, replay, receipt, and independent scope gates remain open"
+      }
+    },
+    {
+      "claim_id": "CMIS-LEGACY-015",
+      "family_id": "140",
+      "source_declaration": "OAI.NoiselessRegression.main",
+      "historical_scope_label": "family-validating",
+      "historical_main_registry_run_id": 39079350083,
+      "primary_github_run": {
+        "run_id": 39079350083,
+        "url": "https://github.com/Ceronio/cmis-formal-verification/actions/runs/39079350083",
+        "head_sha": "ba1a8e98f65926b44dc344279b842d6a2574bdca",
+        "reported_conclusion": "success",
+        "terminal_selected_theorem_pass_reported": true
+      },
+      "github_artifact_metadata": {
+        "artifact_id": 12117404857,
+        "github_artifact_zip_sha256": "sha256:8efc58d8804619b1e68fdcb90b611a3f1be080d0b462c2b90f91835ddd9a60c2",
+        "metadata_source": "GITHUB_ACTIONS_ARTIFACT_METADATA",
+        "archive_contents_independently_verified": false
+      },
+      "exact_claim_statement": {
+        "full_pretty_printed_type": null,
+        "statement_sha256": null,
+        "independent_statement_equivalence_review": "NOT_DONE"
+      },
+      "historical_proof_status": "REPORTED_FORMAL_PASS_NOT_INDEPENDENTLY_REPRODUCED",
+      "evidence_integrity": {
+        "artifact_zip_hash_metadata_only": true,
+        "nested_manifest_independently_checked": false,
+        "long_term_immutable_mirror_verified": false
+      },
+      "independent_reproduction": {
+        "status": "NOT_DONE",
+        "distinct_run_id": null,
+        "receipt_sha256": null
+      },
+      "peer_scope_review": {
+        "status": "NOT_DONE",
+        "reviewer": null,
+        "review_evidence_url": null
+      },
+      "certification": {
+        "status": "UNCERTIFIED",
+        "certificate_id": null,
+        "reason": "Exact statement, replay, receipt, and independent scope gates remain open"
+      }
+    },
+    {
+      "claim_id": "CMIS-LEGACY-016",
+      "family_id": "140",
+      "source_declaration": "OAI.PosteriorReplicas.source_main",
+      "historical_scope_label": "family-validating",
+      "historical_main_registry_run_id": 39079350083,
+      "primary_github_run": {
+        "run_id": 39079350083,
+        "url": "https://github.com/Ceronio/cmis-formal-verification/actions/runs/39079350083",
+        "head_sha": "ba1a8e98f65926b44dc344279b842d6a2574bdca",
+        "reported_conclusion": "success",
+        "terminal_selected_theorem_pass_reported": true
+      },
+      "github_artifact_metadata": {
+        "artifact_id": 12118538298,
+        "github_artifact_zip_sha256": "sha256:c88a3b5c466b1d6847504a543cfec960c5cd8619e01cd71c89953cb35b42a6ee",
+        "metadata_source": "GITHUB_ACTIONS_ARTIFACT_METADATA",
+        "archive_contents_independently_verified": false
+      },
+      "exact_claim_statement": {
+        "full_pretty_printed_type": null,
+        "statement_sha256": null,
+        "independent_statement_equivalence_review": "NOT_DONE"
+      },
+      "historical_proof_status": "REPORTED_FORMAL_PASS_NOT_INDEPENDENTLY_REPRODUCED",
+      "evidence_integrity": {
+        "artifact_zip_hash_metadata_only": true,
+        "nested_manifest_independently_checked": false,
+        "long_term_immutable_mirror_verified": false
+      },
+      "independent_reproduction": {
+        "status": "NOT_DONE",
+        "distinct_run_id": null,
+        "receipt_sha256": null
+      },
+      "peer_scope_review": {
+        "status": "NOT_DONE",
+        "reviewer": null,
+        "review_evidence_url": null
+      },
+      "certification": {
+        "status": "UNCERTIFIED",
+        "certificate_id": null,
+        "reason": "Exact statement, replay, receipt, and independent scope gates remain open"
+      }
+    },
+    {
+      "claim_id": "CMIS-LEGACY-017",
+      "family_id": "140",
+      "source_declaration": "OAI.RepeatedLocalization.FiniteEntropy.finite_expected_regularization",
+      "historical_scope_label": "family-validating",
+      "historical_main_registry_run_id": 39079350083,
+      "primary_github_run": {
+        "run_id": 39079350083,
+        "url": "https://github.com/Ceronio/cmis-formal-verification/actions/runs/39079350083",
+        "head_sha": "ba1a8e98f65926b44dc344279b842d6a2574bdca",
+        "reported_conclusion": "success",
+        "terminal_selected_theorem_pass_reported": true
+      },
+      "github_artifact_metadata": {
+        "artifact_id": 12118342123,
+        "github_artifact_zip_sha256": "sha256:df077044f72a156b0db746b2883815679bcef9217aa0a3186c3fe546828bb9fd",
+        "metadata_source": "GITHUB_ACTIONS_ARTIFACT_METADATA",
+        "archive_contents_independently_verified": false
+      },
+      "exact_claim_statement": {
+        "full_pretty_printed_type": null,
+        "statement_sha256": null,
+        "independent_statement_equivalence_review": "NOT_DONE"
+      },
+      "historical_proof_status": "REPORTED_FORMAL_PASS_NOT_INDEPENDENTLY_REPRODUCED",
+      "evidence_integrity": {
+        "artifact_zip_hash_metadata_only": true,
+        "nested_manifest_independently_checked": false,
+        "long_term_immutable_mirror_verified": false
+      },
+      "independent_reproduction": {
+        "status": "NOT_DONE",
+        "distinct_run_id": null,
+        "receipt_sha256": null
+      },
+      "peer_scope_review": {
+        "status": "NOT_DONE",
+        "reviewer": null,
+        "review_evidence_url": null
+      },
+      "certification": {
+        "status": "UNCERTIFIED",
+        "certificate_id": null,
+        "reason": "Exact statement, replay, receipt, and independent scope gates remain open"
+      }
+    },
+    {
+      "claim_id": "CMIS-LEGACY-018",
+      "family_id": "140",
+      "source_declaration": "OAI.RepeatedLocalization.repeated_localization",
+      "historical_scope_label": "family-validating",
+      "historical_main_registry_run_id": 39079350083,
+      "primary_github_run": {
+        "run_id": 39079350083,
+        "url": "https://github.com/Ceronio/cmis-formal-verification/actions/runs/39079350083",
+        "head_sha": "ba1a8e98f65926b44dc344279b842d6a2574bdca",
+        "reported_conclusion": "success",
+        "terminal_selected_theorem_pass_reported": true
+      },
+      "github_artifact_metadata": {
+        "artifact_id": 12118602477,
+        "github_artifact_zip_sha256": "sha256:d428f8377ab3aec5dd97991ab7772e8041bb92ae2aa14e8d2603486c4f6d0586",
+        "metadata_source": "GITHUB_ACTIONS_ARTIFACT_METADATA",
+        "archive_contents_independently_verified": false
+      },
+      "exact_claim_statement": {
+        "full_pretty_printed_type": null,
+        "statement_sha256": null,
+        "independent_statement_equivalence_review": "NOT_DONE"
+      },
+      "historical_proof_status": "REPORTED_FORMAL_PASS_NOT_INDEPENDENTLY_REPRODUCED",
+      "evidence_integrity": {
+        "artifact_zip_hash_metadata_only": true,
+        "nested_manifest_independently_checked": false,
+        "long_term_immutable_mirror_verified": false
+      },
+      "independent_reproduction": {
+        "status": "NOT_DONE",
+        "distinct_run_id": null,
+        "receipt_sha256": null
+      },
+      "peer_scope_review": {
+        "status": "NOT_DONE",
+        "reviewer": null,
+        "review_evidence_url": null
+      },
+      "certification": {
+        "status": "UNCERTIFIED",
+        "certificate_id": null,
+        "reason": "Exact statement, replay, receipt, and independent scope gates remain open"
+      }
+    },
+    {
+      "claim_id": "CMIS-LEGACY-019",
+      "family_id": "140",
+      "source_declaration": "OAI.ProjectionMoments.main",
+      "historical_scope_label": "family-validating",
+      "historical_main_registry_run_id": 39079350083,
+      "primary_github_run": {
+        "run_id": 39079350083,
+        "url": "https://github.com/Ceronio/cmis-formal-verification/actions/runs/39079350083",
+        "head_sha": "ba1a8e98f65926b44dc344279b842d6a2574bdca",
+        "reported_conclusion": "success",
+        "terminal_selected_theorem_pass_reported": true
+      },
+      "github_artifact_metadata": {
+        "artifact_id": 12118836086,
+        "github_artifact_zip_sha256": "sha256:012bc09c3b2ca2d86fd7616907c7bd64058b51406d8fa277be563740e7d52ee0",
+        "metadata_source": "GITHUB_ACTIONS_ARTIFACT_METADATA",
+        "archive_contents_independently_verified": false
+      },
+      "exact_claim_statement": {
+        "full_pretty_printed_type": null,
+        "statement_sha256": null,
+        "independent_statement_equivalence_review": "NOT_DONE"
+      },
+      "historical_proof_status": "REPORTED_FORMAL_PASS_NOT_INDEPENDENTLY_REPRODUCED",
+      "evidence_integrity": {
+        "artifact_zip_hash_metadata_only": true,
+        "nested_manifest_independently_checked": false,
+        "long_term_immutable_mirror_verified": false
+      },
+      "independent_reproduction": {
+        "status": "NOT_DONE",
+        "distinct_run_id": null,
+        "receipt_sha256": null
+      },
+      "peer_scope_review": {
+        "status": "NOT_DONE",
+        "reviewer": null,
+        "review_evidence_url": null
+      },
+      "certification": {
+        "status": "UNCERTIFIED",
+        "certificate_id": null,
+        "reason": "Exact statement, replay, receipt, and independent scope gates remain open"
+      }
+    },
+    {
+      "claim_id": "CMIS-LEGACY-020",
+      "family_id": "140",
+      "source_declaration": "OAI.CurrentProjection.mixedMomentMain",
+      "historical_scope_label": "family-validating",
+      "historical_main_registry_run_id": 39079350083,
+      "primary_github_run": {
+        "run_id": 39079350083,
+        "url": "https://github.com/Ceronio/cmis-formal-verification/actions/runs/39079350083",
+        "head_sha": "ba1a8e98f65926b44dc344279b842d6a2574bdca",
+        "reported_conclusion": "success",
+        "terminal_selected_theorem_pass_reported": true
+      },
+      "github_artifact_metadata": {
+        "artifact_id": 12118811334,
+        "github_artifact_zip_sha256": "sha256:48d9a7a980ef73ae3c856ae7ebbcccd9d9a030739a615ee914ba38bb9c48d26f",
+        "metadata_source": "GITHUB_ACTIONS_ARTIFACT_METADATA",
+        "archive_contents_independently_verified": false
+      },
+      "exact_claim_statement": {
+        "full_pretty_printed_type": null,
+        "statement_sha256": null,
+        "independent_statement_equivalence_review": "NOT_DONE"
+      },
+      "historical_proof_status": "REPORTED_FORMAL_PASS_NOT_INDEPENDENTLY_REPRODUCED",
+      "evidence_integrity": {
+        "artifact_zip_hash_metadata_only": true,
+        "nested_manifest_independently_checked": false,
+        "long_term_immutable_mirror_verified": false
+      },
+      "independent_reproduction": {
+        "status": "NOT_DONE",
+        "distinct_run_id": null,
+        "receipt_sha256": null
+      },
+      "peer_scope_review": {
+        "status": "NOT_DONE",
+        "reviewer": null,
+        "review_evidence_url": null
+      },
+      "certification": {
+        "status": "UNCERTIFIED",
+        "certificate_id": null,
+        "reason": "Exact statement, replay, receipt, and independent scope gates remain open"
+      }
+    },
+    {
+      "claim_id": "CMIS-LEGACY-021",
+      "family_id": "140",
+      "source_declaration": "OAI.SubsphereCurrent.full_current_main_scope",
+      "historical_scope_label": "family-validating",
+      "historical_main_registry_run_id": 39079350083,
+      "primary_github_run": {
+        "run_id": 39079350083,
+        "url": "https://github.com/Ceronio/cmis-formal-verification/actions/runs/39079350083",
+        "head_sha": "ba1a8e98f65926b44dc344279b842d6a2574bdca",
+        "reported_conclusion": "success",
+        "terminal_selected_theorem_pass_reported": true
+      },
+      "github_artifact_metadata": {
+        "artifact_id": 12118238827,
+        "github_artifact_zip_sha256": "sha256:c3d54229c9c94cb6cdee2562f4d27c61b0c3cc5fe3c729274ef52ac6e5b95ffc",
+        "metadata_source": "GITHUB_ACTIONS_ARTIFACT_METADATA",
+        "archive_contents_independently_verified": false
+      },
+      "exact_claim_statement": {
+        "full_pretty_printed_type": null,
+        "statement_sha256": null,
+        "independent_statement_equivalence_review": "NOT_DONE"
+      },
+      "historical_proof_status": "REPORTED_FORMAL_PASS_NOT_INDEPENDENTLY_REPRODUCED",
+      "evidence_integrity": {
+        "artifact_zip_hash_metadata_only": true,
+        "nested_manifest_independently_checked": false,
+        "long_term_immutable_mirror_verified": false
+      },
+      "independent_reproduction": {
+        "status": "NOT_DONE",
+        "distinct_run_id": null,
+        "receipt_sha256": null
+      },
+      "peer_scope_review": {
+        "status": "NOT_DONE",
+        "reviewer": null,
+        "review_evidence_url": null
+      },
+      "certification": {
+        "status": "UNCERTIFIED",
+        "certificate_id": null,
+        "reason": "Exact statement, replay, receipt, and independent scope gates remain open"
+      }
+    },
+    {
+      "claim_id": "CMIS-LEGACY-022",
+      "family_id": "143",
+      "source_declaration": "OAI.QuinticLienard.main",
+      "historical_scope_label": "family-validating",
+      "historical_main_registry_run_id": 39113799488,
+      "primary_github_run": {
+        "run_id": 39113799488,
+        "url": "https://github.com/Ceronio/cmis-formal-verification/actions/runs/39113799488",
+        "head_sha": "b74239465c534d671644a29c0b9e35c29bdc720b",
+        "reported_conclusion": "success",
+        "terminal_selected_theorem_pass_reported": true
+      },
+      "github_artifact_metadata": {
+        "artifact_id": 12131579337,
+        "github_artifact_zip_sha256": "sha256:22c00e2bc6a91e360de633719cbc92a9fcc2eeb199d958b320f99415a6faeac8",
+        "metadata_source": "GITHUB_ACTIONS_ARTIFACT_METADATA",
+        "archive_contents_independently_verified": false
+      },
+      "exact_claim_statement": {
+        "full_pretty_printed_type": null,
+        "statement_sha256": null,
+        "independent_statement_equivalence_review": "NOT_DONE"
+      },
+      "historical_proof_status": "REPORTED_FORMAL_PASS_NOT_INDEPENDENTLY_REPRODUCED",
+      "evidence_integrity": {
+        "artifact_zip_hash_metadata_only": true,
+        "nested_manifest_independently_checked": false,
+        "long_term_immutable_mirror_verified": false
+      },
+      "independent_reproduction": {
+        "status": "NOT_DONE",
+        "distinct_run_id": null,
+        "receipt_sha256": null
+      },
+      "peer_scope_review": {
+        "status": "NOT_DONE",
+        "reviewer": null,
+        "review_evidence_url": null
+      },
+      "certification": {
+        "status": "UNCERTIFIED",
+        "certificate_id": null,
+        "reason": "Exact statement, replay, receipt, and independent scope gates remain open"
+      }
+    },
+    {
+      "claim_id": "CMIS-LEGACY-023",
+      "family_id": "144",
+      "source_declaration": "OAI.ThreeTorus.simple_lebesgue_spectrum",
+      "historical_scope_label": "family-validating",
+      "historical_main_registry_run_id": 39113828752,
+      "primary_github_run": {
+        "run_id": 39113828752,
+        "url": "https://github.com/Ceronio/cmis-formal-verification/actions/runs/39113828752",
+        "head_sha": "2958cfc31bfd9627be238404f2e1409e454ea7a3",
+        "reported_conclusion": "success",
+        "terminal_selected_theorem_pass_reported": true
+      },
+      "github_artifact_metadata": {
+        "artifact_id": 12130894817,
+        "github_artifact_zip_sha256": "sha256:83cbfe1aa96f108b9bb946c4b6551d7202e51738acd7cbbd9c48d47c2b6a3aa0",
+        "metadata_source": "GITHUB_ACTIONS_ARTIFACT_METADATA",
+        "archive_contents_independently_verified": false
+      },
+      "exact_claim_statement": {
+        "full_pretty_printed_type": null,
+        "statement_sha256": null,
+        "independent_statement_equivalence_review": "NOT_DONE"
+      },
+      "historical_proof_status": "REPORTED_FORMAL_PASS_NOT_INDEPENDENTLY_REPRODUCED",
+      "evidence_integrity": {
+        "artifact_zip_hash_metadata_only": true,
+        "nested_manifest_independently_checked": false,
+        "long_term_immutable_mirror_verified": false
+      },
+      "independent_reproduction": {
+        "status": "NOT_DONE",
+        "distinct_run_id": null,
+        "receipt_sha256": null
+      },
+      "peer_scope_review": {
+        "status": "NOT_DONE",
+        "reviewer": null,
+        "review_evidence_url": null
+      },
+      "certification": {
+        "status": "UNCERTIFIED",
+        "certificate_id": null,
+        "reason": "Exact statement, replay, receipt, and independent scope gates remain open"
+      }
+    },
+    {
+      "claim_id": "CMIS-LEGACY-024",
+      "family_id": "145",
+      "source_declaration": "OAI.Rokhlin.mixing_all_finite_orders",
+      "historical_scope_label": "family-validating",
+      "historical_main_registry_run_id": 39113856845,
+      "primary_github_run": {
+        "run_id": 39113856845,
+        "url": "https://github.com/Ceronio/cmis-formal-verification/actions/runs/39113856845",
+        "head_sha": "5b08b58fbc0c7c9b55460d6cc293b1a860eac70e",
+        "reported_conclusion": "success",
+        "terminal_selected_theorem_pass_reported": true
+      },
+      "github_artifact_metadata": {
+        "artifact_id": 12130944957,
+        "github_artifact_zip_sha256": "sha256:6079385cf43fbb0cedd098f5aa22cbc50d1b46d554328c0d801f63dc1da02fcb",
+        "metadata_source": "GITHUB_ACTIONS_ARTIFACT_METADATA",
+        "archive_contents_independently_verified": false
+      },
+      "exact_claim_statement": {
+        "full_pretty_printed_type": null,
+        "statement_sha256": null,
+        "independent_statement_equivalence_review": "NOT_DONE"
+      },
+      "historical_proof_status": "REPORTED_FORMAL_PASS_NOT_INDEPENDENTLY_REPRODUCED",
+      "evidence_integrity": {
+        "artifact_zip_hash_metadata_only": true,
+        "nested_manifest_independently_checked": false,
+        "long_term_immutable_mirror_verified": false
+      },
+      "independent_reproduction": {
+        "status": "NOT_DONE",
+        "distinct_run_id": null,
+        "receipt_sha256": null
+      },
+      "peer_scope_review": {
+        "status": "NOT_DONE",
+        "reviewer": null,
+        "review_evidence_url": null
+      },
+      "certification": {
+        "status": "UNCERTIFIED",
+        "certificate_id": null,
+        "reason": "Exact statement, replay, receipt, and independent scope gates remain open"
+      }
+    },
+    {
+      "claim_id": "CMIS-LEGACY-025",
+      "family_id": "146",
+      "source_declaration": "OAI.StandardMapEntropy.main_components",
+      "historical_scope_label": "family-validating",
+      "historical_main_registry_run_id": 39113889697,
+      "primary_github_run": {
+        "run_id": 39113889697,
+        "url": "https://github.com/Ceronio/cmis-formal-verification/actions/runs/39113889697",
+        "head_sha": "5aed1a5a364dac866e38cdbdffc6780970deaaa1",
+        "reported_conclusion": "success",
+        "terminal_selected_theorem_pass_reported": true
+      },
+      "github_artifact_metadata": {
+        "artifact_id": 12132855644,
+        "github_artifact_zip_sha256": "sha256:81bca4ddfd667a1adc0ee5109c0955dd602359ae9821c2d431f941c5734de532",
+        "metadata_source": "GITHUB_ACTIONS_ARTIFACT_METADATA",
+        "archive_contents_independently_verified": false
+      },
+      "exact_claim_statement": {
+        "full_pretty_printed_type": null,
+        "statement_sha256": null,
+        "independent_statement_equivalence_review": "NOT_DONE"
+      },
+      "historical_proof_status": "REPORTED_FORMAL_PASS_NOT_INDEPENDENTLY_REPRODUCED",
+      "evidence_integrity": {
+        "artifact_zip_hash_metadata_only": true,
+        "nested_manifest_independently_checked": false,
+        "long_term_immutable_mirror_verified": false
+      },
+      "independent_reproduction": {
+        "status": "NOT_DONE",
+        "distinct_run_id": null,
+        "receipt_sha256": null
+      },
+      "peer_scope_review": {
+        "status": "NOT_DONE",
+        "reviewer": null,
+        "review_evidence_url": null
+      },
+      "certification": {
+        "status": "UNCERTIFIED",
+        "certificate_id": null,
+        "reason": "Exact statement, replay, receipt, and independent scope gates remain open"
+      }
+    },
+    {
+      "claim_id": "CMIS-LEGACY-026",
+      "family_id": "146",
+      "source_declaration": "OAI.StandardMapEntropy.main_entropy",
+      "historical_scope_label": "family-validating",
+      "historical_main_registry_run_id": 39113889697,
+      "primary_github_run": {
+        "run_id": 39113889697,
+        "url": "https://github.com/Ceronio/cmis-formal-verification/actions/runs/39113889697",
+        "head_sha": "5aed1a5a364dac866e38cdbdffc6780970deaaa1",
+        "reported_conclusion": "success",
+        "terminal_selected_theorem_pass_reported": true
+      },
+      "github_artifact_metadata": {
+        "artifact_id": 12131964524,
+        "github_artifact_zip_sha256": "sha256:2d2f79013cc41c846f1043ca8278182c3338f7cd87dcc1f3bd23b96013808804",
+        "metadata_source": "GITHUB_ACTIONS_ARTIFACT_METADATA",
+        "archive_contents_independently_verified": false
+      },
+      "exact_claim_statement": {
+        "full_pretty_printed_type": null,
+        "statement_sha256": null,
+        "independent_statement_equivalence_review": "NOT_DONE"
+      },
+      "historical_proof_status": "REPORTED_FORMAL_PASS_NOT_INDEPENDENTLY_REPRODUCED",
+      "evidence_integrity": {
+        "artifact_zip_hash_metadata_only": true,
+        "nested_manifest_independently_checked": false,
+        "long_term_immutable_mirror_verified": false
+      },
+      "independent_reproduction": {
+        "status": "NOT_DONE",
+        "distinct_run_id": null,
+        "receipt_sha256": null
+      },
+      "peer_scope_review": {
+        "status": "NOT_DONE",
+        "reviewer": null,
+        "review_evidence_url": null
+      },
+      "certification": {
+        "status": "UNCERTIFIED",
+        "certificate_id": null,
+        "reason": "Exact statement, replay, receipt, and independent scope gates remain open"
+      }
+    },
+    {
+      "claim_id": "CMIS-LEGACY-027",
+      "family_id": "146",
+      "source_declaration": "OAI.StandardMapEntropy.main_entropy_complete",
+      "historical_scope_label": "family-validating",
+      "historical_main_registry_run_id": 39113889697,
+      "primary_github_run": {
+        "run_id": 39113889697,
+        "url": "https://github.com/Ceronio/cmis-formal-verification/actions/runs/39113889697",
+        "head_sha": "5aed1a5a364dac866e38cdbdffc6780970deaaa1",
+        "reported_conclusion": "success",
+        "terminal_selected_theorem_pass_reported": true
+      },
+      "github_artifact_metadata": {
+        "artifact_id": 12132790261,
+        "github_artifact_zip_sha256": "sha256:23140554b776c38a9fbe1cd38733f79e043199ad36b80c0641a68a31cf9d58f9",
+        "metadata_source": "GITHUB_ACTIONS_ARTIFACT_METADATA",
+        "archive_contents_independently_verified": false
+      },
+      "exact_claim_statement": {
+        "full_pretty_printed_type": null,
+        "statement_sha256": null,
+        "independent_statement_equivalence_review": "NOT_DONE"
+      },
+      "historical_proof_status": "REPORTED_FORMAL_PASS_NOT_INDEPENDENTLY_REPRODUCED",
+      "evidence_integrity": {
+        "artifact_zip_hash_metadata_only": true,
+        "nested_manifest_independently_checked": false,
+        "long_term_immutable_mirror_verified": false
+      },
+      "independent_reproduction": {
+        "status": "NOT_DONE",
+        "distinct_run_id": null,
+        "receipt_sha256": null
+      },
+      "peer_scope_review": {
+        "status": "NOT_DONE",
+        "reviewer": null,
+        "review_evidence_url": null
+      },
+      "certification": {
+        "status": "UNCERTIFIED",
+        "certificate_id": null,
+        "reason": "Exact statement, replay, receipt, and independent scope gates remain open"
+      }
+    },
+    {
+      "claim_id": "CMIS-LEGACY-028",
+      "family_id": "148",
+      "source_declaration": "OAI.EntropyRateDimension.entropy_rate_dimension",
+      "historical_scope_label": "family-validating",
+      "historical_main_registry_run_id": 39127975290,
+      "primary_github_run": {
+        "run_id": 39127975290,
+        "url": "https://github.com/Ceronio/cmis-formal-verification/actions/runs/39127975290",
+        "head_sha": "7eadd118d2db083f6717419b38491a3d62e6cdd3",
+        "reported_conclusion": "success",
+        "terminal_selected_theorem_pass_reported": true
+      },
+      "github_artifact_metadata": {
+        "artifact_id": 12137107868,
+        "github_artifact_zip_sha256": "sha256:6302f0e59ff4aa33f36e3f3226fa22ab279b47a20ef14f73d7300596804d02dc",
+        "metadata_source": "GITHUB_ACTIONS_ARTIFACT_METADATA",
+        "archive_contents_independently_verified": false
+      },
+      "exact_claim_statement": {
+        "full_pretty_printed_type": null,
+        "statement_sha256": null,
+        "independent_statement_equivalence_review": "NOT_DONE"
+      },
+      "historical_proof_status": "REPORTED_FORMAL_PASS_NOT_INDEPENDENTLY_REPRODUCED",
+      "evidence_integrity": {
+        "artifact_zip_hash_metadata_only": true,
+        "nested_manifest_independently_checked": false,
+        "long_term_immutable_mirror_verified": false
+      },
+      "independent_reproduction": {
+        "status": "NOT_DONE",
+        "distinct_run_id": null,
+        "receipt_sha256": null
+      },
+      "peer_scope_review": {
+        "status": "NOT_DONE",
+        "reviewer": null,
+        "review_evidence_url": null
+      },
+      "certification": {
+        "status": "UNCERTIFIED",
+        "certificate_id": null,
+        "reason": "Exact statement, replay, receipt, and independent scope gates remain open"
+      }
+    },
+    {
+      "claim_id": "CMIS-LEGACY-029",
+      "family_id": "148",
+      "source_declaration": "OAI.EntropyRateDimension.Extensions.homogeneous_dimension_direct",
+      "historical_scope_label": "family-validating",
+      "historical_main_registry_run_id": 39127975290,
+      "primary_github_run": {
+        "run_id": 39127975290,
+        "url": "https://github.com/Ceronio/cmis-formal-verification/actions/runs/39127975290",
+        "head_sha": "7eadd118d2db083f6717419b38491a3d62e6cdd3",
+        "reported_conclusion": "success",
+        "terminal_selected_theorem_pass_reported": true
+      },
+      "github_artifact_metadata": {
+        "artifact_id": 12136973590,
+        "github_artifact_zip_sha256": "sha256:dde8731e1b3b572b825d4049cb1a7c473dcba9820645142a34a29db447cfe91b",
+        "metadata_source": "GITHUB_ACTIONS_ARTIFACT_METADATA",
+        "archive_contents_independently_verified": false
+      },
+      "exact_claim_statement": {
+        "full_pretty_printed_type": null,
+        "statement_sha256": null,
+        "independent_statement_equivalence_review": "NOT_DONE"
+      },
+      "historical_proof_status": "REPORTED_FORMAL_PASS_NOT_INDEPENDENTLY_REPRODUCED",
+      "evidence_integrity": {
+        "artifact_zip_hash_metadata_only": true,
+        "nested_manifest_independently_checked": false,
+        "long_term_immutable_mirror_verified": false
+      },
+      "independent_reproduction": {
+        "status": "NOT_DONE",
+        "distinct_run_id": null,
+        "receipt_sha256": null
+      },
+      "peer_scope_review": {
+        "status": "NOT_DONE",
+        "reviewer": null,
+        "review_evidence_url": null
+      },
+      "certification": {
+        "status": "UNCERTIFIED",
+        "certificate_id": null,
+        "reason": "Exact statement, replay, receipt, and independent scope gates remain open"
+      }
+    },
+    {
+      "claim_id": "CMIS-LEGACY-030",
+      "family_id": "148",
+      "source_declaration": "OAI.CorSetReference.cor_set",
+      "historical_scope_label": "family-validating",
+      "historical_main_registry_run_id": 39127975290,
+      "primary_github_run": {
+        "run_id": 39127975290,
+        "url": "https://github.com/Ceronio/cmis-formal-verification/actions/runs/39127975290",
+        "head_sha": "7eadd118d2db083f6717419b38491a3d62e6cdd3",
+        "reported_conclusion": "success",
+        "terminal_selected_theorem_pass_reported": true
+      },
+      "github_artifact_metadata": {
+        "artifact_id": 12136973590,
+        "github_artifact_zip_sha256": "sha256:dde8731e1b3b572b825d4049cb1a7c473dcba9820645142a34a29db447cfe91b",
+        "metadata_source": "GITHUB_ACTIONS_ARTIFACT_METADATA",
+        "archive_contents_independently_verified": false
+      },
+      "exact_claim_statement": {
+        "full_pretty_printed_type": null,
+        "statement_sha256": null,
+        "independent_statement_equivalence_review": "NOT_DONE"
+      },
+      "historical_proof_status": "REPORTED_FORMAL_PASS_NOT_INDEPENDENTLY_REPRODUCED",
+      "evidence_integrity": {
+        "artifact_zip_hash_metadata_only": true,
+        "nested_manifest_independently_checked": false,
+        "long_term_immutable_mirror_verified": false
+      },
+      "independent_reproduction": {
+        "status": "NOT_DONE",
+        "distinct_run_id": null,
+        "receipt_sha256": null
+      },
+      "peer_scope_review": {
+        "status": "NOT_DONE",
+        "reviewer": null,
+        "review_evidence_url": null
+      },
+      "certification": {
+        "status": "UNCERTIFIED",
+        "certificate_id": null,
+        "reason": "Exact statement, replay, receipt, and independent scope gates remain open"
+      }
+    },
+    {
+      "claim_id": "CMIS-LEGACY-031",
+      "family_id": "149",
+      "source_declaration": "OAI.Problem326.global_bounded_persistent_solution",
+      "historical_scope_label": "supporting-only",
+      "historical_main_registry_run_id": 39128187459,
+      "primary_github_run": {
+        "run_id": 39128187459,
+        "url": "https://github.com/Ceronio/cmis-formal-verification/actions/runs/39128187459",
+        "head_sha": "95723be0f460d9fe7d05d39cc0da8769b6d64fec",
+        "reported_conclusion": "success",
+        "terminal_selected_theorem_pass_reported": true
+      },
+      "github_artifact_metadata": {
+        "artifact_id": 12136614791,
+        "github_artifact_zip_sha256": "sha256:0900a413551874efaa56b7a8b9238d181859c626f4302513e376880eabfe4de8",
+        "metadata_source": "GITHUB_ACTIONS_ARTIFACT_METADATA",
+        "archive_contents_independently_verified": false
+      },
+      "exact_claim_statement": {
+        "full_pretty_printed_type": null,
+        "statement_sha256": null,
+        "independent_statement_equivalence_review": "NOT_DONE"
+      },
+      "historical_proof_status": "REPORTED_FORMAL_PASS_NOT_INDEPENDENTLY_REPRODUCED",
+      "evidence_integrity": {
+        "artifact_zip_hash_metadata_only": true,
+        "nested_manifest_independently_checked": false,
+        "long_term_immutable_mirror_verified": false
+      },
+      "independent_reproduction": {
+        "status": "NOT_DONE",
+        "distinct_run_id": null,
+        "receipt_sha256": null
+      },
+      "peer_scope_review": {
+        "status": "NOT_DONE",
+        "reviewer": null,
+        "review_evidence_url": null
+      },
+      "certification": {
+        "status": "UNCERTIFIED",
+        "certificate_id": null,
+        "reason": "Exact statement, replay, receipt, and independent scope gates remain open"
+      }
+    },
+    {
+      "claim_id": "CMIS-LEGACY-032",
+      "family_id": "150",
+      "source_declaration": "OAI.TriangularBilliards.irrational_triangle_billiard",
+      "historical_scope_label": "supporting-only",
+      "historical_main_registry_run_id": 39128206649,
+      "primary_github_run": {
+        "run_id": 39128206649,
+        "url": "https://github.com/Ceronio/cmis-formal-verification/actions/runs/39128206649",
+        "head_sha": "9e1316b8b0ab8e2fcd8fe62da8e6a01f9f00a1e3",
+        "reported_conclusion": "success",
+        "terminal_selected_theorem_pass_reported": true
+      },
+      "github_artifact_metadata": {
+        "artifact_id": 12137675198,
+        "github_artifact_zip_sha256": "sha256:417ff322060e48eabf81ce617f7bc080ff0541d45e1b8f98c00870e4e958a3a4",
+        "metadata_source": "GITHUB_ACTIONS_ARTIFACT_METADATA",
+        "archive_contents_independently_verified": false
+      },
+      "exact_claim_statement": {
+        "full_pretty_printed_type": null,
+        "statement_sha256": null,
+        "independent_statement_equivalence_review": "NOT_DONE"
+      },
+      "historical_proof_status": "REPORTED_FORMAL_PASS_NOT_INDEPENDENTLY_REPRODUCED",
+      "evidence_integrity": {
+        "artifact_zip_hash_metadata_only": true,
+        "nested_manifest_independently_checked": false,
+        "long_term_immutable_mirror_verified": false
+      },
+      "independent_reproduction": {
+        "status": "NOT_DONE",
+        "distinct_run_id": null,
+        "receipt_sha256": null
+      },
+      "peer_scope_review": {
+        "status": "NOT_DONE",
+        "reviewer": null,
+        "review_evidence_url": null
+      },
+      "certification": {
+        "status": "UNCERTIFIED",
+        "certificate_id": null,
+        "reason": "Exact statement, replay, receipt, and independent scope gates remain open"
+      }
+    },
+    {
+      "claim_id": "CMIS-LEGACY-033",
+      "family_id": "151",
+      "source_declaration": "OAI.Problem340.exists_C1_entropy_counterexample",
+      "historical_scope_label": "family-validating",
+      "historical_main_registry_run_id": 39127995324,
+      "primary_github_run": {
+        "run_id": 39127995324,
+        "url": "https://github.com/Ceronio/cmis-formal-verification/actions/runs/39127995324",
+        "head_sha": "58c086f21d1cc8bc87bccc440f4a70e9894be73c",
+        "reported_conclusion": "success",
+        "terminal_selected_theorem_pass_reported": true
+      },
+      "github_artifact_metadata": {
+        "artifact_id": 12137246803,
+        "github_artifact_zip_sha256": "sha256:ee5328788cd1aa86d2823a6ad4f1ef0878d36da45ef8db6e582aae316cd95a34",
+        "metadata_source": "GITHUB_ACTIONS_ARTIFACT_METADATA",
+        "archive_contents_independently_verified": false
+      },
+      "exact_claim_statement": {
+        "full_pretty_printed_type": null,
+        "statement_sha256": null,
+        "independent_statement_equivalence_review": "NOT_DONE"
+      },
+      "historical_proof_status": "REPORTED_FORMAL_PASS_NOT_INDEPENDENTLY_REPRODUCED",
+      "evidence_integrity": {
+        "artifact_zip_hash_metadata_only": true,
+        "nested_manifest_independently_checked": false,
+        "long_term_immutable_mirror_verified": false
+      },
+      "independent_reproduction": {
+        "status": "NOT_DONE",
+        "distinct_run_id": null,
+        "receipt_sha256": null
+      },
+      "peer_scope_review": {
+        "status": "NOT_DONE",
+        "reviewer": null,
+        "review_evidence_url": null
+      },
+      "certification": {
+        "status": "UNCERTIFIED",
+        "certificate_id": null,
+        "reason": "Exact statement, replay, receipt, and independent scope gates remain open"
+      }
+    },
+    {
+      "claim_id": "CMIS-LEGACY-034",
+      "family_id": "152",
+      "source_declaration": "OAI.SmoothObstruction.main",
+      "historical_scope_label": "supporting-only",
+      "historical_main_registry_run_id": 39128229929,
+      "primary_github_run": {
+        "run_id": 39128229929,
+        "url": "https://github.com/Ceronio/cmis-formal-verification/actions/runs/39128229929",
+        "head_sha": "5755ad20c4b244122d1df7579dfe9e4fc34736c9",
+        "reported_conclusion": "success",
+        "terminal_selected_theorem_pass_reported": true
+      },
+      "github_artifact_metadata": {
+        "artifact_id": 12137347657,
+        "github_artifact_zip_sha256": "sha256:94c84885078291cfc265079bde3c87ffde65af614e6204bebc913cd5f7438830",
+        "metadata_source": "GITHUB_ACTIONS_ARTIFACT_METADATA",
+        "archive_contents_independently_verified": false
+      },
+      "exact_claim_statement": {
+        "full_pretty_printed_type": null,
+        "statement_sha256": null,
+        "independent_statement_equivalence_review": "NOT_DONE"
+      },
+      "historical_proof_status": "REPORTED_FORMAL_PASS_NOT_INDEPENDENTLY_REPRODUCED",
+      "evidence_integrity": {
+        "artifact_zip_hash_metadata_only": true,
+        "nested_manifest_independently_checked": false,
+        "long_term_immutable_mirror_verified": false
+      },
+      "independent_reproduction": {
+        "status": "NOT_DONE",
+        "distinct_run_id": null,
+        "receipt_sha256": null
+      },
+      "peer_scope_review": {
+        "status": "NOT_DONE",
+        "reviewer": null,
+        "review_evidence_url": null
+      },
+      "certification": {
+        "status": "UNCERTIFIED",
+        "certificate_id": null,
+        "reason": "Exact statement, replay, receipt, and independent scope gates remain open"
+      }
+    },
+    {
+      "claim_id": "CMIS-LEGACY-035",
+      "family_id": "155",
+      "source_declaration": "OAI.PeriodicTilingThree.periodic_tiling_counterexample_and_minimality",
+      "historical_scope_label": "family-validating",
+      "historical_main_registry_run_id": 39129543413,
+      "primary_github_run": {
+        "run_id": 39129543413,
+        "url": "https://github.com/Ceronio/cmis-formal-verification/actions/runs/39129543413",
+        "head_sha": "f751d947c5ad71c1821639898df5dc512dd7cfb0",
+        "reported_conclusion": "success",
+        "terminal_selected_theorem_pass_reported": true
+      },
+      "github_artifact_metadata": {
+        "artifact_id": 12137771493,
+        "github_artifact_zip_sha256": "sha256:dbc032ff3c49de981aea7b004b530592db97433ce4b50505bed3db5e05d27904",
+        "metadata_source": "GITHUB_ACTIONS_ARTIFACT_METADATA",
+        "archive_contents_independently_verified": false
+      },
+      "exact_claim_statement": {
+        "full_pretty_printed_type": null,
+        "statement_sha256": null,
+        "independent_statement_equivalence_review": "NOT_DONE"
+      },
+      "historical_proof_status": "REPORTED_FORMAL_PASS_NOT_INDEPENDENTLY_REPRODUCED",
+      "evidence_integrity": {
+        "artifact_zip_hash_metadata_only": true,
+        "nested_manifest_independently_checked": false,
+        "long_term_immutable_mirror_verified": false
+      },
+      "independent_reproduction": {
+        "status": "NOT_DONE",
+        "distinct_run_id": null,
+        "receipt_sha256": null
+      },
+      "peer_scope_review": {
+        "status": "NOT_DONE",
+        "reviewer": null,
+        "review_evidence_url": null
+      },
+      "certification": {
+        "status": "UNCERTIFIED",
+        "certificate_id": null,
+        "reason": "Exact statement, replay, receipt, and independent scope gates remain open"
+      }
+    },
+    {
+      "claim_id": "CMIS-LEGACY-036",
+      "family_id": "156",
+      "source_declaration": "OAI.BorsukNine.main_theorem",
+      "historical_scope_label": "family-validating",
+      "historical_main_registry_run_id": 39129568496,
+      "primary_github_run": {
+        "run_id": 39129568496,
+        "url": "https://github.com/Ceronio/cmis-formal-verification/actions/runs/39129568496",
+        "head_sha": "30f1379204536da3c3da7ebf9c3adcef019ac3e5",
+        "reported_conclusion": "success",
+        "terminal_selected_theorem_pass_reported": true
+      },
+      "github_artifact_metadata": {
+        "artifact_id": 12138096469,
+        "github_artifact_zip_sha256": "sha256:f620ddf0401a75bcd22abbd5f1cc4dc1a05dbda1b62647e9e79fe73f7fa87745",
+        "metadata_source": "GITHUB_ACTIONS_ARTIFACT_METADATA",
+        "archive_contents_independently_verified": false
+      },
+      "exact_claim_statement": {
+        "full_pretty_printed_type": null,
+        "statement_sha256": null,
+        "independent_statement_equivalence_review": "NOT_DONE"
+      },
+      "historical_proof_status": "REPORTED_FORMAL_PASS_NOT_INDEPENDENTLY_REPRODUCED",
+      "evidence_integrity": {
+        "artifact_zip_hash_metadata_only": true,
+        "nested_manifest_independently_checked": false,
+        "long_term_immutable_mirror_verified": false
+      },
+      "independent_reproduction": {
+        "status": "NOT_DONE",
+        "distinct_run_id": null,
+        "receipt_sha256": null
+      },
+      "peer_scope_review": {
+        "status": "NOT_DONE",
+        "reviewer": null,
+        "review_evidence_url": null
+      },
+      "certification": {
+        "status": "UNCERTIFIED",
+        "certificate_id": null,
+        "reason": "Exact statement, replay, receipt, and independent scope gates remain open"
+      }
+    },
+    {
+      "claim_id": "CMIS-LEGACY-037",
+      "family_id": "157",
+      "source_declaration": "OAI.HadwigerCounterexample.exists_counterexamples",
+      "historical_scope_label": "partial-family",
+      "historical_main_registry_run_id": 39129637021,
+      "primary_github_run": {
+        "run_id": 39129637021,
+        "url": "https://github.com/Ceronio/cmis-formal-verification/actions/runs/39129637021",
+        "head_sha": "8a2975497ed2cd667bb1d85b5a7c6a33efbae3ef",
+        "reported_conclusion": "success",
+        "terminal_selected_theorem_pass_reported": true
+      },
+      "github_artifact_metadata": {
+        "artifact_id": 12137494793,
+        "github_artifact_zip_sha256": "sha256:aca1b05eb2b050269219758730ada9e8800bdac3ea8d31b035bb858bd4c6d3fc",
+        "metadata_source": "GITHUB_ACTIONS_ARTIFACT_METADATA",
+        "archive_contents_independently_verified": false
+      },
+      "exact_claim_statement": {
+        "full_pretty_printed_type": null,
+        "statement_sha256": null,
+        "independent_statement_equivalence_review": "NOT_DONE"
+      },
+      "historical_proof_status": "REPORTED_FORMAL_PASS_NOT_INDEPENDENTLY_REPRODUCED",
+      "evidence_integrity": {
+        "artifact_zip_hash_metadata_only": true,
+        "nested_manifest_independently_checked": false,
+        "long_term_immutable_mirror_verified": false
+      },
+      "independent_reproduction": {
+        "status": "NOT_DONE",
+        "distinct_run_id": null,
+        "receipt_sha256": null
+      },
+      "peer_scope_review": {
+        "status": "NOT_DONE",
+        "reviewer": null,
+        "review_evidence_url": null
+      },
+      "certification": {
+        "status": "UNCERTIFIED",
+        "certificate_id": null,
+        "reason": "Exact statement, replay, receipt, and independent scope gates remain open"
+      }
+    },
+    {
+      "claim_id": "CMIS-LEGACY-038",
+      "family_id": "157",
+      "source_declaration": "OAI.HadwigerCounterexample.not_hadwiger_conjecture",
+      "historical_scope_label": "partial-family",
+      "historical_main_registry_run_id": 39129637021,
+      "primary_github_run": {
+        "run_id": 39129637021,
+        "url": "https://github.com/Ceronio/cmis-formal-verification/actions/runs/39129637021",
+        "head_sha": "8a2975497ed2cd667bb1d85b5a7c6a33efbae3ef",
+        "reported_conclusion": "success",
+        "terminal_selected_theorem_pass_reported": true
+      },
+      "github_artifact_metadata": {
+        "artifact_id": 12137494793,
+        "github_artifact_zip_sha256": "sha256:aca1b05eb2b050269219758730ada9e8800bdac3ea8d31b035bb858bd4c6d3fc",
+        "metadata_source": "GITHUB_ACTIONS_ARTIFACT_METADATA",
+        "archive_contents_independently_verified": false
+      },
+      "exact_claim_statement": {
+        "full_pretty_printed_type": null,
+        "statement_sha256": null,
+        "independent_statement_equivalence_review": "NOT_DONE"
+      },
+      "historical_proof_status": "REPORTED_FORMAL_PASS_NOT_INDEPENDENTLY_REPRODUCED",
+      "evidence_integrity": {
+        "artifact_zip_hash_metadata_only": true,
+        "nested_manifest_independently_checked": false,
+        "long_term_immutable_mirror_verified": false
+      },
+      "independent_reproduction": {
+        "status": "NOT_DONE",
+        "distinct_run_id": null,
+        "receipt_sha256": null
+      },
+      "peer_scope_review": {
+        "status": "NOT_DONE",
+        "reviewer": null,
+        "review_evidence_url": null
+      },
+      "certification": {
+        "status": "UNCERTIFIED",
+        "certificate_id": null,
+        "reason": "Exact statement, replay, receipt, and independent scope gates remain open"
+      }
+    },
+    {
+      "claim_id": "CMIS-LEGACY-039",
+      "family_id": "157",
+      "source_declaration": "OAI.LinearListHadwiger.main_theorem",
+      "historical_scope_label": "partial-family",
+      "historical_main_registry_run_id": 39129637021,
+      "primary_github_run": {
+        "run_id": 39129637021,
+        "url": "https://github.com/Ceronio/cmis-formal-verification/actions/runs/39129637021",
+        "head_sha": "8a2975497ed2cd667bb1d85b5a7c6a33efbae3ef",
+        "reported_conclusion": "success",
+        "terminal_selected_theorem_pass_reported": true
+      },
+      "github_artifact_metadata": {
+        "artifact_id": 12138205937,
+        "github_artifact_zip_sha256": "sha256:017db609110215a80bd5c1c5de87989d957b6b4e9f5f7fe55408a87437dba672",
+        "metadata_source": "GITHUB_ACTIONS_ARTIFACT_METADATA",
+        "archive_contents_independently_verified": false
+      },
+      "exact_claim_statement": {
+        "full_pretty_printed_type": null,
+        "statement_sha256": null,
+        "independent_statement_equivalence_review": "NOT_DONE"
+      },
+      "historical_proof_status": "REPORTED_FORMAL_PASS_NOT_INDEPENDENTLY_REPRODUCED",
+      "evidence_integrity": {
+        "artifact_zip_hash_metadata_only": true,
+        "nested_manifest_independently_checked": false,
+        "long_term_immutable_mirror_verified": false
+      },
+      "independent_reproduction": {
+        "status": "NOT_DONE",
+        "distinct_run_id": null,
+        "receipt_sha256": null
+      },
+      "peer_scope_review": {
+        "status": "NOT_DONE",
+        "reviewer": null,
+        "review_evidence_url": null
+      },
+      "certification": {
+        "status": "UNCERTIFIED",
+        "certificate_id": null,
+        "reason": "Exact statement, replay, receipt, and independent scope gates remain open"
+      }
+    },
+    {
+      "claim_id": "CMIS-LEGACY-040",
+      "family_id": "158",
+      "source_declaration": "OAI.EuclideanFiveColor.no_proper_five_coloring",
+      "historical_scope_label": "family-validating",
+      "historical_main_registry_run_id": 39129693771,
+      "primary_github_run": {
+        "run_id": 39129693771,
+        "url": "https://github.com/Ceronio/cmis-formal-verification/actions/runs/39129693771",
+        "head_sha": "84fac8b8fc2ba4d0bc44d212133a39266a71a18b",
+        "reported_conclusion": "success",
+        "terminal_selected_theorem_pass_reported": true
+      },
+      "github_artifact_metadata": {
+        "artifact_id": 12137129197,
+        "github_artifact_zip_sha256": "sha256:e1f480fb1b992ac4c62072c9763b18956e8dc3341abbc87bebd7c83eb4957821",
+        "metadata_source": "GITHUB_ACTIONS_ARTIFACT_METADATA",
+        "archive_contents_independently_verified": false
+      },
+      "exact_claim_statement": {
+        "full_pretty_printed_type": null,
+        "statement_sha256": null,
+        "independent_statement_equivalence_review": "NOT_DONE"
+      },
+      "historical_proof_status": "REPORTED_FORMAL_PASS_NOT_INDEPENDENTLY_REPRODUCED",
+      "evidence_integrity": {
+        "artifact_zip_hash_metadata_only": true,
+        "nested_manifest_independently_checked": false,
+        "long_term_immutable_mirror_verified": false
+      },
+      "independent_reproduction": {
+        "status": "NOT_DONE",
+        "distinct_run_id": null,
+        "receipt_sha256": null
+      },
+      "peer_scope_review": {
+        "status": "NOT_DONE",
+        "reviewer": null,
+        "review_evidence_url": null
+      },
+      "certification": {
+        "status": "UNCERTIFIED",
+        "certificate_id": null,
+        "reason": "Exact statement, replay, receipt, and independent scope gates remain open"
+      }
+    },
+    {
+      "claim_id": "CMIS-LEGACY-041",
+      "family_id": "158",
+      "source_declaration": "OAI.Problem160.properColoring_seven",
+      "historical_scope_label": "family-validating",
+      "historical_main_registry_run_id": 39129693771,
+      "primary_github_run": {
+        "run_id": 39129693771,
+        "url": "https://github.com/Ceronio/cmis-formal-verification/actions/runs/39129693771",
+        "head_sha": "84fac8b8fc2ba4d0bc44d212133a39266a71a18b",
+        "reported_conclusion": "success",
+        "terminal_selected_theorem_pass_reported": true
+      },
+      "github_artifact_metadata": {
+        "artifact_id": 12137991045,
+        "github_artifact_zip_sha256": "sha256:24a91971c65833660d06d892f4903fa57127b8947419c01c89346a991937d118",
+        "metadata_source": "GITHUB_ACTIONS_ARTIFACT_METADATA",
+        "archive_contents_independently_verified": false
+      },
+      "exact_claim_statement": {
+        "full_pretty_printed_type": null,
+        "statement_sha256": null,
+        "independent_statement_equivalence_review": "NOT_DONE"
+      },
+      "historical_proof_status": "REPORTED_FORMAL_PASS_NOT_INDEPENDENTLY_REPRODUCED",
+      "evidence_integrity": {
+        "artifact_zip_hash_metadata_only": true,
+        "nested_manifest_independently_checked": false,
+        "long_term_immutable_mirror_verified": false
+      },
+      "independent_reproduction": {
+        "status": "NOT_DONE",
+        "distinct_run_id": null,
+        "receipt_sha256": null
+      },
+      "peer_scope_review": {
+        "status": "NOT_DONE",
+        "reviewer": null,
+        "review_evidence_url": null
+      },
+      "certification": {
+        "status": "UNCERTIFIED",
+        "certificate_id": null,
+        "reason": "Exact statement, replay, receipt, and independent scope gates remain open"
+      }
+    },
+    {
+      "claim_id": "CMIS-LEGACY-042",
+      "family_id": "160",
+      "source_declaration": "OAI.QuantitativeVanDerWaerden.uniform_lower_bound",
+      "historical_scope_label": "family-validating",
+      "historical_main_registry_run_id": 39129756059,
+      "primary_github_run": {
+        "run_id": 39129756059,
+        "url": "https://github.com/Ceronio/cmis-formal-verification/actions/runs/39129756059",
+        "head_sha": "1486858382ba5a795dc878e6168e488265fef56f",
+        "reported_conclusion": "success",
+        "terminal_selected_theorem_pass_reported": true
+      },
+      "github_artifact_metadata": {
+        "artifact_id": 12137841307,
+        "github_artifact_zip_sha256": "sha256:2ec00530f46e0196097529145d365dcbace20ebb2bb48ccda6b4e42c646cd991",
+        "metadata_source": "GITHUB_ACTIONS_ARTIFACT_METADATA",
+        "archive_contents_independently_verified": false
+      },
+      "exact_claim_statement": {
+        "full_pretty_printed_type": null,
+        "statement_sha256": null,
+        "independent_statement_equivalence_review": "NOT_DONE"
+      },
+      "historical_proof_status": "REPORTED_FORMAL_PASS_NOT_INDEPENDENTLY_REPRODUCED",
+      "evidence_integrity": {
+        "artifact_zip_hash_metadata_only": true,
+        "nested_manifest_independently_checked": false,
+        "long_term_immutable_mirror_verified": false
+      },
+      "independent_reproduction": {
+        "status": "NOT_DONE",
+        "distinct_run_id": null,
+        "receipt_sha256": null
+      },
+      "peer_scope_review": {
+        "status": "NOT_DONE",
+        "reviewer": null,
+        "review_evidence_url": null
+      },
+      "certification": {
+        "status": "UNCERTIFIED",
+        "certificate_id": null,
+        "reason": "Exact statement, replay, receipt, and independent scope gates remain open"
+      }
+    }
+  ]
+}
