@@ -1,8 +1,8 @@
 # CMIS mathematical claim certification policy — review candidate
 
 **Status:** REVIEW ONLY. No mathematical claim is newly certified by this branch.
-**Scope:** Current public repository \`Ceronio/cmis-formal-verification\`, 26 October 2026.
-**Canonical source:** Historical public register on main, pinned to Git blob \`77a3906c00926b78f395382ca4823af1ca5ff19f\`.
+**Scope:** Current public repository `Ceronio/cmis-formal-verification`, 26 October 2026.
+**Canonical source:** Historical public register on main, pinned to Git blob `77a3906c00926b78f395382ca4823af1ca5ff19f`.
 **Data protection:** No changes to private CMIS, CBI, TBC, local Mac archives, or underlying public mathematical source objects.
 
 ## The governing distinction
@@ -27,21 +27,21 @@ A FULLY_CERTIFIED claim requires all of the following, with identity-bound evide
 
 1. **Statement identity.** Complete Lean proposition pretty-print and cryptographic hash of the normalized, elaborated target; explicit human-readable mathematical proposition including every quantifier, hypothesis, inequality, dimension and endpoint.
 2. **Source pins and rights.** Exact OpenAI mathematics commit, target/config/challenge/solution object identities, imported theory and executable checker/toolchain pins; source attribution without unauthorized authorship claims.
-3. **Real proof admission.** Exact target challenge/solution Comparator agreement, permitted observed axioms, and successful Lean default-kernel acceptance of the selected proof (not merely a \`#check\` or \`#print axioms\` command).
+3. **Real proof admission.** Exact target challenge/solution Comparator agreement, permitted observed axioms, and successful Lean default-kernel acceptance of the selected proof (not merely a `#check` or `#print axioms` command).
 4. **Receipt completeness.** Raw proof logs, exit codes, selected target identifiers, full artifact bytes, outer and nested checksum manifests, downloaded artifact SHA-256 and durable retention, not just a GitHub summary or archive metadata.
-5. **Independent replay.** Separate clean proof execution from pinned sources, independently verifiable run URL and new proof receipt, with no weakened statements, new axioms, \`sorry\`, \`admit\` or trust-boundary changes.
+5. **Independent replay.** Separate clean proof execution from pinned sources, independently verifiable run URL and new proof receipt, with no weakened statements, new axioms, `sorry`, `admit` or trust-boundary changes.
 6. **Claim-scope review.** An independently accountable reviewer verifies equivalence between formal statement and actual public mathematical claim; the review cites proof artifacts and signs off every exception. It must not infer stronger claims from narrower proofs.
 7. **Integration control.** Independent review of source, transitive assumptions and canonical project-gate applicability. Applications and commercial outcomes require their own empirical assessment and may not be auto-certified by a pure theorem.
 
-\`FULLY_CERTIFIED\` is a **joint** state; a missing required gate means \`UNCERTIFIED\` or a narrower explicitly named result. Failed or timed-out proofs are HOLD, not mathematical disproof.
+`FULLY_CERTIFIED` is a **joint** state; a missing required gate means `UNCERTIFIED` or a narrower explicitly named result. Failed or timed-out proofs are HOLD, not mathematical disproof.
 
 ## Critical fail-closed implementation strategy
 
-The current new verifier, \`scripts/verify_claim_certification.py\`, is intentionally limited to **record integrity**, with 16 adversarial negative controls. It cross-checks the exact 42 original declaration rows, source/main blob identity, all 70 historical GitHub runs, source-scope classifications, artifact ZIP digest *metadata* and zero false certification flags.
+The current new verifier, `scripts/verify_claim_certification.py`, is intentionally limited to **record integrity**, with 16 adversarial negative controls. It cross-checks the exact 42 original declaration rows, source/main blob identity, all 70 historical GitHub runs, source-scope classifications, artifact ZIP digest *metadata* and zero false certification flags.
 
-The audit may print \`CLAIM_CONTRACT_AUDIT_PASS_ZERO_NEW_CERTIFICATION\`. That means historical records have not been silently lost or upgraded. **It does not mean the mathematical claims are certified.**
+The audit may print `CLAIM_CONTRACT_AUDIT_PASS_ZERO_NEW_CERTIFICATION`. That means historical records have not been silently lost or upgraded. **It does not mean the mathematical claims are certified.**
 
-The separate \`mathematical_release_gate\` job intentionally fails with \`RELEASE_HOLD\`. It cannot produce a green certification release until an independently reviewed verifier actually replays proofs, verifies receipts and scope attestations, and also closes coverage gaps. The current script *rejects any attempt to set a claim status to CERTIFIED through JSON alone*. Do not remove this restriction merely to obtain a green badge.
+The separate `mathematical_release_gate` job intentionally fails with `RELEASE_HOLD`. It cannot produce a green certification release until an independently reviewed verifier actually replays proofs, verifies receipts and scope attestations, and also closes coverage gaps. The current script *rejects any attempt to set a claim status to CERTIFIED through JSON alone*. Do not remove this restriction merely to obtain a green badge.
 
 This branch does **not** rewrite the original public register, reassign historical proof credit, merge into main, publish a release, or create new canonical data.
 
@@ -49,7 +49,7 @@ This branch does **not** rewrite the original public register, reassign historic
 
 - Family 159: unresolved Lean resource and proof-admission hold; build progress is not theorem proof.
 - Families 161, 162, 165, 167, 168, 169 and 170: follow-on feature-branch workflows need claim-specific comparison and archived receipts before promoting anything to the public claim registry.
-- Family 171: CP67 source audit, CP68 typecheck, CP69 axiom/interface audit and CP70 release gate succeeded. CP70 explicitly records \`positive_target_proved=false\` and zero full-theorem credit.
+- Family 171: CP67 source audit, CP68 typecheck, CP69 axiom/interface audit and CP70 release gate succeeded. CP70 explicitly records `positive_target_proved=false` and zero full-theorem credit.
 - Family 172: seven comparator statements identified in source review, but independent formal admission and complete coverage not established by these GitHub audit files.
 - Family 173: bounded finite checks do not prove the universal second-neighborhood statement.
 - CP71–CP80: local research candidate artifacts and math examples do not replace source-faithful, published proof admissions.
@@ -73,4 +73,4 @@ The historical claim index stores *artifact metadata* only; it does not pretend 
 6. Implement a *separately reviewed positive-certification runner* that cryptographically validates proof and review attestations before allowing any positive CERTIFIED status.
 7. Establish enforceable repository rulesets/required checks only under a separate scoped authorization and technical eligibility review. The existence of the new workflow alone is not branch protection.
 
-**Release verdict in this PR:** \`RELEASE_HOLD / 0 newly independently certified mathematical claims\`.
+**Release verdict in this PR:** `RELEASE_HOLD / 0 newly independently certified mathematical claims`.
