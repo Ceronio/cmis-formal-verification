@@ -45,7 +45,7 @@ jobs:
           test "$(jq -r '.packages[] | select(.name=="mathlib") | .rev' .cp68/source/lean/lake-manifest.json)" = "$MATHLIB_COMMIT"
           lean --version | tee cp68_receipt/LEAN_VERSION.txt
           lake --version | tee cp68_receipt/LAKE_VERSION.txt
-      - name: Prepare exact dependencies and typecheck the target specification
+      - name: Prepare exact dependencies, build the pinned module, and typecheck the target
         timeout-minutes: 70
         shell: bash
         run: |
@@ -61,6 +61,7 @@ jobs:
           after=$(sha256sum lake-manifest.json)
           test "$before" = "$after"
           lake exe cache get | tee "$GITHUB_WORKSPACE/cp68_receipt/CACHE_GET.log"
+          lake build OAI.Combinatorics.Ramsey.Hypercube 2>&1 | tee "$GITHUB_WORKSPACE/cp68_receipt/OAI_HYPERCUBE_BUILD.log"
           mkdir -p CMIS
           cp "$spec" CMIS/Family171FullTarget.lean
           lake env lean CMIS/Family171FullTarget.lean \
@@ -78,7 +79,7 @@ jobs:
           out=Path('cp68_receipt'); out.mkdir(exist_ok=True)
           spec=Path('formal/family171/Family171FullTarget.lean')
           stderr=(out/'LEAN_STDERR.txt')
-          ok=stderr.exists() and stderr.stat().st_size==0 and (out/'LEAN_STDOUT.txt').exists()
+          ok=stderr.exists() and stderr.stat().st_size==0 and (out/'LEAN_STDOUT.txt').exists() and (out/'OAI_HYPERCUBE_BUILD.log').exists()
           status='SPEC_TYPECHECK_PASS' if ok else 'SPEC_TYPECHECK_HOLD'
           result={
             'status':status,
@@ -89,6 +90,7 @@ jobs:
             'branch_commit':os.environ['GITHUB_SHA'],
             'spec_sha256':hashlib.sha256(spec.read_bytes()).hexdigest(),
             'lean_version':os.environ['LEAN_VERSION'],
+            'pinned_source_module_built':ok,
           }
           (out/'RESULT.json').write_text(json.dumps(result,indent=2)+'\n')
           (out/'FINAL_STATUS.txt').write_text(status+'\n')
@@ -111,3 +113,4 @@ jobs:
           test "$(cat cp68_receipt/FINAL_STATUS.txt)" = SPEC_TYPECHECK_PASS
           grep -F '"mathematical_credit": 0' cp68_receipt/RESULT.json
           grep -F '"positive_target_proved": false' cp68_receipt/RESULT.json
+          grep -F '"pinned_source_module_built": true' cp68_receipt/RESULT.json
