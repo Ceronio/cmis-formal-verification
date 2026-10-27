@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.0",
+  "project": "CMIS",
+  "checkpoint": "CP71",
+  "family_id": "172",
+  "source_repository": "openai/math",
+  "commit": "fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb",
+  "intended_scope": "Independent CP71 definition, quantifier, elementary two-point and exact tensor substrate; NOT proof admission of full classification theorem.",
+  "checker": "Read only GitHub REST at exact source commit; compute Git blob SHA-1 over returned bytes and compare to pinned SHA",
+  "source_files": [
+    {
+      "path": "lean/docs/172.md",
+      "git_blob_sha": "66a70def5fdc63c39958196e5bfd3902f7f19dd0",
+      "role": "family scope"
+    },
+    {
+      "path": "lean/ComparatorChallenges/EuclideanRamsey.lean",
+      "git_blob_sha": "6268acd3bf3f2537607064aae93b425aed117b4c",
+      "role": "exact theorem and quantifiers"
+    },
+    {
+      "path": "lean/ComparatorChallenges/EuclideanRamsey.json",
+      "git_blob_sha": "7b3d0e9dc89a1a5e254ead95031f29b8f0ccb9f2",
+      "role": "configured comparator target"
+    },
+    {
+      "path": "lean/OAI/Combinatorics/EuclideanRamsey/Main.lean",
+      "git_blob_sha": "f61dbf1f08e982747098c903896971d7fd4d1524",
+      "role": "publisher solution theorem boundary"
+    },
+    {
+      "path": "preprints/A-classification-of-finite-Euclidean-Ramsey-configurations-September-23-2026/build/sections/01-introduction.tex",
+      "git_blob_sha": "7124c465bde3ba0a9975aa4dcb6380c527173589",
+      "role": "published theorem statement and scope"
+    },
+    {
+      "path": "preprints/A-classification-of-finite-Euclidean-Ramsey-configurations-September-23-2026/build/sections/02-tensors.tex",
+      "git_blob_sha": "357a5dc4fab8c0f083541e90a009106372ac05da",
+      "role": "tensor equivalence and necessity analysis"
+    }
+  ],
+  "selected_full_theorem": "OAI.EuclideanRamsey.classification",
+  "comparator_main_target": "Ramsey a ↔ FieldCriterion a, given s≥2,d≥1,injectivity and full affine span",
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "classification_lean_kernel_replayed": false,
+  "claim_certification": "NOT_CLAIMED",
+  "recording_policy": "No false theorem credit or family validation; branch only, main untouched."
+}
