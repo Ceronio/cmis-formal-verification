@@ -1,0 +1,67 @@
+{
+  "schema_version": "1.0",
+  "checkpoint": "CP72",
+  "family": "172",
+  "scope_name": "Finite transitive Euclidean configuration and nonempty subsets are Ramsey",
+  "reference_checkpoint": "CP71 exact classification main theorem already had PASS_SELECTED_THEOREM at 40493749941",
+  "source_repo": "openai/math",
+  "source_commit": "fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb",
+  "target_config": "ComparatorChallenges.EuclideanRamseyTransitive",
+  "target_module": "OAI.Combinatorics.EuclideanRamsey.Transitive",
+  "exact_selected_declaration": "OAI.EuclideanRamsey.TransitiveConsequence.subset_of_finite_transitive_ramsey",
+  "allowed_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "source_files": [
+    {
+      "path": "lean/docs/172.md",
+      "git_blob_sha1": "66a70def5fdc63c39958196e5bfd3902f7f19dd0",
+      "role": "family scope and comparator enumeration"
+    },
+    {
+      "path": "lean/ComparatorChallenges/EuclideanRamseyTransitive.lean",
+      "git_blob_sha1": "a3e0ea5a431606ddf5b8a5b49448878fc2716fcf",
+      "role": "exact original selected theorem statement and hypotheses"
+    },
+    {
+      "path": "lean/ComparatorChallenges/EuclideanRamseyTransitive.json",
+      "git_blob_sha1": "6432d12cf2aff364a256229efb518f4fbbc9395b",
+      "role": "exact original comparator contract"
+    },
+    {
+      "path": "lean/OAI/Combinatorics/EuclideanRamsey/Transitive.lean",
+      "git_blob_sha1": "3a80b7a1ff1e46d936e66e9f807305e898b7e304",
+      "role": "original transitive theorem solution, group-orbit averaging and reduction"
+    },
+    {
+      "path": "lean/OAI/Combinatorics/EuclideanRamsey/Main.lean",
+      "git_blob_sha1": "f61dbf1f08e982747098c903896971d7fd4d1524",
+      "role": "CP71 original classification theorem dependency"
+    },
+    {
+      "path": "preprints/A-classification-of-finite-Euclidean-Ramsey-configurations-September-23-2026/build/sections/01-introduction.tex",
+      "git_blob_sha1": "7124c465bde3ba0a9975aa4dcb6380c527173589",
+      "role": "Ramsey definitions, tensor classification and exact scale"
+    },
+    {
+      "path": "preprints/A-classification-of-finite-Euclidean-Ramsey-configurations-September-23-2026/build/sections/02-tensors.tex",
+      "git_blob_sha1": "357a5dc4fab8c0f083541e90a009106372ac05da",
+      "role": "rational tensor equivalence and necessity"
+    },
+    {
+      "path": "preprints/A-classification-of-finite-Euclidean-Ramsey-configurations-September-23-2026/build/sections/07-consequences.tex",
+      "git_blob_sha1": "6f66c1027c2f0d18c46d6f822d78eb1fa8733d8a",
+      "role": "published transitive-set corollary and exact group-average proof"
+    },
+    {
+      "path": "LICENSE",
+      "git_blob_sha1": "261eeb9e9f8b2b4b0d119366dda99c6fd7d35c64",
+      "role": "Apache-2.0 original attribution"
+    }
+  ],
+  "research_scope": "All standalone mathematical definitions and transitive orbit proof, exact finite tests, GitHub real source and theorem receipts; no claim of full Family 172 or external certification",
+  "proof_credit": "Pending independent exact selected theorem comparator outcome",
+  "next_checkpoint": "CP73 explicitly HOLD until user review"
+}
