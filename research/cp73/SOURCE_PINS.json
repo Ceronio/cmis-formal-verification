@@ -1,0 +1,102 @@
+{
+  "schema_version": "1.0",
+  "checkpoint": "CP73",
+  "family_id": 172,
+  "title": "Five-point circular Euclidean Ramsey theorem",
+  "source_repository": "openai/math",
+  "source_commit": "fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb",
+  "target_name": "OAI.EuclideanRamsey.CircleConsequence.at_most_five_circle_points_ramsey",
+  "comparator_config": "ComparatorChallenges.EuclideanRamseyCircle",
+  "solution_module": "OAI.Combinatorics.EuclideanRamsey.Circle",
+  "allowed_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "historical_dependencies": {
+    "CP71_main_classification_proof_run": 40493749941,
+    "CP72_transitive_proof_run": 40499600793
+  },
+  "scope": "Exact original theorem plus new elementary quadratic isolation, rank and rational tensor demonstrations; independent external certification deferred",
+  "source_files": [
+    {
+      "path": "lean/docs/172.md",
+      "git_blob_sha1": "66a70def5fdc63c39958196e5bfd3902f7f19dd0",
+      "role": "Original Family172 scope and 7 comparator links"
+    },
+    {
+      "path": "lean/ComparatorChallenges/EuclideanRamseyCircle.lean",
+      "git_blob_sha1": "182603c4e7f4cf64f3c0113d644ccbeab1fe478f",
+      "role": "Exact original theorem quantifiers and hypotheses"
+    },
+    {
+      "path": "lean/ComparatorChallenges/EuclideanRamseyCircle.json",
+      "git_blob_sha1": "f62b963a3a70b966b7e50e3a7cd781a87c698f74",
+      "role": "Comparator target and permitted axioms"
+    },
+    {
+      "path": "lean/OAI/Combinatorics/EuclideanRamsey/Circle.lean",
+      "git_blob_sha1": "adf383ee19a650c65c419ad47559b23da69d8034",
+      "role": "Source original circle theorem proof and singleton reduction"
+    },
+    {
+      "path": "lean/OAI/Combinatorics/EuclideanRamsey/CircleRows.lean",
+      "git_blob_sha1": "8711645ff53e0e4c9316d8e2572cacb88e20584c",
+      "role": "Exact quadratic interpolation isolators and row independence"
+    },
+    {
+      "path": "lean/OAI/Combinatorics/EuclideanRamsey/CircleSpan.lean",
+      "git_blob_sha1": "58547eba81c460f2405c646eae78d218759901bc",
+      "role": "Noncollinearity and full affine span"
+    },
+    {
+      "path": "lean/OAI/Combinatorics/EuclideanRamsey/CircleExtension.lean",
+      "git_blob_sha1": "b93f79e61aa825da77625e8b761f1de285278fb0",
+      "role": "Stereographic extension to five and zero-radius distinction"
+    },
+    {
+      "path": "lean/OAI/Combinatorics/EuclideanRamsey/CircleInterpolation.lean",
+      "git_blob_sha1": "5c9b972ab5a25503a0599e73169b6319e0ac4cd6",
+      "role": "Paired secants and quadratic evaluation"
+    },
+    {
+      "path": "lean/OAI/Combinatorics/EuclideanRamsey/CircleGeometry.lean",
+      "git_blob_sha1": "9fb8afc4d37558653dd693e11138cf3f702d0976",
+      "role": "Circle geometry and Ramsey subset property"
+    },
+    {
+      "path": "lean/OAI/Combinatorics/EuclideanRamsey/Quadratic.lean",
+      "git_blob_sha1": "de62167121102fb9978a387c3d29678c9e9f6c0c",
+      "role": "Quadratic row sufficient criterion"
+    },
+    {
+      "path": "lean/OAI/Combinatorics/EuclideanRamsey/Main.lean",
+      "git_blob_sha1": "f61dbf1f08e982747098c903896971d7fd4d1524",
+      "role": "CP71 verified classification theorem dependency"
+    },
+    {
+      "path": "preprints/A-classification-of-finite-Euclidean-Ramsey-configurations-September-23-2026/build/sections/07-consequences.tex",
+      "git_blob_sha1": "6f66c1027c2f0d18c46d6f822d78eb1fa8733d8a",
+      "role": "Published at most five points corollary and proof"
+    },
+    {
+      "path": "preprints/A-classification-of-finite-Euclidean-Ramsey-configurations-September-23-2026/build/sections/01-introduction.tex",
+      "git_blob_sha1": "7124c465bde3ba0a9975aa4dcb6380c527173589",
+      "role": "Published original-scale Ramsey and field classification"
+    },
+    {
+      "path": "preprints/A-classification-of-finite-Euclidean-Ramsey-configurations-September-23-2026/build/sections/02-tensors.tex",
+      "git_blob_sha1": "357a5dc4fab8c0f083541e90a009106372ac05da",
+      "role": "Tensor field criterion mathematical boundary"
+    },
+    {
+      "path": "LICENSE",
+      "git_blob_sha1": "261eeb9e9f8b2b4b0d119366dda99c6fd7d35c64",
+      "role": "Original Apache 2.0 attribution"
+    }
+  ],
+  "permitted_claim_status": "FORMAL_SELECTED_THEOREM_IF_REMOTE_COMPARATOR_PASSES",
+  "whole_family_certified": false,
+  "remaining_family_comparator_targets_after_cp73": 4,
+  "stop_before": "CP74"
+}
