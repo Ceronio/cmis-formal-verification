@@ -1,0 +1,113 @@
+name: CMIS CP72 Family 172 — independent transitive orbit maths and pinned source
+
+on:
+  push:
+    branches: [cmis-family172-cp72-transitive-independent-20261027]
+    paths:
+      - 'research/cp72/**'
+      - '.github/workflows/cmis-family172-cp72-independent-review.yml'
+  pull_request:
+    paths:
+      - 'research/cp72/**'
+      - '.github/workflows/cmis-family172-cp72-independent-review.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  cp72_bounded_research:
+    name: CP72 exact orbit, tensor and nine-source contract audit — NO family credit
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - name: Check out exact public research revision
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Record environment and source identities
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          mkdir -p research/cp72/receipt
+          python3 --version | tee research/cp72/receipt/PYTHON_VERSION.txt
+          {
+            echo "commit=$GITHUB_SHA"
+            echo "run_id=$GITHUB_RUN_ID"
+            echo "attempt=$GITHUB_RUN_ATTEMPT"
+            echo "runner=$RUNNER_OS"
+            echo "scope=Family172 transitive subset CP72"
+            echo "previous_verified_classification=40493749941"
+          } > research/cp72/receipt/GITHUB_EXECUTION.txt
+      - name: Compile and run all 29 adversarial mathematical tests
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          python3 -m py_compile research/cp72/transitive_math.py research/cp72/test_cp72.py research/cp72/verify_pinned_sources.py
+          python3 research/cp72/test_cp72.py -v 2>&1 | tee research/cp72/receipt/UNIT_TEST_LOG.txt
+          grep -q 'Ran 29 tests' research/cp72/receipt/UNIT_TEST_LOG.txt
+          grep -q '^OK$' research/cp72/receipt/UNIT_TEST_LOG.txt
+      - name: Execute all exact finite and symbolic tests independently of saved JSON
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          python3 research/cp72/transitive_math.py --output research/cp72/receipt/MATH_AUDIT.json | tee research/cp72/receipt/MATH_STDOUT.txt
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          x=json.loads(Path("research/cp72/receipt/MATH_AUDIT.json").read_text())
+          assert x["status"]=="PASS_CP72_BOUNDED_MATH"
+          assert x["grid_total"]==255
+          assert len(x["group_cases"])==7
+          assert x["symbolic_transcendental_rectangle"]["invalid_candidate_rejected"] is True
+          assert x["full_family_validated"] is False
+          assert x["other_family_172_endpoints_claimed"] is False
+          assert x["publisher_transitive_theorem_lean_status"]=="SEPARATE_GITHUB_COMPARATOR"
+          assert x["independent_external_certification"]=="DEFERRED"
+          PY
+      - name: Authenticate all nine exact publisher source objects and comparator hypotheses
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          python3 research/cp72/verify_pinned_sources.py --output-dir research/cp72/receipt | tee research/cp72/receipt/SOURCE_STDOUT.txt
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          x=json.loads(Path("research/cp72/receipt/SOURCE_VALIDATION.json").read_text())
+          assert x["status"]=="PASS_CP72_NINE_PINNED_SOURCE_OBJECTS_AND_CONTRACT"
+          assert x["checked_object_count"]==9
+          assert x["full_family_172_credit"]==0
+          assert x["does_not_certify_full_family"] is True
+          PY
+      - name: Seal hashes, provenance and explicit honest mathematical status
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          mkdir -p research/cp72/receipt
+          printf 'PASS_CP72_BOUNDED_MATH_AND_PINNED_SOURCE\n' > research/cp72/receipt/FINAL_STATUS.txt
+          printf 'SELECTED_THEOREM_REQUIRES_SEPARATE_LEAN_RUN\n' > research/cp72/receipt/FORMAL_STATUS.txt
+          sha256sum research/cp72/*.py research/cp72/*.json research/cp72/*.md > research/cp72/receipt/RESEARCH_CODE_SHA256.txt
+          cd research/cp72/receipt
+          find . -type f ! -name 'SHA256SUMS.txt' ! -name 'SHA256_VERIFICATION.txt' -print0 | sort -z | xargs -0 sha256sum > SHA256SUMS.txt
+          sha256sum -c SHA256SUMS.txt | tee SHA256_VERIFICATION.txt
+      - name: Upload public standalone CP72 research with all code and source receipts
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: cmis-cp72-transitive-full-bounded-research-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            research/cp72/
+            !research/cp72/__pycache__/**
+          if-no-files-found: error
+          retention-days: 30
+          compression-level: 9
+      - name: Enforce exact bounded PASS without claiming any universal proof
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          test "$(cat research/cp72/receipt/FINAL_STATUS.txt)" = 'PASS_CP72_BOUNDED_MATH_AND_PINNED_SOURCE'
+          test "$(cat research/cp72/receipt/FORMAL_STATUS.txt)" = 'SELECTED_THEOREM_REQUIRES_SEPARATE_LEAN_RUN'
+          echo 'CP72 research mathematics and pinned sources PASS. Not a theorem comparator.' >> "$GITHUB_STEP_SUMMARY"
+          echo 'Formal selected theorem is a separate CP72 workflow. Other Family172 endpoints NOT credited.' >> "$GITHUB_STEP_SUMMARY"
