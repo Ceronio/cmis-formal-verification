@@ -1,0 +1,112 @@
+name: CP71 Family 172 — pinned sources and independent bounded maths
+on:
+  push:
+    branches: [cmis-family172-cp71-independent-review-20261027]
+    paths:
+      - 'research/cp71/**'
+      - '.github/workflows/cmis-family172-cp71-independent-review.yml'
+  pull_request:
+    paths:
+      - 'research/cp71/**'
+      - '.github/workflows/cmis-family172-cp71-independent-review.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  cp71_bounded_research:
+    name: CP71 source and maths execution — no theorem credit
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - name: Check out exact audited revision
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Establish execution environment and receipt
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          mkdir -p research/cp71/receipt
+          python3 --version | tee research/cp71/receipt/PYTHON_VERSION.txt
+          echo "source_commit=$GITHUB_SHA" > research/cp71/receipt/GITHUB_EXECUTION.txt
+          echo "run_id=$GITHUB_RUN_ID" >> research/cp71/receipt/GITHUB_EXECUTION.txt
+          echo "run_attempt=$GITHUB_RUN_ATTEMPT" >> research/cp71/receipt/GITHUB_EXECUTION.txt
+          echo "runner=$RUNNER_OS" >> research/cp71/receipt/GITHUB_EXECUTION.txt
+      - name: Syntax check and adversarial mathematical tests
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          python3 -m py_compile research/cp71/math_audit.py research/cp71/test_cp71.py research/cp71/verify_pinned_sources.py
+          python3 research/cp71/test_cp71.py -v 2>&1 | tee research/cp71/receipt/UNIT_TEST_LOG.txt
+          grep -q 'Ran 19 tests' research/cp71/receipt/UNIT_TEST_LOG.txt
+          grep -q '^OK$' research/cp71/receipt/UNIT_TEST_LOG.txt
+      - name: Execute exact finite geometry and tensor checks
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          python3 research/cp71/math_audit.py --output research/cp71/receipt/MATH_AUDIT.json | tee research/cp71/receipt/MATH_STDOUT.txt
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          x=json.loads(Path("research/cp71/receipt/MATH_AUDIT.json").read_text())
+          assert x["status"]=="PASS_EXACT_BOUNDED_CP71"
+          assert x["publisher_classification_lean_kernel"]=="NOT_RUN"
+          assert x["publisher_classification_statement_comparator"]=="NOT_RUN"
+          assert x["family_whole_scope_validated"] is False
+          assert x["additional_formal_credit"]==0
+          assert len(x["simplex_pigeonhole"])==4
+          assert sum(v["colorings_checked"] for v in x["simplex_pigeonhole"])==16738
+          assert x["exact_tensor"]["bogus_candidate_rejected_before_multiplication"] is True
+          PY
+      - name: Authenticate source manuscript, comparator and solution
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          python3 research/cp71/verify_pinned_sources.py --output-dir research/cp71/receipt/source_snapshots | tee research/cp71/receipt/SOURCE_STDOUT.txt
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          x=json.loads(Path("research/cp71/receipt/SOURCE_VALIDATION.json").read_text())
+          assert x["status"]=="PASS_PINNED_SOURCE_AND_SCOPE_ONLY"
+          assert x["source_object_count"]==6
+          assert x["classification_lean_kernel"]=="NOT_RUN"
+          assert x["proof_admission"]=="NOT_RUN"
+          assert x["claim_validated"] is False
+          PY
+      - name: Seal results and SHA256 verification
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          cd research/cp71/receipt
+          printf 'PASS_CP71_BOUNDED_MATH_AND_PINNED_SOURCE\n' > FINAL_STATUS.txt
+          printf 'GENERAL_THEOREM_KERNEL_NOT_EXECUTED\n' > FORMAL_THEOREM_STATUS.txt
+          find . -type f ! -name SHA256SUMS.txt -print0 | sort -z | xargs -0 sha256sum > SHA256SUMS.txt
+          sha256sum -c SHA256SUMS.txt | tee SHA256_VERIFICATION.txt
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          assert Path("FINAL_STATUS.txt").read_text().strip()=="PASS_CP71_BOUNDED_MATH_AND_PINNED_SOURCE"
+          assert Path("FORMAL_THEOREM_STATUS.txt").read_text().strip()=="GENERAL_THEOREM_KERNEL_NOT_EXECUTED"
+          assert json.loads(Path("MATH_AUDIT.json").read_text())["additional_formal_credit"]==0
+          assert json.loads(Path("SOURCE_VALIDATION.json").read_text())["claim_validated"] is False
+          PY
+      - name: Upload public CP71 mathematical evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: cmis-cp71-family172-bounded-research-receipt
+          path: research/cp71/receipt/
+          if-no-files-found: error
+          retention-days: 30
+          compression-level: 9
+      - name: Enforce truthful success scope
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          test "$(cat research/cp71/receipt/FINAL_STATUS.txt)" = "PASS_CP71_BOUNDED_MATH_AND_PINNED_SOURCE"
+          test "$(cat research/cp71/receipt/FORMAL_THEOREM_STATUS.txt)" = "GENERAL_THEOREM_KERNEL_NOT_EXECUTED"
+          echo "CP71 independent bounded tests and source pinning passed. NO full-theorem proof credit." >> "$GITHUB_STEP_SUMMARY"
