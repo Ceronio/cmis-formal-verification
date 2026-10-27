@@ -1,0 +1,117 @@
+name: CMIS CP73 Family172 — independent five-circle-point mathematics and source audit
+
+on:
+  push:
+    branches: [cmis-family172-cp73-circle-independent-20261027]
+    paths:
+      - 'research/cp73/**'
+      - '.github/workflows/cmis-family172-cp73-independent-review.yml'
+  pull_request:
+    paths:
+      - 'research/cp73/**'
+      - '.github/workflows/cmis-family172-cp73-independent-review.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  bounded_math:
+    name: CP73 35 exact tests and 15 pinned publisher objects (NO theorem credit)
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - name: Check out exact public research revision
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Record reproducible environment
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          mkdir -p research/cp73/receipt
+          python3 --version | tee research/cp73/receipt/PYTHON_VERSION.txt
+          {
+            echo "commit=$GITHUB_SHA"
+            echo "run_id=$GITHUB_RUN_ID"
+            echo "run_attempt=$GITHUB_RUN_ATTEMPT"
+            echo "runner=$RUNNER_OS"
+            echo "source=public original OpenAI Mathematics; no private CBI data"
+            echo "scope=single CP73 circular Euclidean Ramsey companion"
+          } > research/cp73/receipt/GITHUB_EXECUTION.txt
+      - name: Compile and execute all adversarial mathematical tests
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          export PYTHONDONTWRITEBYTECODE=1
+          python3 -m py_compile research/cp73/circle_math.py research/cp73/test_cp73.py research/cp73/verify_pinned_sources.py
+          python3 research/cp73/test_cp73.py -v 2>&1 | tee research/cp73/receipt/UNIT_TEST_LOG.txt
+          grep -q 'Ran 35 tests' research/cp73/receipt/UNIT_TEST_LOG.txt
+          grep -q '^OK$' research/cp73/receipt/UNIT_TEST_LOG.txt
+      - name: Recompute exact rational circle interpolation, ranks and tensor checks
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          export PYTHONDONTWRITEBYTECODE=1
+          python3 research/cp73/circle_math.py --output research/cp73/receipt/MATH_AUDIT.json | tee research/cp73/receipt/MATH_STDOUT.txt
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          v=json.loads(Path("research/cp73/receipt/MATH_AUDIT.json").read_text())
+          assert v["status"]=="PASS_CP73_EXACT_BOUNDED_RESEARCH"
+          assert v["five_quadratic_rank"]==5
+          assert v["six_circle_quadratic_rank"]==5
+          assert v["six_rational_circle_tensor_valid"] is True
+          assert v["six_point_rank_failure_does_not_prove_nonramsey"] is True
+          assert v["nontransitive_circular_five"] is True
+          assert v["subsets_of_10_tested"]==252 and v["subset_evaluations"]==6300
+          assert v["additional_whole_family_validation"]==0
+          assert v["other_family_172_targets_claimed"] is False
+          assert v["independent_external_certification"]=="DEFERRED"
+          PY
+      - name: Authenticate original 15-source corpus and exact comparator hypotheses
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          export PYTHONDONTWRITEBYTECODE=1
+          python3 research/cp73/verify_pinned_sources.py --output-dir research/cp73/receipt | tee research/cp73/receipt/SOURCE_STDOUT.txt
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          s=json.loads(Path("research/cp73/receipt/SOURCE_VALIDATION.json").read_text())
+          assert s["status"]=="PASS_CP73_15_ORIGINAL_SOURCE_OBJECTS_AND_SCOPE"
+          assert s["objects_checked"]==15
+          assert s["full_family_172_certified"] is False
+          assert s["scope"]["source_contract_pass_does_not_prove_theorem"] is True
+          PY
+      - name: Check all source code fingerprints and evidence integrity
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          echo "PASS_CP73_BOUNDED_MATHEMATICS_AND_15_PINNED_SOURCE_OBJECTS" > research/cp73/receipt/FINAL_STATUS.txt
+          echo "EXACT_ORIGINAL_LEAN_PROOF_MUST_BE_CHECKED_SEPARATELY" > research/cp73/receipt/FORMAL_STATUS.txt
+          (cd research/cp73 &&
+            sha256sum circle_math.py test_cp73.py verify_pinned_sources.py SOURCE_PINS.json INDEPENDENT_MATHEMATICAL_NOTE.md README.md > receipt/RESEARCH_CODE_SHA256.txt)
+          (cd research/cp73/receipt &&
+            find . -type f ! -name SHA256SUMS.txt ! -name SHA256_VERIFICATION.txt -print0 | sort -z | xargs -0 sha256sum > SHA256SUMS.txt &&
+            sha256sum -c SHA256SUMS.txt | tee SHA256_VERIFICATION.txt)
+      - name: Upload complete reproducible public research and receipt
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: cmis-cp73-circle-bounded-research-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            research/cp73/
+            !research/cp73/__pycache__/**
+          if-no-files-found: error
+          retention-days: 30
+          compression-level: 9
+      - name: Enforce no false universal theorem credit
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          test "$(cat research/cp73/receipt/FINAL_STATUS.txt)" = "PASS_CP73_BOUNDED_MATHEMATICS_AND_15_PINNED_SOURCE_OBJECTS"
+          test "$(cat research/cp73/receipt/FORMAL_STATUS.txt)" = "EXACT_ORIGINAL_LEAN_PROOF_MUST_BE_CHECKED_SEPARATELY"
+          echo "CP73 exact finite math and source-authenticity PASS; original universal theorem requires the separate Comparator run." >> "$GITHUB_STEP_SUMMARY"
