@@ -99,7 +99,9 @@ jobs:
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
           name: cmis-cp71-family172-bounded-research-receipt
-          path: research/cp71/receipt/
+          path: |
+            research/cp71/
+            !research/cp71/__pycache__/**
           if-no-files-found: error
           retention-days: 30
           compression-level: 9
