@@ -70,7 +70,7 @@ def assert_contract(data):
                    "\\begin{proposition}\\label{alg:necessity}",
                    "even when their coordinate fields differ"},
         "scope":{"Classification of finite Euclidean Ramsey configurations",
-                 "seven", "cospherical"}
+                 "Comparator links", "cospherical"}
     }
     for name,s in {"challenge":challenge,"solution":solution,
                    "manuscript":manuscript,"tensors":tensors,"scope":scope}.items():
