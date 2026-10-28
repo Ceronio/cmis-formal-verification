@@ -1,0 +1,154 @@
+{
+  "schema_version": "1.0",
+  "checkpoint": "CP74",
+  "family_id": 172,
+  "title": "Twelve-point spherical non-Ramsey configuration and all-dimension 50-color avoidance",
+  "source_repository": "openai/math",
+  "source_commit": "fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb",
+  "target_declaration": "OAI.GrahamSpherical.full_main",
+  "challenge_module": "ComparatorChallenges.GrahamSpherical",
+  "solution_module": "OAI.Combinatorics.SphericalRamsey.Main",
+  "expected_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "original_spec": "witness.ncard=12 ∧ witness⊆unit sphere ∧ (∀ positive n,∃50-coloring avoiding any isometric monochromatic witness) ∧ ¬EuclideanRamsey witness",
+  "earlier_selected_theorems": {
+    "CP71": "OAI.EuclideanRamsey.classification",
+    "CP72": "OAI.EuclideanRamsey.TransitiveConsequence.subset_of_finite_transitive_ramsey",
+    "CP73": "OAI.EuclideanRamsey.CircleConsequence.at_most_five_circle_points_ramsey"
+  },
+  "source_files": [
+    {
+      "path": "lean/docs/172.md",
+      "git_blob_sha1": "66a70def5fdc63c39958196e5bfd3902f7f19dd0",
+      "role": "Family172 seven-theorem scope"
+    },
+    {
+      "path": "lean/ComparatorChallenges/GrahamSpherical.lean",
+      "git_blob_sha1": "374d630d3bdc64c298ff362e778d9a967509f331",
+      "role": "Exact full theorem with 12 vertices, unit circle, every-dimension 50-coloring, non-Ramsey"
+    },
+    {
+      "path": "lean/ComparatorChallenges/GrahamSpherical.json",
+      "git_blob_sha1": "1a24217a7982d3920a84790ab17372488fb8011c",
+      "role": "Comparator target / permitted axioms"
+    },
+    {
+      "path": "lean/OAI/Combinatorics/SphericalRamsey/AffineCopy.lean",
+      "git_blob_sha1": "3508beaeb86062cadf48709479d78715e494695a",
+      "role": "Affine copy extension"
+    },
+    {
+      "path": "lean/OAI/Combinatorics/SphericalRamsey/AffineCopyCore.lean",
+      "git_blob_sha1": "795aeb6fd99baf78784a0b0f181f7fbab375ad45",
+      "role": "Distance/Gram extension"
+    },
+    {
+      "path": "lean/OAI/Combinatorics/SphericalRamsey/AlgebraicExtension.lean",
+      "git_blob_sha1": "6566440071e7f0d80c39c9697c1ce67e6db8defc",
+      "role": "Derivation extension across algebraic field"
+    },
+    {
+      "path": "lean/OAI/Combinatorics/SphericalRamsey/BasisDerivation.lean",
+      "git_blob_sha1": "4b9a7878e08466cb8368b91f9f232d7c5be7294a",
+      "role": "Derivation at transcendence basis"
+    },
+    {
+      "path": "lean/OAI/Combinatorics/SphericalRamsey/Coloring.lean",
+      "git_blob_sha1": "7b775a6dbdb27f5adb91696c3d16fff2f50768f8",
+      "role": "Floor-modulo-50 obstruction"
+    },
+    {
+      "path": "lean/OAI/Combinatorics/SphericalRamsey/CopyInvariant.lean",
+      "git_blob_sha1": "08f22b1b5b38177c79bab0dbae03bf54f1707db5",
+      "role": "Weighted energy for genuine isometric copies"
+    },
+    {
+      "path": "lean/OAI/Combinatorics/SphericalRamsey/DerivationCoordinates.lean",
+      "git_blob_sha1": "9051a74fa51f5b31bcff2075abfb10a42af81c20",
+      "role": "Rational function derivation formulas"
+    },
+    {
+      "path": "lean/OAI/Combinatorics/SphericalRamsey/EnergyIdentity.lean",
+      "git_blob_sha1": "f96b3b124ae83481d5b72b23b572c6309ef7ec80",
+      "role": "Weighted moment and energy identity"
+    },
+    {
+      "path": "lean/OAI/Combinatorics/SphericalRamsey/Main.lean",
+      "git_blob_sha1": "0bbceb83cc41bd0a605255402002e8f424b521b4",
+      "role": "Original solution exact selected theorem"
+    },
+    {
+      "path": "lean/OAI/Combinatorics/SphericalRamsey/Model.lean",
+      "git_blob_sha1": "49b19875bcc80ad119d1bb1961bc9d9a9cd27312",
+      "role": "Exact coordinate/weight/coloring/Ramsey definitions"
+    },
+    {
+      "path": "lean/OAI/Combinatorics/SphericalRamsey/MonochromaticObstruction.lean",
+      "git_blob_sha1": "6c6f167617fbf026ac057a6b7bb25bdc5f297d5c",
+      "role": "EnergyColor and AvoidsCopy"
+    },
+    {
+      "path": "lean/OAI/Combinatorics/SphericalRamsey/Parameter.lean",
+      "git_blob_sha1": "7d59beea271707d44fca2d820ad3718e7347b983",
+      "role": "Liouville parameter bounds and transcendence"
+    },
+    {
+      "path": "lean/OAI/Combinatorics/SphericalRamsey/Ramsey.lean",
+      "git_blob_sha1": "80bc80b07f284fec312588ff4aafc8785a9acb06",
+      "role": "50-color avoidance implies non-Ramsey"
+    },
+    {
+      "path": "lean/OAI/Combinatorics/SphericalRamsey/RealDerivation.lean",
+      "git_blob_sha1": "e35136bcf07f888d805bd1a9a37dc1bc1dbe8b60",
+      "role": "Real derivation prescribed at t"
+    },
+    {
+      "path": "lean/OAI/Combinatorics/SphericalRamsey/RealTranscendenceBasis.lean",
+      "git_blob_sha1": "39b2fbaa90e797507a1b82bf3f78e5cedbb230e2",
+      "role": "Transcendence basis extension"
+    },
+    {
+      "path": "lean/OAI/Combinatorics/SphericalRamsey/Result.lean",
+      "git_blob_sha1": "96a882abc55ff96a9a29968cf3bfcb974516397b",
+      "role": "Result import"
+    },
+    {
+      "path": "lean/OAI/Combinatorics/SphericalRamsey/Specification.lean",
+      "git_blob_sha1": "9a7da1ddc456564c6dc78001472ade05f6ebd3be",
+      "role": "Specification import"
+    },
+    {
+      "path": "lean/OAI/Combinatorics/SphericalRamsey/WitnessCoordinates.lean",
+      "git_blob_sha1": "885ec926a8bf0e2fe8e82b9f9c189ded0ad73cef",
+      "role": "12 points distinct and sphere"
+    },
+    {
+      "path": "lean/OAI/Combinatorics/SphericalRamsey/WitnessScalars.lean",
+      "git_blob_sha1": "2f180fd19816936e288de76df96fe40eaa7a6e46",
+      "role": "Rotation scalar inequalities"
+    },
+    {
+      "path": "preprints/A-classification-of-finite-Euclidean-Ramsey-configurations-September-23-2026/build/sections/07-consequences.tex",
+      "git_blob_sha1": "6f66c1027c2f0d18c46d6f822d78eb1fa8733d8a",
+      "role": "Original paper three squares/moment obstruction"
+    },
+    {
+      "path": "preprints/A-classification-of-finite-Euclidean-Ramsey-configurations-September-23-2026/build/sections/01-introduction.tex",
+      "git_blob_sha1": "7124c465bde3ba0a9975aa4dcb6380c527173589",
+      "role": "Original Ramsey problem and overview"
+    },
+    {
+      "path": "LICENSE",
+      "git_blob_sha1": "261eeb9e9f8b2b4b0d119366dda99c6fd7d35c64",
+      "role": "Original Apache 2.0 attribution"
+    }
+  ],
+  "checkpoint_scope": "Independent exact moment derivation and elementary floor-residue proof, real source auth, selected original Lean theorem execution, and separate investigation of optional 16-color strengthening without claim of kernel verification.",
+  "whole_family_172_certified": false,
+  "additional_whole_family_credit": 0,
+  "external_human_certification": "DEFERRED",
+  "stop_after": "CP74; do not begin CP75 without user review"
+}
