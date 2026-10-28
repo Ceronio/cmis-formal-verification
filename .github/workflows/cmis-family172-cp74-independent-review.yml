@@ -1,0 +1,121 @@
+name: CMIS CP74 — independent twelve-point polynomial and fifty-color research
+
+on:
+  push:
+    branches: [cmis-family172-cp74-graham-12point-20261028]
+    paths:
+      - 'research/cp74/**'
+      - '.github/workflows/cmis-family172-cp74-independent-review.yml'
+  pull_request:
+    paths:
+      - 'research/cp74/**'
+      - '.github/workflows/cmis-family172-cp74-independent-review.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  bounded_math:
+    name: CP74 40 exact tests and 25 publisher-source identities — NO formal theorem credit
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - name: Checkout exact public mathematical research
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Record reproducible environment
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          mkdir -p research/cp74/receipt
+          python3 --version | tee research/cp74/receipt/PYTHON_VERSION.txt
+          {
+            echo "commit=$GITHUB_SHA"
+            echo "run_id=$GITHUB_RUN_ID"
+            echo "run_attempt=$GITHUB_RUN_ATTEMPT"
+            echo "runner=$RUNNER_OS"
+            echo "checkpoint=CP74"
+            echo "selected_original_theorem=OAI.GrahamSpherical.full_main"
+            echo "scope=12 actual points + 50-color exact source, not new 16-color selected theorem"
+          } > research/cp74/receipt/EXECUTION_IDENTITY.txt
+      - name: Run forty negative-control and exact arithmetic tests
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          export PYTHONDONTWRITEBYTECODE=1
+          python3 -m py_compile research/cp74/math_audit.py research/cp74/test_cp74.py research/cp74/verify_pinned_sources.py
+          python3 -m unittest discover -s research/cp74 -p test_cp74.py -v 2>&1 | tee research/cp74/receipt/TEST_LOG.txt
+          grep -q 'Ran 40 tests' research/cp74/receipt/TEST_LOG.txt
+          grep -q '^OK$' research/cp74/receipt/TEST_LOG.txt
+      - name: Recompute 27 symbolic polynomial identities and rounding counterchecks
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          export PYTHONDONTWRITEBYTECODE=1
+          python3 research/cp74/math_audit.py --output research/cp74/receipt/MATH_AUDIT.json | tee research/cp74/receipt/MATH_STDOUT.txt
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          x=json.loads(Path("research/cp74/receipt/MATH_AUDIT.json").read_text())
+          assert x["status"]=="PASS_EXACT_CP74_POLYNOMIAL_AND_FINITE_TESTS"
+          assert x["weighted_moment_identities"]["all_exact_over_Z_t"] is True
+          assert x["weighted_moment_identities"]["polynomial_identity_checks"]==27
+          assert x["witness_groups"]==3 and x["total_vertices"]==12
+          assert x["floor_color_falsification"]["samples"]==900
+          assert x["independent_deduction_16_colors"]["formal_Lean_kernel"]=="NOT_RUN"
+          assert x["new_full_family_credit"]==0
+          assert x["source_selected_Lean_status"]=="SEPARATE_PINNED_GITHUB_COMPARATOR"
+          assert x["whole_family_172_certified"] is False
+          PY
+      - name: Verify twenty-five original publisher Git objects and exact theorem
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          export PYTHONDONTWRITEBYTECODE=1
+          python3 research/cp74/verify_pinned_sources.py --output-dir research/cp74/receipt | tee research/cp74/receipt/SOURCE_STDOUT.txt
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          x=json.loads(Path("research/cp74/receipt/SOURCE_VALIDATION.json").read_text())
+          assert x["status"]=="PASS_CP74_25_PINNED_PUBLISHER_SOURCES_AND_CLAIM_CONTRACT"
+          assert x["checked_source_files"]==25
+          assert x["source_contract"]["exact_fifty_color_scope"] is True
+          assert x["source_authentication_is_not_full_theorem_proof"] is True
+          assert x["new_family_wide_validation"]==0
+          PY
+      - name: Seal immutable-identity evidence with hash verification
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          printf 'PASS_CP74_BOUNDED_POLYNOMIAL_AND_PINNED_SOURCE\n' > research/cp74/receipt/FINAL_STATUS.txt
+          printf 'ORIGINAL_50_COLOR_THEOREM_SEPARATE_LEAN_COMPARATOR\n' > research/cp74/receipt/FORMAL_STATUS.txt
+          printf 'NEW_16_COLOR_COROLLARY_NOT_LEAN_CERTIFIED\n' > research/cp74/receipt/COROLLARY_STATUS.txt
+          (cd research/cp74 &&
+            sha256sum math_audit.py test_cp74.py verify_pinned_sources.py SOURCE_PINS.json INDEPENDENT_MATHEMATICAL_NOTE.md README.md > receipt/RESEARCH_CODE_SHA256.txt)
+          (cd research/cp74/receipt &&
+            find . -type f ! -name SHA256SUMS.txt ! -name SHA256_VERIFICATION.txt -print0 | sort -z | xargs -0 sha256sum > SHA256SUMS.txt &&
+            sha256sum -c SHA256SUMS.txt | tee SHA256_VERIFICATION.txt)
+      - name: Upload complete source, calculations and publisher receipt bytes
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: cmis-cp74-full-bounded-research-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            research/cp74/
+            !research/cp74/__pycache__/**
+          if-no-files-found: error
+          retention-days: 30
+          compression-level: 9
+      - name: Keep source and research success distinct from selected theorem
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          test "$(cat research/cp74/receipt/FINAL_STATUS.txt)" = "PASS_CP74_BOUNDED_POLYNOMIAL_AND_PINNED_SOURCE"
+          test "$(cat research/cp74/receipt/FORMAL_STATUS.txt)" = "ORIGINAL_50_COLOR_THEOREM_SEPARATE_LEAN_COMPARATOR"
+          test "$(cat research/cp74/receipt/COROLLARY_STATUS.txt)" = "NEW_16_COLOR_COROLLARY_NOT_LEAN_CERTIFIED"
+          echo "CP74 original 50-color claim has a separate Lean/Comparator execution." >> "$GITHUB_STEP_SUMMARY"
+          echo "Additional 16-color argument is conventional mathematics, not independently Lean-certified." >> "$GITHUB_STEP_SUMMARY"
