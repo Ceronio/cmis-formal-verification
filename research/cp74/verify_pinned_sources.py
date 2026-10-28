@@ -110,7 +110,7 @@ def exact_scope(data):
       ("manuscript",geom,[
           "\\begin{proposition}\\label{cons:twelve}",
           "Liouville's constant",
-          "weighted derivation",
+          "weighted cancellation",
           "the three augmented moment identities",
           "right side $8"]),
       ("family_docs",docs,[
