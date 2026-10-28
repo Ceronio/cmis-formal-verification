@@ -1,0 +1,124 @@
+{
+  "schema_version": "1.0",
+  "checkpoint": "CP75",
+  "family": 172,
+  "source_repository": "openai/math",
+  "source_commit": "fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb",
+  "target": "OAI.EuclideanRamsey.NineStatement.nine_circle_configuration",
+  "challenge_module": "ComparatorChallenges.EuclideanRamseyNine",
+  "solution_module": "OAI.Combinatorics.EuclideanRamsey.NineStatement",
+  "allowed_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "exact_hypothesis": "AlgebraicIndependent ℚ t for nine separately indexed real parameters",
+  "conclusion": "Nine points distinct and on unit circle, configuration is NOT Euclidean Ramsey",
+  "source_files": [
+    {
+      "path": "lean/docs/172.md",
+      "git_blob_sha1": "66a70def5fdc63c39958196e5bfd3902f7f19dd0",
+      "role": "Family 172 seven-comparator scope"
+    },
+    {
+      "path": "lean/ComparatorChallenges/EuclideanRamseyNine.lean",
+      "git_blob_sha1": "b723673ae577d21f103efe850a4295d3137f2d80",
+      "role": "Exact original nine-parameter theorem, algebraic independence hypotheses"
+    },
+    {
+      "path": "lean/ComparatorChallenges/EuclideanRamseyNine.json",
+      "git_blob_sha1": "8932a268a532d530c5af3ff4119944c52a0e39b6",
+      "role": "Original Comparator theorem and permitted axioms"
+    },
+    {
+      "path": "lean/OAI/Combinatorics/EuclideanRamsey/NineStatement.lean",
+      "git_blob_sha1": "da584d3c77f07319fb952417a0e10d2f59270907",
+      "role": "Source-selected theorem wrapper"
+    },
+    {
+      "path": "lean/OAI/Combinatorics/EuclideanRamsey/Nine.lean",
+      "git_blob_sha1": "2dc014d3bf4b4187c115bb286414f063251008ad",
+      "role": "Generic nine-point determinant and contradiction"
+    },
+    {
+      "path": "lean/OAI/Combinatorics/EuclideanRamsey/NineGeometry.lean",
+      "git_blob_sha1": "09c7571d2b6c1b90f95fb1c4217c76075435adff",
+      "role": "Stereographic recovery, injectivity, affine span"
+    },
+    {
+      "path": "lean/OAI/Combinatorics/EuclideanRamsey/NineField.lean",
+      "git_blob_sha1": "5464b54e5d52bf179cb272322c6a384f64c754d7",
+      "role": "Tensor-field faithful embedding for algebraically independent real parameters"
+    },
+    {
+      "path": "lean/OAI/Combinatorics/EuclideanRamsey/NineGridDeterminant.lean",
+      "git_blob_sha1": "2d2cba5a4273878d2801153530dbdda9008ff720",
+      "role": "Cleared 9×9 polynomial determinant: 8^6"
+    },
+    {
+      "path": "lean/OAI/Combinatorics/EuclideanRamsey/NineRationalDeterminant.lean",
+      "git_blob_sha1": "c3dd11bc01e474dc0c430b8fca8f0fc1cff12e2f",
+      "role": "Denominator clearing and rational-function generic determinant"
+    },
+    {
+      "path": "lean/OAI/Combinatorics/EuclideanRamsey/NineLinearObstruction.lean",
+      "git_blob_sha1": "4a9a6d2f7c49c8365e1e3ebb2a4d0f4c2ff01c44",
+      "role": "Invertible tensor evaluation forbids FieldCriterion"
+    },
+    {
+      "path": "lean/OAI/Combinatorics/EuclideanRamsey/IndependentTensor.lean",
+      "git_blob_sha1": "eeb4b279e9142c1111b63e547ee781e51e2cd870",
+      "role": "Double-variable tensor embedding"
+    },
+    {
+      "path": "lean/OAI/Combinatorics/EuclideanRamsey/Main.lean",
+      "git_blob_sha1": "f61dbf1f08e982747098c903896971d7fd4d1524",
+      "role": "CP71 classification, Ramsey-to-field necessary direction"
+    },
+    {
+      "path": "lean/OAI/Combinatorics/EuclideanRamsey/Model.lean",
+      "git_blob_sha1": "71ecccecba69d369602cff27eb8ac79b4b16b424",
+      "role": "Exact Euclidean Ramsey and tensor-field definitions"
+    },
+    {
+      "path": "lean/OAI/Combinatorics/EuclideanRamsey/TensorDescent.lean",
+      "git_blob_sha1": "bd0fda2b32715da45251fb3d0f15cf14308b8775",
+      "role": "Tensor-field dependencies"
+    },
+    {
+      "path": "lean/OAI/Combinatorics/EuclideanRamsey/CircleExtension.lean",
+      "git_blob_sha1": "b93f79e61aa825da77625e8b761f1de285278fb0",
+      "role": "Stereographic parametrization used in NineGeometry"
+    },
+    {
+      "path": "lean/OAI/Combinatorics/EuclideanRamsey/CircleSpan.lean",
+      "git_blob_sha1": "58547eba81c460f2405c646eae78d218759901bc",
+      "role": "Full affine span for distinct circle points"
+    },
+    {
+      "path": "preprints/A-classification-of-finite-Euclidean-Ramsey-configurations-September-23-2026/build/sections/07-consequences.tex",
+      "git_blob_sha1": "6f66c1027c2f0d18c46d6f822d78eb1fa8733d8a",
+      "role": "Nine-point manuscript proof and determinant 64"
+    },
+    {
+      "path": "preprints/A-classification-of-finite-Euclidean-Ramsey-configurations-September-23-2026/build/sections/01-introduction.tex",
+      "git_blob_sha1": "7124c465bde3ba0a9975aa4dcb6380c527173589",
+      "role": "Original theorem context, conditions and intellectual provenance"
+    },
+    {
+      "path": "preprints/A-classification-of-finite-Euclidean-Ramsey-configurations-September-23-2026/build/sections/02-tensors.tex",
+      "git_blob_sha1": "357a5dc4fab8c0f083541e90a009106372ac05da",
+      "role": "Exact tensor criterion / field descent"
+    },
+    {
+      "path": "LICENSE",
+      "git_blob_sha1": "261eeb9e9f8b2b4b0d119366dda99c6fd7d35c64",
+      "role": "Apache-2.0 source attribution"
+    }
+  ],
+  "scope": "CP75 independent review, exact symbolic grid determinant, new finite negative controls, GitHub research and selected source theorem verification; external independent certification remains deferred",
+  "remaining_family_172_original_comparators_after_cp75": 2,
+  "whole_family_validated": false,
+  "external_certification": "DEFERRED",
+  "stop_at": "CP75; CP76 needs explicit next user continuation"
+}
