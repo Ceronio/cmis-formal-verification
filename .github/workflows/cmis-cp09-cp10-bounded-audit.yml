@@ -1,0 +1,49 @@
+name: CMIS CP09 and CP10 bounded source audit
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - codex/cmis-cp09-cp10-source-audit-20261029
+    paths:
+      - '.github/workflows/cmis-cp09-cp10-bounded-audit.yml'
+permissions:
+  contents: read
+jobs:
+  bounded-audit:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: 427a97383152989becb88a7f9f78b8c01f6b6f58
+          persist-credentials: false
+      - name: Confirm pinned source hashes and Python
+        run: |
+          test "$(git rev-parse HEAD)" = "427a97383152989becb88a7f9f78b8c01f6b6f58"
+          git rev-parse HEAD
+          python3 --version
+          python3 - <<'PY'
+          import hashlib, json, pathlib, sys
+          assert sys.version_info[:2] == (3, 12)
+          root = pathlib.Path('cmis-audit/evidence/pinned_sources')
+          for row in json.loads((root / 'SOURCE_HASH_AUDIT.json').read_text()):
+              data = (root / 'authenticated' / row['name']).read_bytes()
+              assert hashlib.sha256(data).hexdigest() == row['sha256']
+              blob = hashlib.sha1(b'blob ' + str(len(data)).encode() + b'\0' + data).hexdigest()
+              assert blob == row['git_blob_sha1']
+          PY
+      - name: Reconstruct exact bounded claims
+        run: |
+          python3 cmis-audit/scripts/reconstruct_cp09.py
+          python3 cmis-audit/scripts/reconstruct_cp10.py
+          echo 'PASS_BOUNDED_COMPUTATIONS_ONLY' > cmis-audit/results/FINAL_STATUS.txt
+          cd cmis-audit/results
+          sha256sum *.json FINAL_STATUS.txt > SHA256SUMS.txt
+      - name: Preserve bounded computation receipt
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: cmis-cp09-cp10-bounded-${{ github.run_id }}-${{ github.run_attempt }}
+          path: cmis-audit/results/
+          if-no-files-found: error
+          retention-days: 30
