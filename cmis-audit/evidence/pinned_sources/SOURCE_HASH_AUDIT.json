@@ -1,0 +1,90 @@
+[
+  {
+    "name": "nonvanishing.tex",
+    "bytes": 16805,
+    "sha256": "5eb530e75f876ba18b90bfe9979bdcd2336443d3f100471ca797d7b5711c29b8",
+    "git_blob_sha1": "0fc7c72efd7643026c914a5b77987005765544fb",
+    "expected_git_blob": "0fc7c72efd7643026c914a5b77987005765544fb",
+    "matches": true
+  },
+  {
+    "name": "overview.tex",
+    "bytes": 321928,
+    "sha256": "aa54c8e14b7647226264045ae846df7ce6803d2ded48aa3183195e45f9f91962",
+    "git_blob_sha1": "8f3b8cb6d5c4f5f7f0ac216b2c6db52b4b34b2fd",
+    "expected_git_blob": "8f3b8cb6d5c4f5f7f0ac216b2c6db52b4b34b2fd",
+    "matches": true
+  },
+  {
+    "name": "foundations.tex",
+    "bytes": 17035,
+    "sha256": "66e91b9f49c71b4453e447c371e05a43251ef6be436c84cebe9970392eab7939",
+    "git_blob_sha1": "ce7192baf3b7be6a5801aab7036e8a64d43392bd",
+    "expected_git_blob": "ce7192baf3b7be6a5801aab7036e8a64d43392bd",
+    "matches": true
+  },
+  {
+    "name": "odd-primes.tex",
+    "bytes": 25591,
+    "sha256": "81fcbfa0b6db03d727949ea7f6de286f73c0d88ada423ccb1b3943733ec450dc",
+    "git_blob_sha1": "90f5f30ec75b91e58d78d284e6c9367f737f9997",
+    "expected_git_blob": "90f5f30ec75b91e58d78d284e6c9367f737f9997",
+    "matches": true
+  },
+  {
+    "name": "energy.tex",
+    "bytes": 11930,
+    "sha256": "046baf5cfb1c774d0a398f47958bfbf2d4e7551e66f9bdd361347e1af51cc9eb",
+    "git_blob_sha1": "13dba226bb82274a2da363d68b9915cc6732fc18",
+    "expected_git_blob": "13dba226bb82274a2da363d68b9915cc6732fc18",
+    "matches": true
+  },
+  {
+    "name": "real-place.tex",
+    "bytes": 17417,
+    "sha256": "761db4596cc260f8f62ea5480c59ce1c0b2cfac0f5b4e1ca75d9bc0cbbfd3173",
+    "git_blob_sha1": "68081d270e90f18a7573402cd6be5b2523d21ecc",
+    "expected_git_blob": "68081d270e90f18a7573402cd6be5b2523d21ecc",
+    "matches": true
+  },
+  {
+    "name": "certificate.tex",
+    "bytes": 19114,
+    "sha256": "113f8438138e239f2f39820692aa2180b97e0729463799e40f7100a304e73c9a",
+    "git_blob_sha1": "28e5f69eab9ba44f288e889b870389650c0d37b1",
+    "expected_git_blob": "28e5f69eab9ba44f288e889b870389650c0d37b1",
+    "matches": true
+  },
+  {
+    "name": "conclusion.tex",
+    "bytes": 2529,
+    "sha256": "f7d8a388041f6b1229f1d4a6f42fbbe61c81f65b68a652be270969cc6c80f1fa",
+    "git_blob_sha1": "d7cf816b5da984ae97b11eb8a5a8ce4140b2e708",
+    "expected_git_blob": "d7cf816b5da984ae97b11eb8a5a8ce4140b2e708",
+    "matches": true
+  },
+  {
+    "name": "Catalan.json",
+    "bytes": 319,
+    "sha256": "d8e970601d8f0418cc21adfcbb794fe8cc11b0fdbd9da7fd6dfcb3052c8ae7a3",
+    "git_blob_sha1": "78b89138b45ecbe09c061b25c2e2f6177ffd4b9b",
+    "expected_git_blob": "78b89138b45ecbe09c061b25c2e2f6177ffd4b9b",
+    "matches": true
+  },
+  {
+    "name": "Catalan.lean",
+    "bytes": 209,
+    "sha256": "9bf391e5c1a95dd82d78e53774b9f2223d8c0fae0396fc3ad59332f895de8561",
+    "git_blob_sha1": "f7941ef960ec9d0ec745f15f2ee7b2ff46bd6058",
+    "expected_git_blob": "f7941ef960ec9d0ec745f15f2ee7b2ff46bd6058",
+    "matches": true
+  },
+  {
+    "name": "Main.lean",
+    "bytes": 2174,
+    "sha256": "1b52680d355251e465074d8f2d688086967f1f681f606ee1f199c5edc26c0111",
+    "git_blob_sha1": "752588840ac791e2a8844ce20ca0cf1da508590d",
+    "expected_git_blob": "752588840ac791e2a8844ce20ca0cf1da508590d",
+    "matches": true
+  }
+]

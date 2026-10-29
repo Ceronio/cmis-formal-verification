@@ -1,0 +1,113 @@
+CMIS CP09/CP10 — public reconciliation and bounded verification
+Audit date: 29 October 2026
+Decision: CP09 HOLD; CP10 HOLD. No new formal theorem or whole-family certification.
+
+Scope
+This additive audit publishes the prepared CP09/CP10 reconstruction scripts,
+11 unchanged public source files pinned to openai/math commit
+fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb, bounded result records, source hashes,
+and outstanding acceptance gates. Historical evidence, existing verification
+registers, workflows and frozen releases are preserved without modification.
+Private inventories and large historical archives are outside this publication.
+Later exploratory proof notes and additional formal-target candidates are not
+included or credited by this prepared bounded-audit publication.
+
+A. Historical claims
+The original programme contains 372 family identities and CP01–CP75 historical
+checkpoint records. An identity or checkpoint count is not a proof-completion
+count. CP09 and CP10 both examine Family 005. Earlier success labels require
+claim-specific reconciliation with the mandatory acceptance gates; they are not
+silently promoted or erased by this audit.
+
+B. Independently reproduced bounded results
+The pinned overview has 372 unique family entries and 719 PDF-link occurrences.
+The 719 links are not 719 independently authenticated paper byte objects.
+Source IDs omit 045, 061, 070, 123 and 163 within the range through 377;
+these intentional source gaps do not represent missing register rows.
+
+CP09 reconstructs the exact rational 49-by-48 source matrix, its moment arrays
+and fixed determinant certificates. All 144 published Gaussian pivots match.
+The determinant residues of B0, B0+B1 and B0-B1 modulo 101 are 27, 50 and 74.
+Additional bounded fixed-matrix residues at 263, 269 and 271 are retained.
+The source digit-layer congruences pass 99,710 exact comparisons over a
+65-by-59 bounded array at 13 admissible primes. These tests use H=65.
+They do not test the full scale-N=p source matrix with H=65p, or prove the
+universal digit-layer statement. The negative carry-index control is retained.
+
+CP10's principal sources, foundations.tex and odd-primes.tex, match the pinned
+Git blobs. Exact integration reproduces the eight-piece loss area 8609/2,
+with 808 bounded comparisons against the original min/max expressions.
+The conditional lower constant is
+-8609/4608 -(2809/4608) log(2), approximately -2.2908095551633867.
+The exact 2-by-2 counterexample [[1/25,1/25],[0,1/5]] has determinant
+1/125, of 5-adic valuation -3. Equal leading residues do not make the
+column difference integral. Both denominator layers remain required.
+
+C. Historical formal evidence
+The earlier read-only audit inspected 93 runs, 109 job logs and 102 artifact ZIPs;
+artifact bytes were compared with their GitHub SHA-256 digests. That audit is
+distinct from execution of this new bounded workflow. This PR creates no new
+formal PASS and does not reproduce a fresh Lean/kernel execution.
+
+Public historical selected-theorem run references:
+- Catalan: https://github.com/Ceronio/cmis-formal-verification/actions/runs/39069346447
+- CP71: https://github.com/Ceronio/cmis-formal-verification/actions/runs/40493749941
+- CP72: https://github.com/Ceronio/cmis-formal-verification/actions/runs/40499600793
+- CP73: https://github.com/Ceronio/cmis-formal-verification/actions/runs/40539940675
+- CP74: https://github.com/Ceronio/cmis-formal-verification/actions/runs/40695232458
+- CP75: https://github.com/Ceronio/cmis-formal-verification/actions/runs/40717419372
+
+Those six individually inspected receipts record Comparator acceptance, default
+Lean kernel acceptance and observed axioms propext, Classical.choice, Quot.sound.
+The Catalan target is OAI.InternalCatalan.catalan_irrational. Its challenge file
+contains the expected sorry placeholder; the separately accepted solution's
+observed axiom report excludes sorryAx. A permitted-axiom list by itself is
+not an observed-axiom report. Imported-module compilation is not additional
+selected-theorem acceptance.
+
+D. Certification decision
+CP09 HOLD and CP10 HOLD. Zero new accepted checkpoints, formally accepted
+declarations or certified whole families from this publication. The manual
+audit workflow can report PASS_BOUNDED_COMPUTATIONS_ONLY, which carries no
+Lean/theorem/family certification credit. Existing formal requirements remain
+in force. Licensing alone may be deferred.
+
+E. Outstanding obligations and repair
+CP09 needs the complete source-specific moment/digit/Frobenius/filter/growing-
+matrix proof audit, exceptional-prime treatment, analytic and finite-place
+dependencies, manuscript-to-used-declaration mapping, required authorised
+reproducible execution, independent end-to-end review and preservation closure.
+Fixed nonzero residues at 101 do not imply invertibility at every p>260.
+
+CP10 needs the all-N two-adic and odd-prime elimination argument, uniform small-
+prime and exceptional-prime estimates, PNT/effective dependency closure and
+liminf passage. Finite loss-profile arithmetic is not the asymptotic proof.
+The real-place and energy upper-bound chain remains a separate dependency.
+
+Family 159 remains an execution hold:
+https://github.com/Ceronio/cmis-formal-verification/issues/3
+Run 39229719526 was cancelled at its bounded limit and ended RECEIPT_MISSING.
+No selected-theorem acceptance was reached. No retry is authorised here.
+
+The original CMIS_Phase2_CP62_Continuation_2026-10-26.zip is unreadable as a ZIP.
+Size: 212230 bytes.
+SHA-256: 65b60b2c116deb90e25f25e5c28d7edec6a6291d7d41b0a55199ca749cb745f6.
+Alternate CP62 packages do not silently replace or certify this damaged original.
+Recovery, provenance and acceptance remain unresolved; private paths are omitted.
+
+CP09–CP18 remains the active planning cohort: CP09 and CP10 are the two active
+unresolved verification tracks; CP11–CP18 are queued after subject authentication.
+These checkpoints continue Family 005, not ten separately completed families.
+The maximum of three newly opened unresolved tracks and all 16 gates remain.
+
+Preservation and publication limits
+GitHub Actions artifacts expire; their availability is not permanent backup.
+The full historical audit packages and private inventories are not published
+in this PR. Independent authorised recoverability of the complete programme
+has not been established. This source subset is not a complete programme archive.
+No mathematical novelty or real-world application certification is claimed.
+
+AI assistance
+The audit code, analysis and reports were substantially AI-assisted. Source
+mathematics is attributed to the pinned openai/math repository. AI-generated
+analysis is not proof and does not replace independent review or kernel gates.

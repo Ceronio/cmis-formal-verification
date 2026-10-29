@@ -1,0 +1,42 @@
+{
+  "scope": "source loss-profile arithmetic and finite counterexample to invalid denominator shortcut",
+  "loss_piece_integrals": [
+    "2400",
+    "368",
+    "308",
+    "172",
+    "803/2",
+    "630",
+    "7",
+    "18"
+  ],
+  "total_area": "8609/2",
+  "loss_profile_comparisons": 808,
+  "two_adic_coefficient": "505/4608",
+  "conditional_lower_constant_enclosure": [
+    "-130155148937534771100189050687128993093/56816224048031679380673455557251225600",
+    "-793628956936187628659371576546202987/346440390536778532808984485105190400"
+  ],
+  "conditional_lower_constant_approx": [
+    -2.2908095551633867,
+    -2.2908095551633867
+  ],
+  "greater_than_minus_2_29084": true,
+  "invalid_leading_residue_shortcut_counterexample": {
+    "prime": 5,
+    "matrix": [
+      [
+        "1/25",
+        "1/25"
+      ],
+      [
+        "0",
+        "1/5"
+      ]
+    ],
+    "determinant": "1/125",
+    "determinant_valuation": -3
+  },
+  "pnt_or_analytic_limit_reproved": false,
+  "full_finite_place_proof_certified": false
+}

@@ -1,0 +1,43 @@
+{
+  "schema": "cmis-bounded-audit-findings-v1",
+  "date": "2026-10-29",
+  "scope": "prepared CP09/CP10 bounded reconstruction",
+  "source_commit": "fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb",
+  "CP09": {
+    "certification": "HOLD",
+    "family": "005",
+    "fixed_matrix_dimensions": [
+      49,
+      48
+    ],
+    "pivots_matched": 144,
+    "determinant_residues_mod_101": [
+      27,
+      50,
+      74
+    ],
+    "bounded_digit_comparisons": 99710,
+    "bounded_H": 65,
+    "full_growing_matrix_computed": false,
+    "universal_digit_theorem_proved_by_tests": false
+  },
+  "CP10": {
+    "certification": "HOLD",
+    "family": "005",
+    "loss_area": "8609/2",
+    "loss_profile_comparisons": 808,
+    "conditional_lower_constant": "-8609/4608 -(2809/4608)log(2)",
+    "analytic_PNT_limit_proof_reproduced": false
+  },
+  "new_formal_executions": 0,
+  "new_accepted_checkpoints": 0,
+  "unresolved": [
+    "Family 159 execution hold, issue #3",
+    "Unreadable original CP62 ZIP",
+    "Universal proof/dependency and used-declaration audit",
+    "Authorised GitHub execution",
+    "Independent end-to-end review",
+    "Independent recoverable long-term preservation"
+  ],
+  "deferred_requirement_only": "Licensing"
+}

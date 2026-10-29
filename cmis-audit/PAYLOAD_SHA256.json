@@ -1,0 +1,125 @@
+{
+  "schema": "cmis-publication-payload-sha256-v1",
+  "audit_date": "2026-10-29",
+  "publication_preflight_date": "2026-10-30",
+  "source_commit": "fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb",
+  "base_commit": "71f58f6bcfa119da721cd7db0a6100292a5e93d4",
+  "manifest_self_excluded": true,
+  "files": [
+    {
+      "path": ".github/workflows/cmis-cp09-cp10-bounded-audit.yml",
+      "bytes": 1633,
+      "sha256": "80ce3d3df7066ead585cdd86eb54a52142d1a8877c8fa4db67e76256a187899c"
+    },
+    {
+      "path": "cmis-audit/README.md",
+      "bytes": 2123,
+      "sha256": "332c52fc428e5d571f2c2d4785a7222b1cb4a7a88c705f4379f3441777d57dd6"
+    },
+    {
+      "path": "cmis-audit/SOURCE_REFERENCES.json",
+      "bytes": 4232,
+      "sha256": "c6f6e4fefb2f7028a549941c888f0da3913687adf4fd521f58f694b2929c2bf8"
+    },
+    {
+      "path": "cmis-audit/evidence/CP09_BOUNDED_RECONSTRUCTION.json",
+      "bytes": 13599,
+      "sha256": "c92ef93beabc21a9f9dabe7929ee478a706a7aabae1e2bb2ddc62867be7d33ea"
+    },
+    {
+      "path": "cmis-audit/evidence/CP10_BOUNDED_ALGEBRA.json",
+      "bytes": 1013,
+      "sha256": "68c27d0a084a5ff3c80724bf72ce27a2ef8008c3f936a65b19b61cbd9f6bb18c"
+    },
+    {
+      "path": "cmis-audit/evidence/pinned_sources/SOURCE_HASH_AUDIT.json",
+      "bytes": 3231,
+      "sha256": "851aeac8f4aa1c31c5158b6f3ccd02b676f4144bd9e22a24292dd5bd07dd5539"
+    },
+    {
+      "path": "cmis-audit/evidence/pinned_sources/authenticated/Catalan.json",
+      "bytes": 319,
+      "sha256": "d8e970601d8f0418cc21adfcbb794fe8cc11b0fdbd9da7fd6dfcb3052c8ae7a3"
+    },
+    {
+      "path": "cmis-audit/evidence/pinned_sources/authenticated/Catalan.lean",
+      "bytes": 209,
+      "sha256": "9bf391e5c1a95dd82d78e53774b9f2223d8c0fae0396fc3ad59332f895de8561"
+    },
+    {
+      "path": "cmis-audit/evidence/pinned_sources/authenticated/Main.lean",
+      "bytes": 2174,
+      "sha256": "1b52680d355251e465074d8f2d688086967f1f681f606ee1f199c5edc26c0111"
+    },
+    {
+      "path": "cmis-audit/evidence/pinned_sources/authenticated/certificate.tex",
+      "bytes": 19114,
+      "sha256": "113f8438138e239f2f39820692aa2180b97e0729463799e40f7100a304e73c9a"
+    },
+    {
+      "path": "cmis-audit/evidence/pinned_sources/authenticated/conclusion.tex",
+      "bytes": 2529,
+      "sha256": "f7d8a388041f6b1229f1d4a6f42fbbe61c81f65b68a652be270969cc6c80f1fa"
+    },
+    {
+      "path": "cmis-audit/evidence/pinned_sources/authenticated/energy.tex",
+      "bytes": 11930,
+      "sha256": "046baf5cfb1c774d0a398f47958bfbf2d4e7551e66f9bdd361347e1af51cc9eb"
+    },
+    {
+      "path": "cmis-audit/evidence/pinned_sources/authenticated/foundations.tex",
+      "bytes": 17035,
+      "sha256": "66e91b9f49c71b4453e447c371e05a43251ef6be436c84cebe9970392eab7939"
+    },
+    {
+      "path": "cmis-audit/evidence/pinned_sources/authenticated/nonvanishing.tex",
+      "bytes": 16805,
+      "sha256": "5eb530e75f876ba18b90bfe9979bdcd2336443d3f100471ca797d7b5711c29b8"
+    },
+    {
+      "path": "cmis-audit/evidence/pinned_sources/authenticated/odd-primes.tex",
+      "bytes": 25591,
+      "sha256": "81fcbfa0b6db03d727949ea7f6de286f73c0d88ada423ccb1b3943733ec450dc"
+    },
+    {
+      "path": "cmis-audit/evidence/pinned_sources/authenticated/overview.tex",
+      "bytes": 321928,
+      "sha256": "aa54c8e14b7647226264045ae846df7ce6803d2ded48aa3183195e45f9f91962"
+    },
+    {
+      "path": "cmis-audit/evidence/pinned_sources/authenticated/real-place.tex",
+      "bytes": 17417,
+      "sha256": "761db4596cc260f8f62ea5480c59ce1c0b2cfac0f5b4e1ca75d9bc0cbbfd3173"
+    },
+    {
+      "path": "cmis-audit/reports/MATHEMATICAL_VERIFICATION_FINDINGS.json",
+      "bytes": 1218,
+      "sha256": "cc5966fe2d9062f92f4a6aa6cea8c4a00f8de949a94b949c8b528355743c431c"
+    },
+    {
+      "path": "cmis-audit/reports/PREPUBLICATION_VALIDATION.json",
+      "bytes": 1624,
+      "sha256": "825315a95a8d30facd7ae229e78462e98d3a44a9c11ce6203fac6559e3da5cb2"
+    },
+    {
+      "path": "cmis-audit/reports/RECONCILIATION_REPORT.txt",
+      "bytes": 6736,
+      "sha256": "d6dcf4971dd8aee6dcfff935e38b0638fc59c4bbd811576a7dcdeba5440720e4"
+    },
+    {
+      "path": "cmis-audit/reports/UNIVERSAL_ACCEPTANCE_GATES.csv",
+      "bytes": 2372,
+      "sha256": "c931a76f1e295dc71c963c099d2076eb6266fbca3edbef51c6388c0a6be44684"
+    },
+    {
+      "path": "cmis-audit/scripts/reconstruct_cp09.py",
+      "bytes": 5034,
+      "sha256": "eb14e29d6253e9be88e6144cf0f60b9b92eb11be8bab3f690c5214f3c6ac8e49"
+    },
+    {
+      "path": "cmis-audit/scripts/reconstruct_cp10.py",
+      "bytes": 2051,
+      "sha256": "30ba9a30ab81883ee8efe217df78a55e314a60415e4617ed0c23835b6dff2193"
+    }
+  ]
+}
