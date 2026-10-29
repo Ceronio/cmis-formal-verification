@@ -8,8 +8,8 @@
   "files": [
     {
       "path": ".github/workflows/cmis-cp09-cp10-bounded-audit.yml",
-      "bytes": 1633,
-      "sha256": "80ce3d3df7066ead585cdd86eb54a52142d1a8877c8fa4db67e76256a187899c"
+      "bytes": 1998,
+      "sha256": "a142a68b422f5d1aad62908d3ded867bf62de1ab1f51cd4ecc40af5381616eae"
     },
     {
       "path": "cmis-audit/README.md",

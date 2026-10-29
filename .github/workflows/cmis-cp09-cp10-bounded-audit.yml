@@ -1,6 +1,11 @@
 name: CMIS CP09 and CP10 bounded source audit
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - codex/cmis-cp09-cp10-source-audit-20261029
+    paths:
+      - '.github/workflows/cmis-cp09-cp10-bounded-audit.yml'
 permissions:
   contents: read
 jobs:
@@ -9,8 +14,13 @@ jobs:
     timeout-minutes: 20
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: 427a97383152989becb88a7f9f78b8c01f6b6f58
+          persist-credentials: false
       - name: Confirm pinned source hashes and Python
         run: |
+          test "$(git rev-parse HEAD)" = "427a97383152989becb88a7f9f78b8c01f6b6f58"
+          git rev-parse HEAD
           python3 --version
           python3 - <<'PY'
           import hashlib, json, pathlib, sys
