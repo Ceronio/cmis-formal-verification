@@ -1,0 +1,35 @@
+name: CMIS CP05 exact rational certificate audit
+on:
+  push:
+    branches:
+      - audit/cp05-exact-certificates
+    paths:
+      - .github/workflows/cmis-cp05-exact-certificates.yml
+      - audits/cp05/**
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  exact_certificate_audit:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - name: Checkout audited source
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - name: Execute exact finite models and adversarial tests
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p evidence/cp05
+          python3 -I -S -B audits/cp05/verify_public.py --out evidence/cp05/result.json 2>&1 | tee evidence/cp05/run.log
+          python3 --version > evidence/cp05/python.txt
+          printf '%s\n' "$GITHUB_SHA" > evidence/cp05/commit_sha.txt
+          sha256sum audits/cp05/verify_public.py .github/workflows/cmis-cp05-exact-certificates.yml evidence/cp05/result.json > evidence/cp05/SHA256SUMS.txt
+      - name: Retain scoped GitHub CI receipts
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: cmis-cp05-exact-finite-receipt
+          path: evidence/cp05/
+          if-no-files-found: error
+          retention-days: 90
