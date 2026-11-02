@@ -1,0 +1,41 @@
+name: CMIS CP01-CP04 bounded verification
+on:
+  push:
+    branches:
+      - audit/cp01-cp04-verification
+    paths:
+      - .github/workflows/cmis-cp01-cp04-bounded-verification.yml
+      - audits/cp01-cp04/**
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    name: ${{ matrix.cp }} exact arithmetic
+    runs-on: ubuntu-24.04
+    strategy:
+      fail-fast: false
+      matrix:
+        cp: [CP01, CP02, CP03, CP04]
+    steps:
+      - name: Checkout audited commit
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - name: Run exact-arithmetic validation
+        shell: bash
+        env:
+          CP: ${{ matrix.cp }}
+        run: |
+          set -euo pipefail
+          mkdir -p "evidence/$CP"
+          python3 -I -S -B audits/cp01-cp04/verify_finite.py --cp "$CP" --output "evidence/$CP/result.json" 2>&1 | tee "evidence/$CP/run.log"
+          python3 --version > "evidence/$CP/python_version.txt"
+          printf '%s\n' "$GITHUB_SHA" > "evidence/$CP/commit_sha.txt"
+          sha256sum audits/cp01-cp04/verify_finite.py .github/workflows/cmis-cp01-cp04-bounded-verification.yml "evidence/$CP/result.json" > "evidence/$CP/SHA256SUMS.txt"
+      - name: Preserve 90-day CI receipt
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: cmis-${{ matrix.cp }}-bounded-receipt
+          path: evidence/${{ matrix.cp }}/
+          if-no-files-found: error
+          retention-days: 90
