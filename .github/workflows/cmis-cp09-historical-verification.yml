@@ -1,0 +1,53 @@
+name: CMIS CP09 historical-scope bounded verification
+on:
+  push:
+    branches: [audit/cp09-historical-verification]
+    paths:
+      - .github/workflows/cmis-cp09-historical-verification.yml
+      - cmis-audit/**
+      - audits/cp09/**
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  cp09_bounded_source_audit:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - name: Checkout exact branch commit
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Replay source-defined bounded CP09 mathematics
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p cmis-audit/results
+          printf '%s\n' "$GITHUB_SHA" > cmis-audit/results/COMMIT_SHA.txt
+          python3 --version > cmis-audit/results/PYTHON_VERSION.txt
+          python3 -I -S -B cmis-audit/scripts/reconstruct_cp09.py 2>&1 | tee cmis-audit/results/RUN_LOG.txt
+          python3 - <<'PY'
+          import json, pathlib
+          root=pathlib.Path("cmis-audit")
+          got=json.loads((root/"results/CP09_FRESH_RECONSTRUCTION.json").read_text())
+          ref=json.loads((root/"evidence/CP09_BOUNDED_RECONSTRUCTION.json").read_text())
+          assert got==ref,"bounded CP09 reference results changed"
+          assert got["source_pivots_matched"]==144
+          assert sum(r["moment_and_harmonic_congruences_checked"] for r in got["bounded_digit_congruences"])==99710
+          assert got["full_growing_matrix_built"] is False
+          assert got["digit_layer_universal_theorem_verified"] is False
+          assert got["checkpoint_certified"] is False
+          mod101=[r for r in got["modular_eliminations"] if r["prime"]==101]
+          assert [x["det"] for x in mod101]==[27,50,74]
+          print("PASS_BOUNDED_CP09_ONLY: 99,710 digit comparisons; 144 source pivots; source matrices; NO universal proof")
+          PY
+          sha256sum cmis-audit/scripts/reconstruct_cp09.py cmis-audit/evidence/pinned_sources/authenticated/nonvanishing.tex cmis-audit/evidence/CP09_BOUNDED_RECONSTRUCTION.json cmis-audit/results/CP09_FRESH_RECONSTRUCTION.json .github/workflows/cmis-cp09-historical-verification.yml > cmis-audit/results/SHA256SUMS.txt
+          printf '%s\n' 'PASS_BOUNDED_CP09_ONLY' > cmis-audit/results/STATUS.txt
+      - name: Upload auditable verification receipt
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: cmis-cp09-bounded-historical-review-receipt
+          path: cmis-audit/results/
+          if-no-files-found: error
+          retention-days: 90
