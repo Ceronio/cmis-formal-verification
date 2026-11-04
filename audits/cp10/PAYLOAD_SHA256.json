@@ -1,5 +1,5 @@
 {
-  ".github/workflows/cmis-cp10-original-suite.yml": "c9e59f93c2ff94ab59daeccc7decb29f6816fb7ffb4913500cc3029a8b9b12a0",
+  ".github/workflows/cmis-cp10-original-suite.yml": "519fb2ba062e60503aa12c4fa3e1a2851f876c670ff11effdf64b5b28be68271",
   "audits/cp10/DEPENDENCY_PINS.json": "7a3b8cc31c2a571b6271486f87d2d3a2b85245353558ca8208a715a6d1407c06",
   "audits/cp10/SCOPE.md": "3cbecf1658d0e2ea387bb2098df08d844931e4ebfe7d3764a63783c8678efbba",
   "audits/cp10/SOURCE_PARITY.json": "f489ffc36e8ccc836019b83a9bf7524c18da2a4c88cb822e422753925cd408f3",

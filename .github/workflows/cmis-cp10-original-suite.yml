@@ -24,7 +24,8 @@ jobs:
         with:
           python-version: '3.13.5'
       - name: Install hash-pinned mathematical dependencies
-        run: python -m pip install --disable-pip-version-check --only-binary=:all: --require-hashes -r audits/cp10/requirements.lock
+        run: |
+          python -m pip install --disable-pip-version-check --only-binary=:all: --require-hashes -r audits/cp10/requirements.lock
       - name: Replay unchanged original mathematical suites
         run: python -I -B audits/cp10/run_original_suites.py --output cmis_receipt
       - name: Preserve workflow and runner identities
