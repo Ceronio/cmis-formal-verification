@@ -1,0 +1,239 @@
+{
+  "status": "PASS",
+  "check_count": 46,
+  "checks": [
+    {
+      "id": "bound_reject_family",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "bound_reject_pin",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "bound_reject_schema",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "bound_reject_claim_inflation",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "bound_reject_source_coefficient",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "bound_reject_drop_error_term",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "bound_reject_error_allowance",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "bound_reject_rounded_bound",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "bound_reject_minimizer",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "bound_reject_missing_K_condition",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "bound_reject_cross_group_distinctness",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "bound_reject_nonintegral_filter",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "bound_reject_formal_claim",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "bound_reject_whole_theorem_claim",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "bound_reject_K_value",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "bound_reject_N_bool",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "bound_reject_missing_field",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "bound_reject_extra_field",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "tail_reject_short_cutoff",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "tail_reject_precision",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "tail_reject_tail_claim",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "tail_reject_sum",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "tail_reject_index",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "tail_reject_pin",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "tail_reject_family",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "tail_reject_missing",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "tail_reject_bool_cutoff",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "invalid_input_00",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "invalid_input_01",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "invalid_input_02",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "invalid_input_03",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "invalid_input_04",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "invalid_input_05",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "invalid_input_06",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "invalid_input_07",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "invalid_input_08",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "invalid_input_09",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "invalid_input_10",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "invalid_input_11",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "report_valid",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "report_reject_empty",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "report_reject_missing",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "report_reject_duplicate",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "report_reject_false",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "report_reject_string",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "report_reject_wrong_id",
+      "pass": true,
+      "detail": null
+    }
+  ],
+  "rejected_bound_mutations": 18,
+  "rejected_tail_mutations": 9,
+  "invalid_inputs": 12
+}

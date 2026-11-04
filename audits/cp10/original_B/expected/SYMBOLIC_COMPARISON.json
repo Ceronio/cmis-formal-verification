@@ -1,0 +1,347 @@
+{
+  "status": "PASS",
+  "check_count": 66,
+  "checks": [
+    {
+      "id": "sympy_chebyshev_0",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "sympy_chebyshev_1",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "sympy_chebyshev_2",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "sympy_chebyshev_3",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "sympy_chebyshev_4",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "sympy_chebyshev_5",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "sympy_chebyshev_6",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "sympy_chebyshev_7",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "sympy_chebyshev_8",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "sympy_chebyshev_9",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "sympy_chebyshev_10",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "sympy_chebyshev_11",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "sympy_chebyshev_12",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "sympy_chebyshev_13",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "sympy_chebyshev_14",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "sympy_chebyshev_15",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "sympy_chebyshev_16",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "sympy_chebyshev_17",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "sympy_chebyshev_18",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "sympy_chebyshev_19",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "sympy_chebyshev_20",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "sympy_chebyshev_21",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "sympy_chebyshev_22",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "sympy_chebyshev_23",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "sympy_chebyshev_24",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "sympy_chebyshev_25",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "sympy_chebyshev_26",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "sympy_chebyshev_27",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "sympy_chebyshev_28",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "sympy_chebyshev_29",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "sympy_chebyshev_30",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "sympy_chebyshev_31",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "sympy_chebyshev_32",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "sympy_chebyshev_33",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "sympy_chebyshev_34",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "sympy_chebyshev_35",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "sympy_chebyshev_36",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "sympy_chebyshev_37",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "sympy_chebyshev_38",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "sympy_chebyshev_39",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "sympy_chebyshev_40",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "sympy_chebyshev_41",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "sympy_chebyshev_42",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "sympy_chebyshev_43",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "sympy_chebyshev_44",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "sympy_chebyshev_45",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "sympy_chebyshev_46",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "sympy_chebyshev_47",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "sympy_chebyshev_48",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "symbolic_square_completion",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "symbolic_twoadic_coefficient",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "symbolic_loss_area_0",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "symbolic_loss_area_1",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "symbolic_loss_area_2",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "symbolic_loss_area_3",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "symbolic_loss_area_4",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "symbolic_loss_area_5",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "symbolic_loss_area_6",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "symbolic_loss_area_7",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "symbolic_total_area",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "symbolic_log2_enclosure",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "symbolic_source_constant",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "id": "independent_population_counts_N1",
+      "pass": true,
+      "detail": {
+        "prime_cases": 7
+      }
+    },
+    {
+      "id": "independent_population_counts_N2",
+      "pass": true,
+      "detail": {
+        "prime_cases": 13
+      }
+    },
+    {
+      "id": "independent_population_counts_N3",
+      "pass": true,
+      "detail": {
+        "prime_cases": 19
+      }
+    },
+    {
+      "id": "independent_population_counts_N4",
+      "pass": true,
+      "detail": {
+        "prime_cases": 24
+      }
+    }
+  ],
+  "elapsed_seconds": 0.33985028500001135,
+  "sympy_version": "1.14.0",
+  "scope": "alternate library construction; shares transcribed inputs and assistant authorship"
+}

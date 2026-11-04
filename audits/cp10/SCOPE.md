@@ -1,0 +1,3 @@
+# CP10 exact mathematical-suite replay
+
+This payload preserves 17 files byte-for-byte from the original A/B checkpoint archives: mathematics code, frozen protocols and expected check records. It runs all 1,033 A and 313 B mathematical check records. It does not upload private archives, historical family registers, master documents or the full archive-release verifier. A successful result is finite original-code reproducibility, not a proof of Catalan irrationality, external review, checkpoint acceptance, or complete G18/G19 closure by itself. Full archive integrity remains separately audited offline. No new licence is granted by this file.

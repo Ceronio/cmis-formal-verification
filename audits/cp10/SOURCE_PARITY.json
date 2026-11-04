@@ -1,0 +1,141 @@
+{
+  "scope": "Exact frozen CP10 mathematical executables, protocols and expected records only. Original archive/372-family metadata and formal theorem proof are NOT this public payload.",
+  "files": [
+    {
+      "variant": "A",
+      "archive_sha256": "2600e3ae70aabd4dd1a8b966bf870cd0d3891f54fef30510a03c83a712ab2528",
+      "archive_member": "CMIS_Phase2_CP10_2026-10-16/code/two_adic.py",
+      "payload_path": "audits/cp10/original_A/code/two_adic.py",
+      "sha256": "895bb4b13daafab1b6ff83987203277d61afb3545093e22ed2ddf31b6f50431d",
+      "byte_identical": true
+    },
+    {
+      "variant": "A",
+      "archive_sha256": "2600e3ae70aabd4dd1a8b966bf870cd0d3891f54fef30510a03c83a712ab2528",
+      "archive_member": "CMIS_Phase2_CP10_2026-10-16/code/run_primary.py",
+      "payload_path": "audits/cp10/original_A/code/run_primary.py",
+      "sha256": "ede499cabffb0c860e0101cfad92ba8bc4bdbf8fdea45c90fc53c405a12b9f95",
+      "byte_identical": true
+    },
+    {
+      "variant": "A",
+      "archive_sha256": "2600e3ae70aabd4dd1a8b966bf870cd0d3891f54fef30510a03c83a712ab2528",
+      "archive_member": "CMIS_Phase2_CP10_2026-10-16/code/run_negative.py",
+      "payload_path": "audits/cp10/original_A/code/run_negative.py",
+      "sha256": "61780580086833ada3b5d43adbb53754bf594bb445848cc869a4ef0c9f9fc5bb",
+      "byte_identical": true
+    },
+    {
+      "variant": "A",
+      "archive_sha256": "2600e3ae70aabd4dd1a8b966bf870cd0d3891f54fef30510a03c83a712ab2528",
+      "archive_member": "CMIS_Phase2_CP10_2026-10-16/code/run_comparison.py",
+      "payload_path": "audits/cp10/original_A/code/run_comparison.py",
+      "sha256": "4e15734358b98da11a0d8c6928ebfd83b009af2f4070553ca856d1ef19b3012d",
+      "byte_identical": true
+    },
+    {
+      "variant": "A",
+      "archive_sha256": "2600e3ae70aabd4dd1a8b966bf870cd0d3891f54fef30510a03c83a712ab2528",
+      "archive_member": "CMIS_Phase2_CP10_2026-10-16/records/PROTOCOL.json",
+      "payload_path": "audits/cp10/original_A/records/PROTOCOL.json",
+      "sha256": "11bad2d20e17300fb7964d7a822d166c5f03e1ebabc7132724e217793470bee0",
+      "byte_identical": true
+    },
+    {
+      "variant": "A",
+      "archive_sha256": "2600e3ae70aabd4dd1a8b966bf870cd0d3891f54fef30510a03c83a712ab2528",
+      "archive_member": "CMIS_Phase2_CP10_2026-10-16/records/COMPARISON_PROTOCOL.json",
+      "payload_path": "audits/cp10/original_A/records/COMPARISON_PROTOCOL.json",
+      "sha256": "0866b956adcfef8267e1b7523669c6a7263b2e7689f774508393ea940e01d1bd",
+      "byte_identical": true
+    },
+    {
+      "variant": "A",
+      "archive_sha256": "2600e3ae70aabd4dd1a8b966bf870cd0d3891f54fef30510a03c83a712ab2528",
+      "archive_member": "CMIS_Phase2_CP10_2026-10-16/results/TWO_ADIC_PRIMARY.json",
+      "payload_path": "audits/cp10/original_A/expected/TWO_ADIC_PRIMARY.json",
+      "sha256": "7bd8483a29086d6f07f6d4fcfbed22fa856e4cd02c5b5881aef990e817070342",
+      "byte_identical": true
+    },
+    {
+      "variant": "A",
+      "archive_sha256": "2600e3ae70aabd4dd1a8b966bf870cd0d3891f54fef30510a03c83a712ab2528",
+      "archive_member": "CMIS_Phase2_CP10_2026-10-16/results/NEGATIVE_CASES.json",
+      "payload_path": "audits/cp10/original_A/expected/NEGATIVE_CASES.json",
+      "sha256": "eb0bf508bd72d8641524f30df43ccd5e360e14fe6f706fe39308e6287a818492",
+      "byte_identical": true
+    },
+    {
+      "variant": "A",
+      "archive_sha256": "2600e3ae70aabd4dd1a8b966bf870cd0d3891f54fef30510a03c83a712ab2528",
+      "archive_member": "CMIS_Phase2_CP10_2026-10-16/results/COMPARISON.json",
+      "payload_path": "audits/cp10/original_A/expected/COMPARISON.json",
+      "sha256": "7eb9a219c5de8cda0cd331e255b18a55d5bf27d06059b69f53bde6d4993ab4bc",
+      "byte_identical": true
+    },
+    {
+      "variant": "B",
+      "archive_sha256": "c0f3701152f8810e548727815cd514e019e04c25f98052cea9603cb576d0cb04",
+      "archive_member": "CMIS_Phase2_CP10_2026-10-16/code/inherited_digit_bridge.py",
+      "payload_path": "audits/cp10/original_B/code/inherited_digit_bridge.py",
+      "sha256": "2810e2da98cca126d69981454707da925861954771616ee75101099080f0d673",
+      "byte_identical": true
+    },
+    {
+      "variant": "B",
+      "archive_sha256": "c0f3701152f8810e548727815cd514e019e04c25f98052cea9603cb576d0cb04",
+      "archive_member": "CMIS_Phase2_CP10_2026-10-16/code/lower_bound.py",
+      "payload_path": "audits/cp10/original_B/code/lower_bound.py",
+      "sha256": "2d9715763e0b760a453e2e19dc1d9cbcfd5bbfc409f89127232b35faea257131",
+      "byte_identical": true
+    },
+    {
+      "variant": "B",
+      "archive_sha256": "c0f3701152f8810e548727815cd514e019e04c25f98052cea9603cb576d0cb04",
+      "archive_member": "CMIS_Phase2_CP10_2026-10-16/code/run_primary.py",
+      "payload_path": "audits/cp10/original_B/code/run_primary.py",
+      "sha256": "1cef764690d19caa2edb4cdddc68836fa822bcd60a17af65c7fb1c7c12e93b4f",
+      "byte_identical": true
+    },
+    {
+      "variant": "B",
+      "archive_sha256": "c0f3701152f8810e548727815cd514e019e04c25f98052cea9603cb576d0cb04",
+      "archive_member": "CMIS_Phase2_CP10_2026-10-16/code/run_comparison.py",
+      "payload_path": "audits/cp10/original_B/code/run_comparison.py",
+      "sha256": "b215d57acd5a76ad446e2180e73c223c1a30fb442323a3a63c06c150f721bd79",
+      "byte_identical": true
+    },
+    {
+      "variant": "B",
+      "archive_sha256": "c0f3701152f8810e548727815cd514e019e04c25f98052cea9603cb576d0cb04",
+      "archive_member": "CMIS_Phase2_CP10_2026-10-16/records/PROTOCOL.json",
+      "payload_path": "audits/cp10/original_B/records/PROTOCOL.json",
+      "sha256": "9c4a0333465f04983df2a738159e2b6e99d73fe87f813ef0edb6a41ae82ed657",
+      "byte_identical": true
+    },
+    {
+      "variant": "B",
+      "archive_sha256": "c0f3701152f8810e548727815cd514e019e04c25f98052cea9603cb576d0cb04",
+      "archive_member": "CMIS_Phase2_CP10_2026-10-16/records/COMPARISON_PROTOCOL.json",
+      "payload_path": "audits/cp10/original_B/records/COMPARISON_PROTOCOL.json",
+      "sha256": "eeffed66e0ff0504d4b8146f8546debcf038d946a227d26454ab3aed2d91067d",
+      "byte_identical": true
+    },
+    {
+      "variant": "B",
+      "archive_sha256": "c0f3701152f8810e548727815cd514e019e04c25f98052cea9603cb576d0cb04",
+      "archive_member": "CMIS_Phase2_CP10_2026-10-16/results/PRIMARY_REPLAY.json",
+      "payload_path": "audits/cp10/original_B/expected/PRIMARY_REPLAY.json",
+      "sha256": "c65b0dd78ad443e0e422efe5af11658b69c5b8f32e29535cf3b2d4785f374633",
+      "byte_identical": true
+    },
+    {
+      "variant": "B",
+      "archive_sha256": "c0f3701152f8810e548727815cd514e019e04c25f98052cea9603cb576d0cb04",
+      "archive_member": "CMIS_Phase2_CP10_2026-10-16/results/SYMBOLIC_COMPARISON.json",
+      "payload_path": "audits/cp10/original_B/expected/SYMBOLIC_COMPARISON.json",
+      "sha256": "3c22b68dd6b857653fcdf7565ef165fcd11edfec6cc06181681e66b2bdea3d89",
+      "byte_identical": true
+    }
+  ]
+}

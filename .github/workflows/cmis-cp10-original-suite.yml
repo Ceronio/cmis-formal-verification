@@ -1,0 +1,50 @@
+name: CMIS CP10 original mathematical suites
+on:
+  push:
+    branches: ['audit/cp10-historical-verification']
+    paths:
+      - 'audits/cp10/**'
+      - '.github/workflows/cmis-cp10-original-suite.yml'
+permissions:
+  contents: read
+concurrency:
+  group: cmis-cp10-original-suites
+  cancel-in-progress: false
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - name: Check out exact triggering commit
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Select fixed Python version
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.13.5'
+      - name: Install hash-pinned mathematical dependencies
+        run: python -m pip install --disable-pip-version-check --only-binary=:all: --require-hashes -r audits/cp10/requirements.lock
+      - name: Replay unchanged original mathematical suites
+        run: python -I -B audits/cp10/run_original_suites.py --output cmis_receipt
+      - name: Preserve workflow and runner identities
+        if: always()
+        shell: bash
+        run: |
+          mkdir -p cmis_receipt
+          cp .github/workflows/cmis-cp10-original-suite.yml cmis_receipt/workflow.yml
+          python --version > cmis_receipt/python-version.txt
+          python -m pip freeze > cmis_receipt/pip-freeze.txt
+          printf '%s\n' "$GITHUB_SHA" > cmis_receipt/executed-commit.txt
+          (cd cmis_receipt && find . -maxdepth 1 -type f ! -name SHA256SUMS -print0 | sort -z | xargs -0 sha256sum > SHA256SUMS)
+      - name: Upload execution receipt even on failure
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: cmis-cp10-original-suites-${{ github.run_id }}-${{ github.run_attempt }}
+          path: cmis_receipt/
+          if-no-files-found: error
+          retention-days: 90
+      - name: Require successful exact replay
+        if: always()
+        run: python -c "import json; r=json.load(open('cmis_receipt/RESULT.json')); assert r['status']=='PASS_ORIGINAL_MATHEMATICAL_SUITES'; assert r['github_execution'] is True"
